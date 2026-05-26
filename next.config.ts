@@ -39,18 +39,34 @@ const productionSecurityHeaders = [
   },
 ];
 
+const isGithubPages = process.env.GITHUB_PAGES === "true";
+const githubPagesBasePath = "/omamori-sha";
+const basePath = isGithubPages ? githubPagesBasePath : "";
+
 const nextConfig: NextConfig = {
-  async headers() {
-    return [
-      {
-        source: "/:path*",
-        headers:
-          process.env.NODE_ENV === "production"
-            ? [...securityHeaders, ...productionSecurityHeaders]
-            : securityHeaders,
-      },
-    ];
-  },
+  ...(isGithubPages
+    ? {
+        output: "export",
+        basePath,
+        assetPrefix: basePath,
+        trailingSlash: true,
+        images: {
+          unoptimized: true,
+        },
+      }
+    : {
+        async headers() {
+          return [
+            {
+              source: "/:path*",
+              headers:
+                process.env.NODE_ENV === "production"
+                  ? [...securityHeaders, ...productionSecurityHeaders]
+                  : securityHeaders,
+            },
+          ];
+        },
+      }),
 };
 
 export default nextConfig;

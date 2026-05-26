@@ -135,7 +135,7 @@ export function SettingsModal({
             aria-labelledby={titleId}
             aria-describedby={descriptionId}
             tabIndex={-1}
-            className="thin-scrollbar max-h-[calc(100dvh-2rem)] w-full max-w-xl overflow-y-auto rounded-[2rem] border border-[#d8b58a]/34 bg-[#fff7eb] bg-[url('/images/textures/washi-noise.svg')] p-6 text-[#493344] shadow-[0_30px_100px_rgba(92,60,45,0.3),inset_0_1px_0_rgba(255,255,255,0.72)]"
+            className="thin-scrollbar max-h-[calc(100dvh-2rem)] w-full max-w-xl overflow-y-auto rounded-[2rem] border border-[#d8b58a]/34 bg-[#fff7eb] bg-[image:var(--asset-washi-noise)] p-6 text-[#493344] shadow-[0_30px_100px_rgba(92,60,45,0.3),inset_0_1px_0_rgba(255,255,255,0.72)]"
             initial={reducedMotion ? { opacity: 0 } : { opacity: 0, y: 20, scale: 0.96 }}
             animate={reducedMotion ? { opacity: 1 } : { opacity: 1, y: 0, scale: 1 }}
             exit={reducedMotion ? { opacity: 0 } : { opacity: 0, y: 24, scale: 0.96 }}

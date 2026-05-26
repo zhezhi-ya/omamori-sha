@@ -1,6 +1,8 @@
 import { ImageResponse } from "next/og";
 import { SocialPreviewArt } from "@/components/social-preview-art";
 
+export const dynamic = "force-static";
+
 export const size = {
   width: 1200,
   height: 630,

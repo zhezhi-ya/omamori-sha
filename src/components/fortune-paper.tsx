@@ -3,6 +3,7 @@
 import { AnimatePresence, motion } from "motion/react";
 import Image from "next/image";
 import { rarityGlow } from "@/constants/design-tokens";
+import { assetPath } from "@/lib/paths";
 import { cn } from "@/lib/utils";
 import type { FortuneRarity } from "@/types/omikuji";
 
@@ -33,14 +34,14 @@ export function FortunePaper({ open, rarity, reducedMotion, children }: FortuneP
           <div className="absolute inset-y-5 left-5 w-[1px] bg-[#6e5132]/12" />
           <div className="absolute inset-y-5 right-5 w-[1px] bg-[#6e5132]/12" />
           <Image
-            src="/images/ui/paper-corner.svg"
+            src={assetPath("/images/ui/paper-corner.svg")}
             alt=""
             width={240}
             height={240}
             className="absolute left-0 top-0 w-24 opacity-55 sm:w-28"
           />
           <Image
-            src="/images/ui/paper-corner.svg"
+            src={assetPath("/images/ui/paper-corner.svg")}
             alt=""
             width={240}
             height={240}

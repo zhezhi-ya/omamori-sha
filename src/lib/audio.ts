@@ -3,6 +3,7 @@
 import { touhouMusicTracks, type TouhouMusicTrack } from "@/constants/design-tokens";
 import { clamp } from "@/lib/utils";
 import type { OmamoriRouteId, OmamoriSettings } from "@/types/omikuji";
+import { assetPath } from "@/lib/paths";
 
 type MaybeAudioContext = AudioContext | null;
 type AmbientNode = OscillatorNode | AudioBufferSourceNode | BiquadFilterNode | GainNode | StereoPannerNode | DelayNode;
@@ -52,7 +53,7 @@ interface MusicManifest {
   tracks?: TouhouMusicTrack[];
 }
 
-const MUSIC_MANIFEST_URL = "/audio/music/tracks.json";
+const MUSIC_MANIFEST_URL = assetPath("/audio/music/tracks.json");
 const pentatonicScale = [0, 2, 5, 7, 9, 12, 14, 17];
 const melodyPattern = [0, 2, 4, 5, 4, 2, 1, 0, 3, 5, 7, 5, 4, 2, 0, 1];
 const synthRoots = [261.63, 293.66, 329.63, 349.23, 392, 440];
@@ -572,7 +573,7 @@ class OmamoriAudioEngine {
     const orderedTracks = this.getOrderedTracks(availableTracks);
 
     for (const track of orderedTracks) {
-      const audio = new Audio(track.src);
+      const audio = new Audio(assetPath(track.src));
       audio.autoplay = true;
       audio.loop = true;
       audio.preload = "auto";

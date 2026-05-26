@@ -147,7 +147,7 @@ input:disabled {
   z-index: -2;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.68), rgba(255, 247, 229, 0.18)),
-    url("/images/textures/washi-noise.svg");
+    var(--asset-washi-noise);
   opacity: 0.54;
   content: "";
 }
@@ -187,7 +187,7 @@ input:disabled {
   border: 1px solid rgba(104, 76, 36, 0.16);
   background:
     linear-gradient(180deg, rgba(255, 253, 247, 0.96), rgba(245, 236, 220, 0.86)),
-    url("/images/textures/washi-noise.svg");
+    var(--asset-washi-noise);
   box-shadow: var(--shadow-card);
   color: #342922;
 }
@@ -206,7 +206,7 @@ input:disabled {
 }
 
 .paper-texture {
-  background-image: url("/images/textures/washi-noise.svg");
+  background-image: var(--asset-washi-noise);
   background-size: 240px 240px;
 }
 

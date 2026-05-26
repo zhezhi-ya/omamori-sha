@@ -15,6 +15,7 @@ import { DRAW_TIMINGS, getOmamoriRoute, SCENE_CANDIDATES } from "@/constants/for
 import { getShanghaiReadableDate } from "@/lib/date";
 import { omamoriAudio } from "@/lib/audio";
 import { filterFortunesForScene } from "@/lib/fortune-engine";
+import { assetPath } from "@/lib/paths";
 import { buildShareText, cn, copyTextSafely } from "@/lib/utils";
 import { useMounted } from "@/hooks/use-mounted";
 import { useOmamoriStore } from "@/store/omamori-store";
@@ -45,7 +46,7 @@ function SceneArtwork({
   return (
     <>
       <Image
-        src={scene.sceneImage}
+        src={assetPath(scene.sceneImage)}
         alt=""
         fill
         loading={eager ? "eager" : "lazy"}
@@ -165,7 +166,7 @@ function RouteSelectionPanel({
               transition={{ duration: reducedMotion ? 0.08 : 0.24, ease: "easeOut" }}
             >
               <Image
-                src={focusedScene.sceneImage}
+                src={assetPath(focusedScene.sceneImage)}
                 alt=""
                 fill
                 loading="eager"
@@ -174,7 +175,7 @@ function RouteSelectionPanel({
               />
             </motion.div>
           </AnimatePresence>
-          <div className="absolute inset-0 bg-[url('/images/textures/washi-noise.svg')] opacity-[0.14]" />
+          <div className="absolute inset-0 bg-[image:var(--asset-washi-noise)] opacity-[0.14]" />
           <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,248,239,0.6)_0%,rgba(255,248,239,0.34)_39%,rgba(255,248,239,0.06)_66%,rgba(44,30,38,0.48)_100%)]" />
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.14),rgba(255,255,255,0.03)_44%,rgba(47,31,39,0.58)_100%)]" />
         </div>
@@ -259,7 +260,7 @@ function RouteSelectionPanel({
                           sizes="(max-width: 1024px) 78vw, 25rem"
                           eager={false}
                         />
-                        <div className="absolute inset-0 bg-[url('/images/textures/washi-noise.svg')] opacity-[0.16]" />
+                        <div className="absolute inset-0 bg-[image:var(--asset-washi-noise)] opacity-[0.16]" />
                         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.12),rgba(57,33,42,0.18)),linear-gradient(180deg,rgba(255,255,255,0.03),rgba(43,29,37,0.7))]" />
                       </div>
                       <div className="relative z-10 flex min-h-[9rem] flex-col justify-end p-3.5 lg:min-h-[8.25rem]">

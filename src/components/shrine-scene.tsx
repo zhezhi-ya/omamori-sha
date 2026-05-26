@@ -5,6 +5,7 @@ import Image from "next/image";
 import { AnimatePresence, motion } from "motion/react";
 import { particleOffsets } from "@/constants/design-tokens";
 import { OMAMORI_ROUTES } from "@/constants/fortune";
+import { assetPath } from "@/lib/paths";
 import type { OmamoriRouteConfig, SceneNotice } from "@/types/omikuji";
 
 interface ShrineSceneProps {
@@ -49,14 +50,14 @@ function SceneRouteLayers({ route, useRitualBackdrop = false }: { route: Omamori
   return (
     <>
       <Image
-        src={backdropImage}
+        src={assetPath(backdropImage)}
         alt=""
         fill
         sizes="100vw"
         loading="eager"
         className={useRitualBackdrop ? "object-cover opacity-[0.94]" : "object-cover opacity-[0.96]"}
       />
-      <div className="absolute inset-0 bg-[url('/images/textures/washi-noise.svg')] opacity-[0.08]" />
+      <div className="absolute inset-0 bg-[image:var(--asset-washi-noise)] opacity-[0.08]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(255,255,255,0.18),transparent_34%),linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,249,238,0.05)_50%,rgba(70,43,54,0.42))]" />
     </>
   );
@@ -161,14 +162,14 @@ export function ShrineScene({
         {hasPageRitualBackdrop ? (
           <div className="pointer-events-none absolute inset-0 hidden lg:block">
             <Image
-              src={routeConfig.ritualImage ?? routeConfig.sceneImage}
+              src={assetPath(routeConfig.ritualImage ?? routeConfig.sceneImage)}
               alt=""
               fill
               sizes="100vw"
               loading="eager"
               className="object-cover opacity-[0.98]"
             />
-            <div className="absolute inset-0 bg-[url('/images/textures/washi-noise.svg')] opacity-[0.1]" />
+            <div className="absolute inset-0 bg-[image:var(--asset-washi-noise)] opacity-[0.1]" />
             <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(28,18,26,0.66)_0%,rgba(62,38,48,0.38)_46%,rgba(255,244,229,0.14)_100%)]" />
             <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(28,18,26,0.58)_0%,rgba(74,47,58,0.26)_36%,rgba(255,247,236,0.58)_100%)]" />
           </div>

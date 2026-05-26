@@ -1,5 +1,7 @@
+import type { CSSProperties } from "react";
 import type { Metadata, Viewport } from "next";
 import { Noto_Sans_SC, Noto_Serif_SC } from "next/font/google";
+import { assetPath } from "@/lib/paths";
 import "./globals.css";
 
 const bodyFont = Noto_Sans_SC({
@@ -24,7 +26,7 @@ function getMetadataBase(): URL {
   }
 
   try {
-    return new URL(siteUrl);
+    return new URL(new URL(siteUrl).origin);
   } catch {
     return new URL("http://localhost:3000");
   }
@@ -48,9 +50,9 @@ export const metadata: Metadata = {
     follow: true,
   },
   icons: {
-    icon: "/images/ui/app-icon.svg",
-    shortcut: "/images/ui/app-icon.svg",
-    apple: "/images/ui/app-icon.svg",
+    icon: assetPath("/images/ui/app-icon.svg"),
+    shortcut: assetPath("/images/ui/app-icon.svg"),
+    apple: assetPath("/images/ui/app-icon.svg"),
   },
   openGraph: {
     title: "御守社",
@@ -71,6 +73,10 @@ export const viewport: Viewport = {
   themeColor: "#ffedf3",
 };
 
+const assetVariables = {
+  "--asset-washi-noise": `url("${assetPath("/images/textures/washi-noise.svg")}")`,
+} as CSSProperties;
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -81,6 +87,7 @@ export default function RootLayout({
       lang="zh-CN"
       data-scroll-behavior="smooth"
       className={`${bodyFont.variable} ${displayFont.variable} h-full antialiased`}
+      style={assetVariables}
     >
       <body className="min-h-full bg-background-base text-ink-primary">
         <a href="#main-content" className="skip-link">

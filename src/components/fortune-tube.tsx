@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "motion/react";
+import { assetPath } from "@/lib/paths";
 import { cn } from "@/lib/utils";
 import type { OmamoriRouteId, RitualAssetSet } from "@/types/omikuji";
 
@@ -29,7 +30,7 @@ function RevealFlash({ reducedMotion, src }: { reducedMotion: boolean; src: stri
         animationDelay: reducedMotion ? "40ms" : undefined,
       }}
     >
-      <Image src={src} alt="" fill sizes="20rem" className="object-contain" />
+      <Image src={assetPath(src)} alt="" fill sizes="20rem" className="object-contain" />
     </div>
   );
 }
@@ -107,7 +108,7 @@ export function FortuneTube({
               animate={reducedMotion ? { scale: 1 } : { scale: [1, 1.012, 1] }}
               transition={{ duration: 4.6, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
             >
-              <Image src={ritualAssets.ritualBase} alt="" fill sizes="20rem" className="object-contain" />
+              <Image src={assetPath(ritualAssets.ritualBase)} alt="" fill sizes="20rem" className="object-contain" />
             </motion.div>
           ) : null}
           {shouldShowClosedPaper ? (
@@ -120,7 +121,7 @@ export function FortuneTube({
                 isShaking && "ritual-paper-closed-shaking",
               )}
             >
-              <Image src={ritualAssets.paperClosed} alt="" fill sizes="20rem" className="object-contain" />
+              <Image src={assetPath(ritualAssets.paperClosed)} alt="" fill sizes="20rem" className="object-contain" />
             </div>
           ) : null}
           {shouldShowEmerging ? (
@@ -129,7 +130,7 @@ export function FortuneTube({
               data-ritual-layer="paper-emerging"
               className="absolute inset-0 ritual-paper-emerging"
             >
-              <Image src={ritualAssets.paperEmerging} alt="" fill sizes="20rem" className="object-contain" />
+              <Image src={assetPath(ritualAssets.paperEmerging)} alt="" fill sizes="20rem" className="object-contain" />
             </div>
           ) : null}
           {shouldShowParticles ? (
@@ -138,7 +139,7 @@ export function FortuneTube({
               data-ritual-layer="fx-particles"
               className="absolute inset-0 ritual-fx-particles-shaking"
             >
-              <Image src={ritualAssets.fxParticles} alt="" fill sizes="20rem" className="object-contain" />
+              <Image src={assetPath(ritualAssets.fxParticles)} alt="" fill sizes="20rem" className="object-contain" />
             </div>
           ) : null}
           {isFlash ? (
@@ -150,7 +151,7 @@ export function FortuneTube({
               data-ritual-layer="paper-open"
               className={cn("absolute inset-0 z-10", isOpen || isFlash ? "ritual-paper-open" : "ritual-paper-open-revealed")}
             >
-              <Image src={ritualAssets.paperOpen} alt="" fill sizes="20rem" className="object-contain" />
+              <Image src={assetPath(ritualAssets.paperOpen)} alt="" fill sizes="20rem" className="object-contain" />
             </div>
           ) : null}
         </div>

@@ -6,6 +6,7 @@ import { CATEGORY_LABELS, RARITY_LABELS, TIER_LABELS } from "@/constants/fortune
 import { characterThemeMap, luckyColorSwatches } from "@/constants/design-tokens";
 import { cn, getDisplayFortuneTitle } from "@/lib/utils";
 import { OMAMORI_ROUTES } from "@/constants/fortune";
+import { assetPath } from "@/lib/paths";
 import type { Fortune, OmamoriRouteConfig, OmikujiCategory } from "@/types/omikuji";
 
 interface FortuneCardProps {
@@ -68,14 +69,14 @@ function CharacterPortrait({
       {image ? (
         <>
           <Image
-            src={image}
+            src={assetPath(image)}
             alt={`${characterName} 角色图`}
             width={520}
             height={720}
             className="absolute inset-x-0 bottom-0 mx-auto h-full w-full object-contain object-bottom saturate-[0.92] sepia-[0.08] drop-shadow-[0_24px_40px_rgba(35,20,26,0.28)]"
             sizes="(max-width: 768px) 100vw, 360px"
           />
-          <div className="absolute inset-0 bg-[url('/images/textures/washi-noise.svg')] opacity-[0.14] mix-blend-multiply" />
+          <div className="absolute inset-0 bg-[image:var(--asset-washi-noise)] opacity-[0.14] mix-blend-multiply" />
           <div
             className="absolute inset-0"
             style={{
@@ -157,7 +158,7 @@ export function FortuneCard({
     <div className="relative space-y-6 overflow-hidden rounded-[2rem] border border-[#8f714b]/14 bg-[linear-gradient(180deg,rgba(255,252,245,0.92),rgba(237,220,190,0.88))] p-3 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.38)] sm:p-5">
       <div className="pointer-events-none absolute right-1 top-1 hidden h-40 w-40 sm:block lg:h-44 lg:w-44">
         <Image
-          src={routeConfig.ritualAssets.resultCorner}
+          src={assetPath(routeConfig.ritualAssets.resultCorner)}
           alt=""
           fill
           sizes="8rem"
@@ -256,7 +257,7 @@ export function FortuneCard({
               <div className="relative flex h-24 w-24 shrink-0 items-center justify-center overflow-hidden rounded-[1.6rem] border border-[#b18961]/20">
                 {characterImage ? (
                   <Image
-                    src={characterImage}
+                    src={assetPath(characterImage)}
                     alt=""
                     width={160}
                     height={160}
