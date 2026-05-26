@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Kourindou curio shop foreground props">
+  <defs>
+    <linearGradient id="woodWarm" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8b5a35" stop-opacity=".58"/>
+      <stop offset=".58" stop-color="#432719" stop-opacity=".7"/>
+      <stop offset="1" stop-color="#130b08" stop-opacity=".86"/>
+    </linearGradient>
+    <radialGradient id="lampGlow" cx=".52" cy=".28" r=".46">
+      <stop offset="0" stop-color="#ffd78d" stop-opacity=".48"/>
+      <stop offset=".56" stop-color="#b9894f" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="woodLines" width="180" height="90" patternUnits="userSpaceOnUse">
+      <path d="M0 22c54 18 94-22 180 0M0 64c60-18 112 18 180 0" fill="none" stroke="#f4ead6" stroke-opacity=".11" stroke-width="3"/>
+    </pattern>
+  </defs>
+  <rect width="1600" height="1000" fill="none"/>
+  <circle cx="800" cy="310" r="520" fill="url(#lampGlow)"/>
+  <g opacity=".72">
+    <rect x="42" y="132" width="284" height="650" rx="28" fill="url(#woodWarm)"/>
+    <rect x="1274" y="132" width="284" height="650" rx="28" fill="url(#woodWarm)"/>
+    <rect x="42" y="132" width="284" height="650" rx="28" fill="url(#woodLines)"/>
+    <rect x="1274" y="132" width="284" height="650" rx="28" fill="url(#woodLines)"/>
+    <path d="M78 252h212M78 382h212M78 512h212M1310 252h212M1310 382h212M1310 512h212" stroke="#d8b15f" stroke-width="12" stroke-linecap="round" stroke-opacity=".24"/>
+    <circle cx="184" cy="316" r="46" fill="#263b35" opacity=".55"/>
+    <rect x="112" y="586" width="154" height="102" rx="18" fill="#5c3a24" opacity=".64"/>
+    <circle cx="1416" cy="316" r="44" fill="#6f4a2c" opacity=".58"/>
+    <rect x="1344" y="586" width="154" height="102" rx="18" fill="#263b35" opacity=".56"/>
+  </g>
+  <g opacity=".84">
+    <path d="M736 126h128l26 54H710z" fill="#2a1a12"/>
+    <rect x="758" y="176" width="84" height="126" rx="34" fill="#d8b15f" opacity=".78"/>
+    <path d="M800 70v56" stroke="#d8b15f" stroke-width="8" stroke-linecap="round" stroke-opacity=".68"/>
+    <ellipse cx="800" cy="310" rx="104" ry="22" fill="#0f0907" opacity=".48"/>
+  </g>
+  <g opacity=".8">
+    <rect x="494" y="662" width="612" height="150" rx="30" fill="#2c1b12"/>
+    <path d="M466 650h668l72 70H394z" fill="#6a4026" opacity=".76"/>
+    <rect x="564" y="700" width="180" height="64" rx="15" fill="#6f9f92" opacity=".28"/>
+    <rect x="792" y="698" width="244" height="66" rx="15" fill="#b9894f" opacity=".26"/>
+  </g>
+  <g fill="#f4ead6" opacity=".74">
+    <rect x="438" y="326" width="140" height="82" rx="12" transform="rotate(-8 508 367)"/>
+    <rect x="640" y="236" width="130" height="76" rx="12" transform="rotate(6 705 274)"/>
+    <rect x="1010" y="332" width="148" height="84" rx="12" transform="rotate(9 1084 374)"/>
+    <rect x="856" y="496" width="126" height="74" rx="12" transform="rotate(-7 919 533)"/>
+  </g>
+  <g stroke="#55301e" stroke-width="7" stroke-linecap="round" opacity=".52">
+    <path d="M466 362h84M468 384h54M666 272h74M668 294h44M1040 372h86M1042 394h56M880 532h74M882 554h42"/>
+  </g>
+  <g stroke="#f4ead6" fill="none" opacity=".2">
+    <path d="M384 528c128-70 256-78 386-26s246 48 392-24" stroke-width="2"/>
+    <path d="M420 580c134-42 246-42 360-4 118 39 232 36 372-12" stroke-width="1.5"/>
+  </g>
+</svg>

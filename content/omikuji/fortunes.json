@@ -1,0 +1,3588 @@
+[
+  {
+    "id": "study-reimu-01",
+    "category": "study",
+    "tier": "middle-blessing",
+    "title": "结界静心签",
+    "character": "博丽灵梦",
+    "alias": "博丽神社的巫女",
+    "inspiration": "东方Project同人风格角色签",
+    "archetype": "稳场型主角",
+    "quote": "先把心定下来，麻烦才会乖一点站到它该站的位置。",
+    "motif": "御札、结界、朱白巫女装",
+    "summary": "今天适合先整理思绪再动手。只要把环境和节奏先稳住，后续推进会比你预想轻松很多。",
+    "advice": "别一开始就追求满分状态，先把桌面、脑内和任务顺序清干净。",
+    "luckyColor": "博丽朱红",
+    "luckyItem": "写着重点的便签",
+    "tags": [
+      "先稳住",
+      "适合整理",
+      "清场后更顺"
+    ],
+    "rarity": "common",
+    "characterImage": "/images/characters/moegirl/002-reimu-hakurei.jpg",
+    "characterImageSource": "萌娘百科：博丽灵梦",
+    "relatedSceneIds": [
+      "hakurei"
+    ]
+  },
+  {
+    "id": "study-marisa-01",
+    "category": "study",
+    "tier": "great-blessing",
+    "title": "火花突进签",
+    "character": "雾雨魔理沙",
+    "alias": "普通的魔法使",
+    "inspiration": "东方Project同人风格角色签",
+    "archetype": "高机动冲刺型",
+    "quote": "先试再说，边飞边修，很多答案就是冲出去以后才看见的。",
+    "motif": "星屑、八卦炉、黑白魔法使",
+    "summary": "今天非常适合快速开题和强行动。你不一定一步到位，但会在行动中很快摸到正确路线。",
+    "advice": "先做第一版，不要在起跑线上把自己卡成静止状态。",
+    "luckyColor": "星火金",
+    "luckyItem": "速记草稿纸",
+    "tags": [
+      "先动起来",
+      "边做边懂",
+      "冲刺效率"
+    ],
+    "rarity": "rare",
+    "characterImage": "/images/characters/moegirl/006-marisa-kirisame.png",
+    "characterImageSource": "萌娘百科：雾雨魔理沙",
+    "relatedSceneIds": [
+      "hakurei",
+      "forest-of-magic"
+    ]
+  },
+  {
+    "id": "study-patchouli-01",
+    "category": "study",
+    "tier": "great-blessing",
+    "title": "静室藏书签",
+    "character": "帕秋莉·诺蕾姬",
+    "alias": "不动的大图书馆",
+    "inspiration": "东方Project同人风格角色签",
+    "archetype": "资料整合型",
+    "quote": "比起慌着往前跑，先把资料摆成你能看懂的秩序更重要。",
+    "motif": "魔导书、元素符文、图书馆",
+    "summary": "今天适合做深读、查资料和系统整理。安静输入会比表面忙碌更有效。",
+    "advice": "给自己一段不被打断的阅读时间，你会收获很成型的理解。",
+    "luckyColor": "月夜紫",
+    "luckyItem": "分好标签的资料夹",
+    "tags": [
+      "资料整理",
+      "深度阅读",
+      "安静高效"
+    ],
+    "rarity": "uncommon",
+    "characterImage": "/images/characters/moegirl/008-patchouli-knowledge.jpg",
+    "characterImageSource": "萌娘百科：帕秋莉·诺蕾姬",
+    "relatedSceneIds": [
+      "scarlet"
+    ]
+  },
+  {
+    "id": "study-cirno-01",
+    "category": "study",
+    "tier": "small-blessing",
+    "title": "冰晶起步签",
+    "character": "琪露诺",
+    "alias": "湖上的冰之妖精",
+    "inspiration": "东方Project同人风格角色签",
+    "archetype": "直觉先行型",
+    "quote": "不会也没关系，先冻住慌张，剩下的再一点点学。",
+    "motif": "冰晶、蓝丝带、湖面妖精",
+    "summary": "今天的学习节奏不适合过载，但很适合从最简单的一步开始慢慢建起信心。",
+    "advice": "找一个你百分百能做的小点先做掉，启动感会帮你破冰。",
+    "luckyColor": "冰湖蓝",
+    "luckyItem": "清爽冷饮",
+    "tags": [
+      "先破冰",
+      "小步启动",
+      "别被难度吓住"
+    ],
+    "rarity": "common",
+    "characterImage": "/images/characters/moegirl/003-cirno.jpg",
+    "characterImageSource": "萌娘百科：琪露诺",
+    "relatedSceneIds": [
+      "scarlet",
+      "misty-lake"
+    ]
+  },
+  {
+    "id": "love-sakuya-01",
+    "category": "love",
+    "tier": "middle-blessing",
+    "title": "停秒留白签",
+    "character": "十六夜咲夜",
+    "alias": "完全潇洒的女仆",
+    "inspiration": "东方Project同人风格角色签",
+    "archetype": "克制照顾型",
+    "quote": "不是所有心意都要一口气说完，恰到好处的停顿也会很动人。",
+    "motif": "银色飞刀、怀表、月下女仆",
+    "summary": "今天感情上的最好状态，是有分寸地靠近。你越从容，越容易让对方安心。",
+    "advice": "别急着给关系下定义，先把对话气氛照顾好。",
+    "luckyColor": "月银",
+    "luckyItem": "简洁的腕表",
+    "tags": [
+      "克制靠近",
+      "对话感",
+      "温柔分寸"
+    ],
+    "rarity": "common",
+    "characterImage": "/images/characters/moegirl/007-sakuya-izayoi.jpg",
+    "characterImageSource": "萌娘百科：十六夜咲夜",
+    "relatedSceneIds": [
+      "scarlet"
+    ]
+  },
+  {
+    "id": "love-remilia-01",
+    "category": "love",
+    "tier": "great-blessing",
+    "title": "命运偏光签",
+    "character": "蕾米莉亚·斯卡蕾特",
+    "alias": "永远鲜红的幼月",
+    "inspiration": "东方Project同人风格角色签",
+    "archetype": "强存在感型",
+    "quote": "你不必先证明自己值得被喜欢，先亮起来，命运才看得见你。",
+    "motif": "红月、蝠翼、绯色洋馆",
+    "summary": "今天的感情运带一点戏剧感和高存在感，适合主动一点释放自己的魅力。",
+    "advice": "不用硬装冷静，把你真正有趣的那一面拿出来。",
+    "luckyColor": "绯月红",
+    "luckyItem": "带红色细节的配饰",
+    "tags": [
+      "存在感上升",
+      "适合主动",
+      "魅力值加成"
+    ],
+    "rarity": "rare",
+    "characterImage": "/images/characters/moegirl/010-remilia-scarlet.jpg",
+    "characterImageSource": "萌娘百科：蕾米莉亚·斯卡蕾特",
+    "relatedSceneIds": [
+      "scarlet"
+    ]
+  },
+  {
+    "id": "love-koishi-01",
+    "category": "love",
+    "tier": "shadow",
+    "title": "无意识回响签",
+    "character": "古明地恋",
+    "alias": "紧闭着恋之瞳",
+    "inspiration": "东方Project同人风格角色签",
+    "archetype": "心绪漂移型",
+    "quote": "你以为自己不在意，其实那点心情已经偷偷绕了你好几圈。",
+    "motif": "第三只眼、彩线、地底玫瑰",
+    "summary": "今天的感情情绪会有点绕，不太适合直接做重大判断，更适合先看清自己真正介意什么。",
+    "advice": "先别急着向外解释，先向自己诚实一点。",
+    "luckyColor": "幻彩玫粉",
+    "luckyItem": "反复打开的聊天记录",
+    "tags": [
+      "先看自己",
+      "情绪绕圈",
+      "不宜冲动决定"
+    ],
+    "rarity": "uncommon",
+    "characterImage": "/images/characters/moegirl/051-koishi-komeiji.jpg",
+    "characterImageSource": "萌娘百科：古明地恋",
+    "relatedSceneIds": [
+      "palace-of-earth-spirits"
+    ]
+  },
+  {
+    "id": "love-reisen-01",
+    "category": "love",
+    "tier": "middle-blessing",
+    "title": "月兔心拍签",
+    "character": "铃仙·优昙华院·因幡",
+    "alias": "狂气的月兔",
+    "inspiration": "东方Project同人风格角色签",
+    "archetype": "敏感观察型",
+    "quote": "别过度猜测每个细节，但也别忽略那些真正对你温柔的信号。",
+    "motif": "月兔耳、药匣、红瞳波纹",
+    "summary": "今天你对他人的语气和气氛会格外敏锐，这能帮你避开误会，也能更快捕捉到好感。",
+    "advice": "关注真实互动，不要只在脑内演完所有剧情。",
+    "luckyColor": "月兔淡紫",
+    "luckyItem": "柔软的发圈",
+    "tags": [
+      "观察细腻",
+      "减少误会",
+      "真实互动更重要"
+    ],
+    "rarity": "common",
+    "characterImage": "/images/characters/moegirl/027-reisen-udongein-inaba.jpg",
+    "characterImageSource": "萌娘百科：铃仙·优昙华院·因幡",
+    "relatedSceneIds": [
+      "eientei"
+    ]
+  },
+  {
+    "id": "slacking-marisa-01",
+    "category": "slacking",
+    "tier": "middle-blessing",
+    "title": "借路摸鱼签",
+    "character": "雾雨魔理沙",
+    "alias": "普通的魔法使",
+    "inspiration": "东方Project同人风格角色签",
+    "archetype": "偷空但不掉线型",
+    "quote": "喘口气不是认输，是为了下一轮还能飞得更快。",
+    "motif": "扫帚、星屑、八卦炉",
+    "summary": "今天适合合理摸鱼，尤其是在完成关键事项之后给自己一段松气时间。",
+    "advice": "把摸鱼当恢复，不要摸着摸着把主线弄丢。",
+    "luckyColor": "星尘黄",
+    "luckyItem": "自动贩卖机饮料",
+    "tags": [
+      "合理偷闲",
+      "先做主线",
+      "恢复节奏"
+    ],
+    "rarity": "common",
+    "characterImage": "/images/characters/moegirl/006-marisa-kirisame.png",
+    "characterImageSource": "萌娘百科：雾雨魔理沙",
+    "relatedSceneIds": [
+      "hakurei",
+      "forest-of-magic"
+    ]
+  },
+  {
+    "id": "slacking-cirno-01",
+    "category": "slacking",
+    "tier": "great-blessing",
+    "title": "冰镇散步签",
+    "character": "琪露诺",
+    "alias": "湖上的冰之妖精",
+    "inspiration": "东方Project同人风格角色签",
+    "archetype": "轻松回血型",
+    "quote": "先凉快一下，脑子就不会一直咕嘟咕嘟冒蒸汽。",
+    "motif": "冰晶、薄雾、湖边碎光",
+    "summary": "今天短暂放空真的能回血，不是逃避。你会在轻一点的状态下更快恢复可用度。",
+    "advice": "给自己十分钟走动或透气，再回来做事。",
+    "luckyColor": "冰汽青",
+    "luckyItem": "冰饮或凉感毛巾",
+    "tags": [
+      "放空有效",
+      "轻量回血",
+      "短休息有价值"
+    ],
+    "rarity": "uncommon",
+    "characterImage": "/images/characters/moegirl/003-cirno.jpg",
+    "characterImageSource": "萌娘百科：琪露诺",
+    "relatedSceneIds": [
+      "scarlet",
+      "misty-lake"
+    ]
+  },
+  {
+    "id": "slacking-suika-01",
+    "category": "slacking",
+    "tier": "great-blessing",
+    "title": "宴席开小差签",
+    "character": "伊吹萃香",
+    "alias": "小小的百鬼夜行",
+    "inspiration": "东方Project同人风格角色签",
+    "archetype": "热闹偷闲型",
+    "quote": "人不一定要一直绷着，稍微热闹一点，反而能把魂叫回来。",
+    "motif": "酒瓢、鬼角、夜祭灯火",
+    "summary": "今天的摸鱼更适合偏社交式、轻热闹式的放松，而不是一个人闷着刷空白时间。",
+    "advice": "和熟悉的人聊几句，或者换个有生活感的角落喘口气。",
+    "luckyColor": "祭典橙",
+    "luckyItem": "带甜味的小零食",
+    "tags": [
+      "热闹回血",
+      "别闷着",
+      "生活感恢复"
+    ],
+    "rarity": "rare",
+    "characterImage": "/images/characters/moegirl/123-suika-ibuki.jpg",
+    "characterImageSource": "萌娘百科：伊吹萃香",
+    "relatedSceneIds": [
+      "hakurei"
+    ]
+  },
+  {
+    "id": "late-night-patchouli-01",
+    "category": "lateNight",
+    "tier": "middle-blessing",
+    "title": "烛影深读签",
+    "character": "帕秋莉·诺蕾姬",
+    "alias": "不动的大图书馆",
+    "inspiration": "东方Project同人风格角色签",
+    "archetype": "深夜沉潜型",
+    "quote": "夜晚适合把声音放低，让思路自己浮上来。",
+    "motif": "魔导书、烛火、静夜书页",
+    "summary": "今晚适合安静推进需要细读和思考的内容，不适合把自己扔进高噪音任务里。",
+    "advice": "保留柔和灯光和水分，别把夜晚用成透支模式。",
+    "luckyColor": "烛影紫",
+    "luckyItem": "暖光台灯",
+    "tags": [
+      "深夜思考",
+      "安静推进",
+      "不宜硬刚"
+    ],
+    "rarity": "common",
+    "characterImage": "/images/characters/moegirl/008-patchouli-knowledge.jpg",
+    "characterImageSource": "萌娘百科：帕秋莉·诺蕾姬",
+    "relatedSceneIds": [
+      "scarlet"
+    ]
+  },
+  {
+    "id": "late-night-sakuya-01",
+    "category": "lateNight",
+    "tier": "great-blessing",
+    "title": "银表收束签",
+    "character": "十六夜咲夜",
+    "alias": "完全潇洒的女仆",
+    "inspiration": "东方Project同人风格角色签",
+    "archetype": "收尾精确型",
+    "quote": "如果今晚一定要继续，那就把终点也一起准备好。",
+    "motif": "怀表、银刃、夜庭钟声",
+    "summary": "今晚适合做收尾、归档和最后一轮修整。你会比平时更适合把散乱的事压进整齐状态。",
+    "advice": "别临时再开新坑，把既有内容漂亮地关上更值。",
+    "luckyColor": "冷银蓝",
+    "luckyItem": "收纳整齐的文件夹",
+    "tags": [
+      "收尾强",
+      "归档顺手",
+      "不要开新坑"
+    ],
+    "rarity": "uncommon",
+    "characterImage": "/images/characters/moegirl/007-sakuya-izayoi.jpg",
+    "characterImageSource": "萌娘百科：十六夜咲夜",
+    "relatedSceneIds": [
+      "scarlet"
+    ]
+  },
+  {
+    "id": "late-night-mokou-01",
+    "category": "lateNight",
+    "tier": "shadow",
+    "title": "不死火心签",
+    "character": "藤原妹红",
+    "alias": "蓬莱的人之形",
+    "inspiration": "东方Project同人风格角色签",
+    "archetype": "硬撑燃烧型",
+    "quote": "能扛不代表该一直扛，火太久了也会把自己烧空。",
+    "motif": "不灭火、白发、竹林夜色",
+    "summary": "今晚的熬夜更像意志在顶着走，不太适合继续长线消耗。",
+    "advice": "留一点明天能恢复的余地，别把‘还能撑’误认成‘应该继续’。",
+    "luckyColor": "余烬红",
+    "luckyItem": "温热饮品",
+    "tags": [
+      "别硬扛",
+      "恢复优先",
+      "及时止步"
+    ],
+    "rarity": "uncommon",
+    "characterImage": "/images/characters/moegirl/032-fujiwara-no-mokou.jpg",
+    "characterImageSource": "萌娘百科：藤原妹红",
+    "relatedSceneIds": [
+      "eientei",
+      "human-village"
+    ]
+  },
+  {
+    "id": "social-youmu-01",
+    "category": "social",
+    "tier": "middle-blessing",
+    "title": "半灵练步签",
+    "character": "魂魄妖梦",
+    "alias": "半分虚幻的庭师",
+    "inspiration": "东方Project同人风格角色签",
+    "archetype": "紧张但认真型",
+    "quote": "就算会紧张，也可以先把脚步踩稳，再慢慢进入人群。",
+    "motif": "楼观剑、庭院、半灵光尾",
+    "summary": "今天出门或见人时的紧张感会存在，但只要进入流程后，你会比自己想象中更能应对。",
+    "advice": "提前想好第一个动作，像先打招呼、先坐下、先确认路线。",
+    "luckyColor": "庭院青绿",
+    "luckyItem": "顺手的小包",
+    "tags": [
+      "先踩稳",
+      "流程感有用",
+      "紧张可控"
+    ],
+    "rarity": "common",
+    "characterImage": "/images/characters/moegirl/019-youmu-konpaku.jpg",
+    "characterImageSource": "萌娘百科：魂魄妖梦",
+    "relatedSceneIds": [
+      "hakugyokurou"
+    ]
+  },
+  {
+    "id": "social-reisen-01",
+    "category": "social",
+    "tier": "great-blessing",
+    "title": "月面频道签",
+    "character": "铃仙·优昙华院·因幡",
+    "alias": "狂气的月兔",
+    "inspiration": "东方Project同人风格角色签",
+    "archetype": "环境感知型",
+    "quote": "先观察气氛不是退缩，是让自己选到更舒服的进入方式。",
+    "motif": "月波纹、兔耳、静夜信号",
+    "summary": "今天适合在看清环境后再慢慢加入，你的观察会帮你避开不舒服的节奏。",
+    "advice": "允许自己先做旁观者几分钟，再决定怎么开口。",
+    "luckyColor": "淡月紫",
+    "luckyItem": "降噪耳机",
+    "tags": [
+      "观察后加入",
+      "减少社交耗损",
+      "轻柔进入"
+    ],
+    "rarity": "uncommon",
+    "characterImage": "/images/characters/moegirl/027-reisen-udongein-inaba.jpg",
+    "characterImageSource": "萌娘百科：铃仙·优昙华院·因幡",
+    "relatedSceneIds": [
+      "eientei"
+    ]
+  },
+  {
+    "id": "social-reimu-01",
+    "category": "social",
+    "tier": "great-blessing",
+    "title": "结界外出签",
+    "character": "博丽灵梦",
+    "alias": "博丽神社的巫女",
+    "inspiration": "东方Project同人风格角色签",
+    "archetype": "稳场保护型",
+    "quote": "你不需要突然变得很外向，只要把自己的结界带好就可以出门。",
+    "motif": "御札、鸟居、神社石阶",
+    "summary": "今天的外出运不错，尤其适合带着明确目的去完成一件事，而不是被动卷入很多不必要社交。",
+    "advice": "给自己设一个清晰目标点，做完就可以安心退场。",
+    "luckyColor": "结界金白",
+    "luckyItem": "路线清晰的地图",
+    "tags": [
+      "带着目标出门",
+      "保护边界",
+      "适合完成任务"
+    ],
+    "rarity": "rare",
+    "characterImage": "/images/characters/moegirl/002-reimu-hakurei.jpg",
+    "characterImageSource": "萌娘百科：博丽灵梦",
+    "relatedSceneIds": [
+      "hakurei"
+    ]
+  },
+  {
+    "id": "wealth-reimu-01",
+    "category": "wealth",
+    "tier": "middle-blessing",
+    "title": "赛钱箱回声签",
+    "character": "博丽灵梦",
+    "alias": "博丽神社的巫女",
+    "inspiration": "东方Project同人风格角色签",
+    "archetype": "小额聚拢型",
+    "quote": "钱不一定会突然掉下来，但零散的流失今天很适合先堵住。",
+    "motif": "赛钱箱、御币、神社木纹",
+    "summary": "今天的财富感更适合体现在收口与止损，而不是高风险操作。",
+    "advice": "看一眼订阅、冲动消费和拖延付款的项目，先收回漏出去的部分。",
+    "luckyColor": "木纹金",
+    "luckyItem": "记账清单",
+    "tags": [
+      "止损优先",
+      "理清支出",
+      "小额聚拢"
+    ],
+    "rarity": "common",
+    "characterImage": "/images/characters/moegirl/002-reimu-hakurei.jpg",
+    "characterImageSource": "萌娘百科：博丽灵梦",
+    "relatedSceneIds": [
+      "hakurei"
+    ]
+  },
+  {
+    "id": "wealth-remilia-01",
+    "category": "wealth",
+    "tier": "great-blessing",
+    "title": "红月偏财签",
+    "character": "蕾米莉亚·斯卡蕾特",
+    "alias": "永远鲜红的幼月",
+    "inspiration": "东方Project同人风格角色签",
+    "archetype": "高调吸引型",
+    "quote": "偶尔的小好运会更喜欢那些看起来已经准备好接住它的人。",
+    "motif": "红月、蔷薇、洋馆窗影",
+    "summary": "今天可能会有一点让心情变亮的小收益，但更重要的是你对价值的判断会更果断。",
+    "advice": "看到合适机会可以出手，但不要因为兴奋就立刻把好运花出去。",
+    "luckyColor": "蔷薇深红",
+    "luckyItem": "有质感的钱包",
+    "tags": [
+      "小偏财",
+      "判断果断",
+      "守住好运"
+    ],
+    "rarity": "rare",
+    "characterImage": "/images/characters/moegirl/010-remilia-scarlet.jpg",
+    "characterImageSource": "萌娘百科：蕾米莉亚·斯卡蕾特",
+    "relatedSceneIds": [
+      "scarlet"
+    ]
+  },
+  {
+    "id": "hidden-yukari-01",
+    "category": "hidden",
+    "tier": "secret",
+    "title": "境界缝隙签",
+    "character": "八云紫",
+    "alias": "神隐的主犯",
+    "inspiration": "东方Project同人风格角色签",
+    "archetype": "看破边界型",
+    "quote": "有些答案不在你正盯着的地方，而在你还没意识到的缝隙里。",
+    "motif": "间隙、扇子、紫蝶纹",
+    "summary": "今天的隐藏签不直接告诉你运势，而是提醒你：真正关键的，可能是你一直默认不会变的那条边界。",
+    "advice": "对某件习惯性回避的事多看一眼，也许会有意外转机。",
+    "luckyColor": "境界紫",
+    "luckyItem": "折扇或书签",
+    "tags": [
+      "隐藏转机",
+      "边界松动",
+      "细看缝隙"
+    ],
+    "rarity": "legendary",
+    "unlockedVisualTheme": "gap-boundary",
+    "characterImage": "/images/characters/moegirl/024-yukari-yakumo.jpg",
+    "characterImageSource": "萌娘百科：八云紫",
+    "relatedSceneIds": [
+      "hakurei"
+    ]
+  },
+  {
+    "id": "hidden-koishi-01",
+    "category": "hidden",
+    "tier": "shadow",
+    "title": "心室回音签",
+    "character": "古明地恋",
+    "alias": "紧闭着恋之瞳",
+    "inspiration": "东方Project同人风格角色签",
+    "archetype": "无意识显影型",
+    "quote": "你越想假装没听见，那个答案就越会在安静时自己响出来。",
+    "motif": "第三只眼、彩线、玫瑰心室",
+    "summary": "今天更像是内心提示的掉落日。看似无关的情绪和念头，其实已经在指向同一个重点。",
+    "advice": "不要急着压掉那些重复出现的想法，先记录下来。",
+    "luckyColor": "微故障粉紫",
+    "luckyItem": "备忘录",
+    "tags": [
+      "反复出现",
+      "内心提示",
+      "先记录"
+    ],
+    "rarity": "epic",
+    "unlockedVisualTheme": "subconscious-echo",
+    "characterImage": "/images/characters/moegirl/051-koishi-komeiji.jpg",
+    "characterImageSource": "萌娘百科：古明地恋",
+    "relatedSceneIds": [
+      "palace-of-earth-spirits"
+    ]
+  },
+  {
+    "id": "study-sanae-01",
+    "category": "study",
+    "tier": "middle-blessing",
+    "title": "风祝预演签",
+    "character": "东风谷早苗",
+    "alias": "山上的风祝",
+    "inspiration": "东方Project同人风格角色签",
+    "archetype": "愿望具现型",
+    "quote": "先把你想成真的那一幕讲清楚，行动才会知道该往哪里吹风。",
+    "motif": "御神风、注连绳、翠色山雾",
+    "summary": "今天很适合把目标描述得更具体。你越能说清楚要去哪里，执行就越不容易散。",
+    "advice": "别只写“我要努力”，把成果样子、时间点和第一步一起写下来。",
+    "luckyColor": "山雾青",
+    "luckyItem": "写满步骤的计划卡",
+    "tags": [
+      "目标具象",
+      "适合立计划",
+      "先说清再行动"
+    ],
+    "rarity": "uncommon",
+    "characterImage": "/images/characters/moegirl/041-sanae-kochiya.png",
+    "characterImageSource": "萌娘百科：东风谷早苗",
+    "relatedSceneIds": [
+      "moriya-shrine"
+    ]
+  },
+  {
+    "id": "study-alice-01",
+    "category": "study",
+    "tier": "great-blessing",
+    "title": "人偶排演签",
+    "character": "爱丽丝·玛格特罗依德",
+    "alias": "七色的人形使",
+    "inspiration": "东方Project同人风格角色签",
+    "archetype": "结构编排型",
+    "quote": "把每一步都摆到它该站的位置，复杂的东西也会变得听话。",
+    "motif": "人偶丝线、七色布纹、魔法阵列",
+    "summary": "今天适合把难题拆解成多个小模块。你会在编排顺序和整理结构上格外有手感。",
+    "advice": "先列框架再填细节，不要一头扎进局部把整题节奏弄乱。",
+    "luckyColor": "丝线蓝紫",
+    "luckyItem": "分栏清晰的笔记页",
+    "tags": [
+      "结构化推进",
+      "拆解难题",
+      "顺序感很强"
+    ],
+    "rarity": "rare",
+    "characterImage": "/images/characters/moegirl/020-alice-margatroid.jpg",
+    "characterImageSource": "萌娘百科：爱丽丝·玛格特罗依德",
+    "relatedSceneIds": [
+      "forest-of-magic"
+    ]
+  },
+  {
+    "id": "love-kaguya-01",
+    "category": "love",
+    "tier": "great-blessing",
+    "title": "今宵留辉签",
+    "character": "蓬莱山辉夜",
+    "alias": "永远与须臾的罪人",
+    "inspiration": "东方Project同人风格角色签",
+    "archetype": "高雅试探型",
+    "quote": "有些靠近不必太直白，留一点余韵，反而更让人记得住。",
+    "motif": "竹影、月华、永夜辉光",
+    "summary": "今天的感情运偏向细水长流式加分，适合用气氛、分寸和耐心慢慢推进。",
+    "advice": "别急着求结果，把让人想继续聊下去的余地留出来。",
+    "luckyColor": "月辉白金",
+    "luckyItem": "有光泽感的小饰物",
+    "tags": [
+      "余韵加分",
+      "慢慢靠近",
+      "气氛很重要"
+    ],
+    "rarity": "rare",
+    "characterImage": "/images/characters/moegirl/030-kaguya-houraisan.png",
+    "characterImageSource": "萌娘百科：蓬莱山辉夜",
+    "relatedSceneIds": [
+      "eientei"
+    ]
+  },
+  {
+    "id": "love-meiling-01",
+    "category": "love",
+    "tier": "middle-blessing",
+    "title": "门前微笑签",
+    "character": "红美铃",
+    "alias": "华人小娘",
+    "inspiration": "东方Project同人风格角色签",
+    "archetype": "松弛陪伴型",
+    "quote": "喜欢不一定要很用力，有时候让人觉得和你待着很舒服，就已经很厉害了。",
+    "motif": "红门、云纹、晨练气息",
+    "summary": "今天的感情运更偏向自然相处。你放松一点，反而更容易展现最讨喜的那一面。",
+    "advice": "别把聊天变成考试题，先让彼此都轻松起来。",
+    "luckyColor": "晨霞红",
+    "luckyItem": "顺手带上的热饮",
+    "tags": [
+      "自然相处",
+      "轻松加分",
+      "别太紧绷"
+    ],
+    "rarity": "common",
+    "characterImage": "/images/characters/moegirl/013-hong-meiling.jpg",
+    "characterImageSource": "萌娘百科：红美铃",
+    "relatedSceneIds": [
+      "scarlet"
+    ]
+  },
+  {
+    "id": "slacking-aya-01",
+    "category": "slacking",
+    "tier": "middle-blessing",
+    "title": "取材溜号签",
+    "character": "射命丸文",
+    "alias": "传统的幻想记者",
+    "inspiration": "东方Project同人风格角色签",
+    "archetype": "高机动转场型",
+    "quote": "换个角度看看不一定是偷懒，也可能是在给脑子找新的风口。",
+    "motif": "团扇、快门、山风报信",
+    "summary": "今天适合短暂离开原本的任务现场，去看点别的、走动一下，再回来往往会更清醒。",
+    "advice": "摸鱼可以，但尽量选能带回新鲜空气和新视角的那种。",
+    "luckyColor": "疾风墨青",
+    "luckyItem": "能随手记录灵感的手机备忘录",
+    "tags": [
+      "转场有效",
+      "换角度回血",
+      "短暂离席更清醒"
+    ],
+    "rarity": "common",
+    "characterImage": "/images/characters/moegirl/044-aya-shameimaru.jpg",
+    "characterImageSource": "萌娘百科：射命丸文",
+    "relatedSceneIds": [
+      "moriya-shrine"
+    ]
+  },
+  {
+    "id": "slacking-yuyuko-01",
+    "category": "slacking",
+    "tier": "great-blessing",
+    "title": "春宴偷闲签",
+    "character": "西行寺幽幽子",
+    "alias": "华胥的亡灵",
+    "inspiration": "东方Project同人风格角色签",
+    "archetype": "优雅放空型",
+    "quote": "如果你已经很累了，那就先把今天过得柔软一点，别再追着自己跑。",
+    "motif": "樱吹雪、蝶影、幽明楼席面",
+    "summary": "今天的摸鱼运带着很强的治愈属性，适合好好吃一顿、慢慢散个步，或者什么都不急着完成。",
+    "advice": "把恢复当成正事去做一次，效率未必比硬扛差。",
+    "luckyColor": "落樱粉白",
+    "luckyItem": "看起来就很好吃的小甜点",
+    "tags": [
+      "恢复优先",
+      "适合放空",
+      "柔软一点"
+    ],
+    "rarity": "uncommon",
+    "characterImage": "/images/characters/moegirl/017-yuyuko-saigyouji.jpg",
+    "characterImageSource": "萌娘百科：西行寺幽幽子",
+    "relatedSceneIds": [
+      "hakugyokurou"
+    ]
+  },
+  {
+    "id": "late-night-utsuho-01",
+    "category": "lateNight",
+    "tier": "great-blessing",
+    "title": "炉心余热签",
+    "character": "灵乌路空",
+    "alias": "热核融合的乌鸦",
+    "inspiration": "东方Project同人风格角色签",
+    "archetype": "高热推进型",
+    "quote": "夜里还亮着，并不全是坏事，只是别把整座炉心都一次烧出去。",
+    "motif": "核火、乌羽、地底灼光",
+    "summary": "今晚的能量确实比较高，适合集中推进一个卡了很久的点，但不适合无上限加班式燃烧。",
+    "advice": "只给自己一个重点任务，做完就收，不要趁热失控。",
+    "luckyColor": "核焰橙金",
+    "luckyItem": "能提醒你停下来的倒计时",
+    "tags": [
+      "高热推进",
+      "只做一件重点",
+      "别燃过头"
+    ],
+    "rarity": "rare",
+    "characterImage": "/images/characters/moegirl/045-utsuho-reiuji.jpg",
+    "characterImageSource": "萌娘百科：灵乌路空",
+    "relatedSceneIds": [
+      "palace-of-earth-spirits"
+    ]
+  },
+  {
+    "id": "late-night-kaguya-01",
+    "category": "lateNight",
+    "tier": "middle-blessing",
+    "title": "永夜缓明签",
+    "character": "蓬莱山辉夜",
+    "alias": "永远与须臾的罪人",
+    "inspiration": "东方Project同人风格角色签",
+    "archetype": "夜谈留白型",
+    "quote": "夜再长，也不必急着把一切都想完，留一点给明天也没关系。",
+    "motif": "竹月、夜辉、静室薄光",
+    "summary": "今晚适合慢慢梳理情绪和计划，而不是逼自己在困倦里做高难度判断。",
+    "advice": "把想法先收进备忘录，别在最晚的时候逼出最终答案。",
+    "luckyColor": "永夜蓝白",
+    "luckyItem": "床边记事本",
+    "tags": [
+      "夜里别硬判",
+      "先记录再休息",
+      "留给明天"
+    ],
+    "rarity": "common",
+    "characterImage": "/images/characters/moegirl/030-kaguya-houraisan.png",
+    "characterImageSource": "萌娘百科：蓬莱山辉夜",
+    "relatedSceneIds": [
+      "eientei"
+    ]
+  },
+  {
+    "id": "social-kokoro-01",
+    "category": "social",
+    "tier": "middle-blessing",
+    "title": "表情练习签",
+    "character": "秦心",
+    "alias": "表情丰富的扑克脸",
+    "inspiration": "东方Project同人风格角色签",
+    "archetype": "先演后稳型",
+    "quote": "就算一开始有点僵，也没关系，很多自然都是从练习里长出来的。",
+    "motif": "能面、彩布、情绪光片",
+    "summary": "今天的社交运不要求你一下子变得很会说，而是适合先用礼貌、准备和重复练习把自己带进去。",
+    "advice": "提前准备一句开场白，哪怕简单，也会让你轻松很多。",
+    "luckyColor": "能乐青紫",
+    "luckyItem": "写着关键词的小纸条",
+    "tags": [
+      "先练习",
+      "礼貌稳场",
+      "从容进入"
+    ],
+    "rarity": "common",
+    "characterImage": "/images/characters/moegirl/120-hata-no-kokoro.jpg",
+    "characterImageSource": "萌娘百科：秦心",
+    "relatedSceneIds": [
+      "myouren-temple",
+      "human-village"
+    ]
+  },
+  {
+    "id": "social-sanae-01",
+    "category": "social",
+    "tier": "great-blessing",
+    "title": "山风问候签",
+    "character": "东风谷早苗",
+    "alias": "山上的风祝",
+    "inspiration": "东方Project同人风格角色签",
+    "archetype": "清爽破冰型",
+    "quote": "第一句不用多完美，只要像风一样先吹过去，后面的气氛就会开始流动。",
+    "motif": "山风、御柱、青空薄云",
+    "summary": "今天很适合主动打个招呼、发个消息，或者先迈出社交里的第一小步。",
+    "advice": "不要在发出第一句前把所有剧情都脑补完，先让真实互动发生。",
+    "luckyColor": "初晴青",
+    "luckyItem": "轻便的小挎包",
+    "tags": [
+      "适合主动开口",
+      "轻松破冰",
+      "第一步最重要"
+    ],
+    "rarity": "uncommon",
+    "characterImage": "/images/characters/moegirl/041-sanae-kochiya.png",
+    "characterImageSource": "萌娘百科：东风谷早苗",
+    "relatedSceneIds": [
+      "moriya-shrine"
+    ]
+  },
+  {
+    "id": "wealth-nitori-01",
+    "category": "wealth",
+    "tier": "middle-blessing",
+    "title": "机关节流签",
+    "character": "河城荷取",
+    "alias": "超妖怪弹头",
+    "inspiration": "东方Project同人风格角色签",
+    "archetype": "技术省钱型",
+    "quote": "比起盯着哪里能暴涨，今天更适合想想哪里还能更聪明一点。",
+    "motif": "齿轮、水流、机械手册",
+    "summary": "今天的财富运更偏向优化和节流。你会更容易发现那些长期不必要的支出和低效习惯。",
+    "advice": "看看有没有能自动化、复用或替代的花费，省下来的会比想象多。",
+    "luckyColor": "河童青绿",
+    "luckyItem": "记账应用",
+    "tags": [
+      "优化支出",
+      "聪明省钱",
+      "长期更划算"
+    ],
+    "rarity": "common",
+    "characterImage": "/images/characters/moegirl/036-nitori-kawashiro.jpg",
+    "characterImageSource": "萌娘百科：河城荷取",
+    "relatedSceneIds": [
+      "moriya-shrine"
+    ]
+  },
+  {
+    "id": "wealth-byakuren-01",
+    "category": "wealth",
+    "tier": "great-blessing",
+    "title": "宝船缓进签",
+    "character": "圣白莲",
+    "alias": "被封印的大魔法使",
+    "inspiration": "东方Project同人风格角色签",
+    "archetype": "长期积累型",
+    "quote": "真正稳的丰盈，往往不是一瞬间冲上来，而是你终于愿意长期善待自己。",
+    "motif": "法轮、莲光、宝船余辉",
+    "summary": "今天适合思考长期投入和稳定回报，尤其适合调整储蓄、学习投入或能慢慢增值的东西。",
+    "advice": "别只盯眼前的小爽感，把目光放长一点，会更有安全感。",
+    "luckyColor": "莲辉金",
+    "luckyItem": "定期整理的账户清单",
+    "tags": [
+      "长期思维",
+      "慢慢丰盈",
+      "重视稳定感"
+    ],
+    "rarity": "uncommon",
+    "characterImage": "/images/characters/moegirl/056-byakuren-hijiri.jpg",
+    "characterImageSource": "萌娘百科：圣白莲",
+    "relatedSceneIds": [
+      "myouren-temple"
+    ]
+  },
+  {
+    "id": "hidden-flandre-01",
+    "category": "hidden",
+    "tier": "secret",
+    "title": "碎星回响签",
+    "character": "芙兰朵露·斯卡蕾特",
+    "alias": "恶魔之妹",
+    "inspiration": "东方Project同人风格角色签",
+    "archetype": "异常能量型",
+    "quote": "有些不安不是坏掉了，而是你终于碰到了那个真正会让心跳失控的点。",
+    "motif": "彩晶翼、碎星、地下室微光",
+    "summary": "今天的隐藏签带着很强的异常感。它不是要你立刻做决定，而是提醒你留意那些突然被点亮的执念和兴趣。",
+    "advice": "别急着压住突如其来的热情，先观察它究竟想把你带去哪里。",
+    "luckyColor": "碎晶虹彩",
+    "luckyItem": "会反光的小挂件",
+    "tags": [
+      "异常心跳",
+      "注意执念",
+      "隐藏高能"
+    ],
+    "rarity": "legendary",
+    "unlockedVisualTheme": "crystal-overdrive",
+    "characterImage": "/images/characters/moegirl/009-flandre-scarlet.png",
+    "characterImageSource": "萌娘百科：芙兰朵露·斯卡蕾特",
+    "relatedSceneIds": [
+      "scarlet"
+    ]
+  },
+  {
+    "id": "classic-rumia-01",
+    "category": "love",
+    "tier": "small-blessing",
+    "title": "露米娅心灯微明签",
+    "character": "露米娅",
+    "alias": "Rumia",
+    "inspiration": "东方Project经典角色扩展签",
+    "quote": "黑暗里看不清也没关系，先把手伸到对方能碰到的地方。",
+    "motif": "黑暗结界、红色缎带、夜路小灯",
+    "summary": "关系里的信号有点昏暗，但并不是坏兆头。把话说短一点、近一点，比隔着一团黑雾互相猜更有用。",
+    "advice": "别把沉默当作试探。给对方一个能回应的小句子，就像在夜路上留一盏灯。",
+    "luckyColor": "绯月红",
+    "luckyItem": "一条认真回复的消息",
+    "tags": [
+      "夜路小灯",
+      "少猜一句",
+      "慢慢靠近"
+    ],
+    "rarity": "common",
+    "characterImage": "/images/characters/moegirl/001-rumia.png",
+    "characterImageSource": "萌娘百科：露米娅",
+    "relatedSceneIds": [
+      "scarlet",
+      "misty-lake"
+    ]
+  },
+  {
+    "id": "classic-koakuma-01",
+    "category": "slacking",
+    "tier": "middle-blessing",
+    "title": "小恶魔偷闲回血签",
+    "character": "小恶魔",
+    "alias": "Koakuma",
+    "inspiration": "东方Project经典角色扩展签",
+    "quote": "书页合上之前，偷偷歇一下也不是坏事，别把书签弄丢就行。",
+    "motif": "红魔馆书库、书页边角、小恶魔翅影",
+    "summary": "适合把休息夹在任务之间，像在厚书里夹一枚书签。你可以偷一小段空，但别让自己从目录里失踪。",
+    "advice": "休息前写下回来要翻到哪一页。十分钟后照着书签回到正题。",
+    "luckyColor": "烛影紫",
+    "luckyItem": "夹在笔记里的书签",
+    "tags": [
+      "书库短休",
+      "记得回页",
+      "轻量续航"
+    ],
+    "rarity": "common",
+    "characterImage": "/images/characters/moegirl/004-koakuma.jpg",
+    "characterImageSource": "萌娘百科：小恶魔",
+    "relatedSceneIds": [
+      "scarlet"
+    ]
+  },
+  {
+    "id": "classic-daiyousei-01",
+    "category": "social",
+    "tier": "great-blessing",
+    "title": "大妖精结界外出签",
+    "character": "大妖精",
+    "alias": "Daiyousei",
+    "inspiration": "东方Project经典角色扩展签",
+    "archetype": "守护型",
+    "quote": "湖风一大，就先站到朋友旁边。照看别人之前，也别忘了照看自己。",
+    "motif": "妖精翅光、湖畔草叶、护身小花",
+    "summary": "社交运偏柔和，适合用照应和陪伴进入场面。你不用抢话，只要在该出现的位置出现，就会让气氛安定。",
+    "advice": "先找一个熟悉的人或熟悉角落落脚，再慢慢把注意力放到周围。",
+    "luckyColor": "初晴青",
+    "luckyItem": "清晰的路线图",
+    "tags": [
+      "安静陪伴",
+      "熟人落脚",
+      "柔和入场"
+    ],
+    "rarity": "epic",
+    "characterImage": "/images/characters/moegirl/005-daiyousei.jpg",
+    "characterImageSource": "萌娘百科：大妖精",
+    "relatedSceneIds": [
+      "scarlet",
+      "misty-lake"
+    ]
+  },
+  {
+    "id": "classic-chen-01",
+    "category": "lateNight",
+    "tier": "middle-blessing",
+    "title": "橙夜行守心签",
+    "character": "橙",
+    "alias": "Chen",
+    "inspiration": "东方Project经典角色扩展签",
+    "quote": "夜里别乱跑太远，尾巴会先知道哪条路该收回来。",
+    "motif": "猫又尾影、式神符、迷途之家夜檐",
+    "summary": "今晚的念头容易一窜就远，像猫影越过屋檐。把范围缩小一点，反而更容易保住清醒。",
+    "advice": "给自己设一个归巢时间。到了就停，不和夜色比赛耐力。",
+    "luckyColor": "月夜紫",
+    "luckyItem": "写着归巢时间的纸条",
+    "tags": [
+      "夜间归巢",
+      "收回尾巴",
+      "别跑太远"
+    ],
+    "rarity": "common",
+    "characterImage": "/images/characters/moegirl/011-chen.png",
+    "characterImageSource": "萌娘百科：橙",
+    "relatedSceneIds": [
+      "hakurei"
+    ]
+  },
+  {
+    "id": "classic-letty-whiterock-01",
+    "category": "slacking",
+    "tier": "great-blessing",
+    "title": "蕾蒂偷闲回血签",
+    "character": "蕾蒂·霍瓦特洛克",
+    "alias": "Letty Whiterock",
+    "inspiration": "东方Project经典角色扩展签",
+    "archetype": "突进型",
+    "quote": "雪落下来时，世界也会慢一点。你可以跟着慢，不必假装是盛夏。",
+    "motif": "冬妖怪、细雪、围巾边缘",
+    "summary": "精力像入冬的气温，不适合硬把自己催热。适当降速会让后续行动更稳。",
+    "advice": "把任务削成一小块，配一杯热饮慢慢做完。今天的休息要像雪一样安静。",
+    "luckyColor": "月兔淡紫",
+    "luckyItem": "十分钟散步",
+    "tags": [
+      "降速休息",
+      "冬日续航",
+      "小块完成"
+    ],
+    "rarity": "common",
+    "characterImage": "/images/characters/moegirl/012-letty-whiterock.jpg",
+    "characterImageSource": "萌娘百科：蕾蒂·霍瓦特洛克",
+    "relatedSceneIds": [
+      "scarlet",
+      "misty-lake"
+    ]
+  },
+  {
+    "id": "classic-lunasa-prismriver-01",
+    "category": "study",
+    "tier": "great-blessing",
+    "title": "露娜静学回响签",
+    "character": "露娜萨·普莉兹姆利巴",
+    "alias": "Lunasa Prismriver",
+    "inspiration": "东方Project经典角色扩展签",
+    "archetype": "灵感型",
+    "quote": "先把杂音降下去，低音部听清了，整首曲子才不会散。",
+    "motif": "幽灵提琴、低音旋律、夜色乐谱",
+    "summary": "学习运适合沉下来做一件需要耐心的事。情绪不必高昂，只要节拍稳定，理解会一层层浮出来。",
+    "advice": "关掉多余提示音，留一段完整时间给最难的那一页。",
+    "luckyColor": "庭院青绿",
+    "luckyItem": "写好标题的笔记页",
+    "tags": [
+      "低音专注",
+      "安静深读",
+      "节拍稳定"
+    ],
+    "rarity": "common",
+    "characterImage": "/images/characters/moegirl/014-lunasa-prismriver.jpg",
+    "characterImageSource": "萌娘百科：露娜萨·普莉兹姆利巴",
+    "relatedSceneIds": [
+      "hakugyokurou"
+    ]
+  },
+  {
+    "id": "classic-merlin-prismriver-01",
+    "category": "love",
+    "tier": "middle-blessing",
+    "title": "梅露心灯微明签",
+    "character": "梅露兰·普莉兹姆利巴",
+    "alias": "Merlin Prismriver",
+    "inspiration": "东方Project经典角色扩展签",
+    "quote": "号角吹得太小就没人听见，吹得太响又会吓到人。找个刚好的音量吧。",
+    "motif": "幽灵小号、明亮旋律、飘起的音符",
+    "summary": "关系里适合稍微主动一点，把好意用更亮的方式递出去。热闹可以加分，但别把对方推到台前。",
+    "advice": "发一条带具体邀请的话，比反复试探更像一段好听的前奏。",
+    "luckyColor": "星火金",
+    "luckyItem": "一条带时间地点的邀请",
+    "tags": [
+      "明亮表达",
+      "主动邀请",
+      "音量刚好"
+    ],
+    "rarity": "common",
+    "characterImage": "/images/characters/moegirl/015-merlin-prismriver.png",
+    "characterImageSource": "萌娘百科：梅露兰·普莉兹姆利巴",
+    "relatedSceneIds": [
+      "hakugyokurou"
+    ]
+  },
+  {
+    "id": "classic-lily-white-01",
+    "category": "social",
+    "tier": "shadow",
+    "title": "莉莉结界外出签",
+    "character": "莉莉霍瓦特",
+    "alias": "Lily White",
+    "inspiration": "东方Project经典角色扩展签",
+    "archetype": "灵感型",
+    "quote": "春天到了的话，总要有人先喊一声。声音小也没关系，要像真的春风。",
+    "motif": "春告妖精、白色翅光、第一朵花",
+    "summary": "外出和见人会带来一点新气息。适合做第一个轻声打招呼的人，让场面从僵硬里 thaw 出来。",
+    "advice": "用一句轻快开场打开局面，别把春天憋在袖子里。",
+    "luckyColor": "烛影紫",
+    "luckyItem": "清晰的路线图",
+    "tags": [
+      "春天到了",
+      "轻快开场",
+      "主动问候"
+    ],
+    "rarity": "common",
+    "characterImage": "/images/characters/moegirl/016-lily-white.jpg",
+    "characterImageSource": "萌娘百科：莉莉霍瓦特",
+    "relatedSceneIds": [
+      "hakurei",
+      "hakugyokurou"
+    ]
+  },
+  {
+    "id": "classic-lyrica-prismriver-01",
+    "category": "wealth",
+    "tier": "small-blessing",
+    "title": "莉莉小财聚光签",
+    "character": "莉莉卡·普莉兹姆利巴",
+    "alias": "Lyrica Prismriver",
+    "inspiration": "东方Project经典角色扩展签",
+    "quote": "键盘声会暴露节拍，账单也是。别让小音符自己跑丢。",
+    "motif": "幽灵键盘、零钱音符、短小乐句",
+    "summary": "财运在小额项目上有可调音的空间。零散支出像错位音符，整理后会明显顺耳。",
+    "advice": "把三笔最近的小支出列出来，删掉一个最不像主旋律的。",
+    "luckyColor": "星尘黄",
+    "luckyItem": "三行小账单",
+    "tags": [
+      "零钱节拍",
+      "删掉杂音",
+      "小账单"
+    ],
+    "rarity": "common",
+    "characterImage": "/images/characters/moegirl/018-lyrica-prismriver.jpg",
+    "characterImageSource": "萌娘百科：莉莉卡·普莉兹姆利巴",
+    "relatedSceneIds": [
+      "hakugyokurou"
+    ]
+  },
+  {
+    "id": "classic-wriggle-nightbug-01",
+    "category": "love",
+    "tier": "shadow",
+    "title": "莉格心灯微明签",
+    "character": "莉格露·奈特巴格",
+    "alias": "Wriggle Nightbug",
+    "inspiration": "东方Project经典角色扩展签",
+    "archetype": "回响型",
+    "quote": "萤火虫不用把夜晚照亮，只要让对方看见你在哪里。",
+    "motif": "萤火、草丛夜路、微弱光点",
+    "summary": "感情信号不必铺得很满。一点点可见的在意，反而比突然照得太亮更让人安心。",
+    "advice": "发一个轻小但明确的回应，让对方知道你还在这片夜色里。",
+    "luckyColor": "月兔淡紫",
+    "luckyItem": "一条认真回复的消息",
+    "tags": [
+      "萤火信号",
+      "轻小回应",
+      "夜色靠近"
+    ],
+    "rarity": "rare",
+    "characterImage": "/images/characters/moegirl/021-wriggle-nightbug.png",
+    "characterImageSource": "萌娘百科：莉格露·奈特巴格",
+    "relatedSceneIds": [
+      "human-village"
+    ]
+  },
+  {
+    "id": "classic-mystia-lorelei-01",
+    "category": "wealth",
+    "tier": "small-blessing",
+    "title": "米斯小财聚光签",
+    "character": "米斯蒂娅·萝蕾拉",
+    "alias": "Mystia Lorelei",
+    "inspiration": "东方Project经典角色扩展签",
+    "archetype": "稳场型",
+    "quote": "夜雀一唱，客人会被香气和歌声带偏。买东西前先看清菜单。",
+    "motif": "夜雀歌声、夜摊灯、烤八目鳗烟火",
+    "summary": "容易被气氛带动消费，尤其是食物、夜间娱乐和临时加购。热闹不是坏事，但菜单要看清。",
+    "advice": "下单前停一拍，确认这是想要的，不只是被歌声勾过去的。",
+    "luckyColor": "月兔淡紫",
+    "luckyItem": "简短记账清单",
+    "tags": [
+      "夜摊诱惑",
+      "看清菜单",
+      "停一拍"
+    ],
+    "rarity": "epic",
+    "characterImage": "/images/characters/moegirl/022-mystia-lorelei.png",
+    "characterImageSource": "萌娘百科：米斯蒂娅·萝蕾拉",
+    "relatedSceneIds": [
+      "human-village"
+    ]
+  },
+  {
+    "id": "classic-keine-kamishirasawa-01",
+    "category": "social",
+    "tier": "secret",
+    "title": "上白结界外出签",
+    "character": "上白泽慧音",
+    "alias": "Keine Kamishirasawa",
+    "inspiration": "东方Project经典角色扩展签",
+    "quote": "进人群前先把来龙去脉讲清楚，历史乱了，误会就会趁机改写。",
+    "motif": "寺子屋书册、白泽角影、历史竹简",
+    "summary": "社交运适合做说明者和整理者。把背景补上、把时间线理顺，气氛会比硬寒暄稳定得多。",
+    "advice": "开口前先说清楚前因后果。今天你的条理就是护身结界。",
+    "luckyColor": "木纹金",
+    "luckyItem": "写着时间线的便签",
+    "tags": [
+      "理清来龙",
+      "寺子屋条理",
+      "说明比寒暄强"
+    ],
+    "rarity": "legendary",
+    "characterImage": "/images/characters/moegirl/023-keine-kamishirasawa.jpg",
+    "characterImageSource": "萌娘百科：上白泽慧音",
+    "relatedSceneIds": [
+      "human-village"
+    ]
+  },
+  {
+    "id": "classic-eirin-yagokoro-01",
+    "category": "slacking",
+    "tier": "great-blessing",
+    "title": "八意偷闲回血签",
+    "character": "八意永琳",
+    "alias": "Eirin Yagokoro",
+    "inspiration": "东方Project经典角色扩展签",
+    "quote": "药量过了就不是药。休息也是，按处方来。",
+    "motif": "永远亭药柜、竹林处方、月下量匙",
+    "summary": "适合休息，但要像配药一样控制剂量。太少无效，太多会把节奏睡散。",
+    "advice": "给休息设定明确时长，到点就收药箱。今天的偷闲要精准，不要随手加量。",
+    "luckyColor": "月辉白金",
+    "luckyItem": "一只定时器",
+    "tags": [
+      "按量休息",
+      "药师处方",
+      "精准续航"
+    ],
+    "rarity": "rare",
+    "characterImage": "/images/characters/moegirl/025-eirin-yagokoro.png",
+    "characterImageSource": "萌娘百科：八意永琳",
+    "relatedSceneIds": [
+      "eientei"
+    ]
+  },
+  {
+    "id": "classic-ran-yakumo-01",
+    "category": "slacking",
+    "tier": "middle-blessing",
+    "title": "八云蓝偷闲回血签",
+    "character": "八云蓝",
+    "alias": "Ran Yakumo",
+    "inspiration": "东方Project经典角色扩展签",
+    "quote": "式神也要整理尾巴。把琐事排成队，休息才不会被打断。",
+    "motif": "九尾狐影、式神札、整齐算筹",
+    "summary": "摸鱼前先收束琐事最有利。蓝式的好运在秩序里，越把小事排好，越能放心空出一段时间。",
+    "advice": "列出三件待处理小事，先清掉最吵的一件，再去休息。",
+    "luckyColor": "境界紫",
+    "luckyItem": "三项短清单",
+    "tags": [
+      "式神排程",
+      "清掉琐事",
+      "安心短休"
+    ],
+    "rarity": "uncommon",
+    "characterImage": "/images/characters/moegirl/026-ran-yakumo.jpg",
+    "characterImageSource": "萌娘百科：八云蓝",
+    "relatedSceneIds": [
+      "hakurei"
+    ]
+  },
+  {
+    "id": "classic-tewi-inaba-01",
+    "category": "slacking",
+    "tier": "small-blessing",
+    "title": "因幡帝偷闲回血签",
+    "character": "因幡帝",
+    "alias": "Tewi Inaba",
+    "inspiration": "东方Project经典角色扩展签",
+    "archetype": "突进型",
+    "quote": "兔子跑进竹林之前，通常已经把退路看好了。",
+    "motif": "幸运白兔、竹林岔路、草叶脚印",
+    "summary": "偷闲有点小幸运，但也容易一蹦就不见。适合用聪明的方式绕开疲劳，而不是把正事全丢给运气。",
+    "advice": "休息可以，但先给自己留一个回来的暗号。别让好运替你收拾残局。",
+    "luckyColor": "冰湖蓝",
+    "luckyItem": "十分钟散步",
+    "tags": [
+      "兔子短逃",
+      "留好退路",
+      "好运别浪费"
+    ],
+    "rarity": "uncommon",
+    "characterImage": "/images/characters/moegirl/028-tewi-inaba.jpg",
+    "characterImageSource": "萌娘百科：因幡帝",
+    "relatedSceneIds": [
+      "eientei"
+    ]
+  },
+  {
+    "id": "classic-medicine-melancholy-01",
+    "category": "love",
+    "tier": "secret",
+    "title": "梅蒂心灯微明签",
+    "character": "梅蒂欣·梅兰可莉",
+    "alias": "Medicine Melancholy",
+    "inspiration": "东方Project经典角色扩展签",
+    "archetype": "稳场型",
+    "quote": "铃兰很香，也有毒。靠近之前，先确认彼此都能好好呼吸。",
+    "motif": "铃兰花、毒雾、人偶手心",
+    "summary": "关系里需要一点距离感。不是不靠近，而是先把会刺痛人的话和情绪放淡。",
+    "advice": "别用试探来证明在意。今天适合温和说明边界，再慢慢靠近。",
+    "luckyColor": "冰湖蓝",
+    "luckyItem": "一段不带刺的说明",
+    "tags": [
+      "铃兰边界",
+      "不带刺",
+      "慢慢靠近"
+    ],
+    "rarity": "legendary",
+    "characterImage": "/images/characters/moegirl/029-medicine-melancholy.png",
+    "characterImageSource": "萌娘百科：梅蒂欣·梅兰可莉",
+    "relatedSceneIds": [
+      "nameless-hill"
+    ]
+  },
+  {
+    "id": "classic-yuuka-kazami-01",
+    "category": "love",
+    "tier": "shadow",
+    "title": "风见心灯微明签",
+    "character": "风见幽香",
+    "alias": "Yuuka Kazami",
+    "inspiration": "东方Project经典角色扩展签",
+    "archetype": "灵感型",
+    "quote": "花不会为了谁慌张地开。你若真心喜欢，就好好看着它。",
+    "motif": "太阳花田、阳伞、缓慢转向的花盘",
+    "summary": "感情运不适合过度迎合。保持自己的节奏和姿态，反而更容易让人看见你真实的吸引力。",
+    "advice": "别急着追问答案。把自己的状态照顾好，让心意像花一样稳稳站着。",
+    "luckyColor": "落樱粉白",
+    "luckyItem": "一把晴雨伞",
+    "tags": [
+      "花田姿态",
+      "不急追问",
+      "稳稳站着"
+    ],
+    "rarity": "rare",
+    "characterImage": "/images/characters/moegirl/031-yuuka-kazami.jpg",
+    "characterImageSource": "萌娘百科：风见幽香",
+    "relatedSceneIds": [
+      "sunflower-field"
+    ]
+  },
+  {
+    "id": "classic-shizuha-aki-01",
+    "category": "lateNight",
+    "tier": "middle-blessing",
+    "title": "秋静叶夜行守心签",
+    "character": "秋静叶",
+    "alias": "Shizuha Aki",
+    "inspiration": "东方Project经典角色扩展签",
+    "archetype": "灵感型",
+    "quote": "叶子落下不是失败，是季节把该放下的东西点了名。",
+    "motif": "红叶、秋风、落叶小径",
+    "summary": "今晚适合做减法。把过热的念头一片片放下来，睡前会比继续翻旧账更有用。",
+    "advice": "写下一个可以暂时放过的念头。让它像红叶一样落地，不必再捡回枕边。",
+    "luckyColor": "月兔淡紫",
+    "luckyItem": "一张红叶色便签",
+    "tags": [
+      "红叶放下",
+      "夜间减法",
+      "不翻旧账"
+    ],
+    "rarity": "common",
+    "characterImage": "/images/characters/moegirl/033-shizuha-aki.jpg",
+    "characterImageSource": "萌娘百科：秋静叶",
+    "relatedSceneIds": [
+      "moriya-shrine"
+    ]
+  },
+  {
+    "id": "classic-hina-kagiyama-01",
+    "category": "wealth",
+    "tier": "great-blessing",
+    "title": "键山雏小财聚光签",
+    "character": "键山雏",
+    "alias": "Hina Kagiyama",
+    "inspiration": "东方Project经典角色扩展签",
+    "archetype": "守护型",
+    "quote": "厄运会自己打转，钱也是。先把会漏出去的地方圈出来。",
+    "motif": "厄神回旋、雏人偶、红绳结",
+    "summary": "财运重点在避厄和止漏。你不需要追一个大收益，先让坏习惯停止绕着钱包转圈。",
+    "advice": "检查一项自动扣费或拖延付款，把它处理掉。今天适合把小厄运送走。",
+    "luckyColor": "冷银蓝",
+    "luckyItem": "简短记账清单",
+    "tags": [
+      "送走厄运",
+      "停止漏财",
+      "红绳收口"
+    ],
+    "rarity": "epic",
+    "characterImage": "/images/characters/moegirl/034-hina-kagiyama.jpg",
+    "characterImageSource": "萌娘百科：键山雏",
+    "relatedSceneIds": [
+      "moriya-shrine"
+    ]
+  },
+  {
+    "id": "classic-minoriko-aki-01",
+    "category": "study",
+    "tier": "small-blessing",
+    "title": "秋穰子静学回响签",
+    "character": "秋穰子",
+    "alias": "Minoriko Aki",
+    "inspiration": "东方Project经典角色扩展签",
+    "quote": "稻穗不会一天成熟。今天先把土翻好，收成会记得这一步。",
+    "motif": "丰收篮、稻穗、秋日田埂",
+    "summary": "学习运适合打基础和复盘。看似慢的整理，会在之后变成很实在的收成。",
+    "advice": "把一段知识重新归类，像把果实分进篮子里，不要急着跳到下一片田。",
+    "luckyColor": "祭典橙",
+    "luckyItem": "分类好的笔记页",
+    "tags": [
+      "秋日复盘",
+      "打好基础",
+      "慢慢成熟"
+    ],
+    "rarity": "common",
+    "characterImage": "/images/characters/moegirl/035-minoriko-aki.jpg",
+    "characterImageSource": "萌娘百科：秋穰子",
+    "relatedSceneIds": [
+      "moriya-shrine"
+    ]
+  },
+  {
+    "id": "classic-momiji-inubashiri-01",
+    "category": "study",
+    "tier": "small-blessing",
+    "title": "犬走椛静学回响签",
+    "character": "犬走椛",
+    "alias": "Momiji Inubashiri",
+    "inspiration": "东方Project经典角色扩展签",
+    "quote": "白狼天狗先看清山路，再决定往哪里跑。视野比速度重要。",
+    "motif": "白狼天狗、山道哨位、千里眼",
+    "summary": "学习运适合先总览结构。把地图看清，后面推进会少很多回头路。",
+    "advice": "先画一张章节地图或问题树，再开始逐项攻破。今天别急着冲刺。",
+    "luckyColor": "山雾青",
+    "luckyItem": "一张结构图",
+    "tags": [
+      "先看地图",
+      "结构总览",
+      "稳步推进"
+    ],
+    "rarity": "common",
+    "characterImage": "/images/characters/moegirl/037-momiji-inubashiri.png",
+    "characterImageSource": "萌娘百科：犬走椛",
+    "relatedSceneIds": [
+      "moriya-shrine"
+    ]
+  },
+  {
+    "id": "classic-kisume-01",
+    "category": "social",
+    "tier": "small-blessing",
+    "title": "琪斯美结界外出签",
+    "character": "琪斯美",
+    "alias": "Kisume",
+    "inspiration": "东方Project经典角色扩展签",
+    "quote": "桶里也能听见外面的脚步声。想出去时，先探出一点点就够了。",
+    "motif": "吊桶、洞穴绳索、地底回声",
+    "summary": "社交运适合小范围试探。你不必一下子跳进热闹，先露出一个安全的开口。",
+    "advice": "选择一个低压力入口，比如只回复一句、只参加一小段。桶盖可以慢慢掀。",
+    "luckyColor": "烛影紫",
+    "luckyItem": "一个低压力邀约",
+    "tags": [
+      "小口探出",
+      "低压社交",
+      "慢慢掀盖"
+    ],
+    "rarity": "common",
+    "characterImage": "/images/characters/moegirl/038-kisume.jpg",
+    "characterImageSource": "萌娘百科：琪斯美",
+    "relatedSceneIds": [
+      "palace-of-earth-spirits"
+    ]
+  },
+  {
+    "id": "classic-shiki-eiki-yamaxanadu-01",
+    "category": "social",
+    "tier": "small-blessing",
+    "title": "四季结界外出签",
+    "character": "四季映姬·亚玛萨那度",
+    "alias": "Shiki Eiki, Yamaxanadu",
+    "inspiration": "东方Project经典角色扩展签",
+    "quote": "黑白不是拿来吓人的，是用来让你别再含糊过去。",
+    "motif": "净玻璃镜、悔悟棒、是非审判",
+    "summary": "社交运需要清楚判断。该道歉、该说明、该拒绝的事，拖久了会被判得更重。",
+    "advice": "挑一件含糊很久的人际小事，今天给出明确答复。措辞可以温和，立场要清楚。",
+    "luckyColor": "冷银蓝",
+    "luckyItem": "写好的答复草稿",
+    "tags": [
+      "黑白分明",
+      "明确答复",
+      "温和立场"
+    ],
+    "rarity": "common",
+    "characterImage": "/images/characters/moegirl/039-shiki-eiki-yamaxanadu.jpg",
+    "characterImageSource": "萌娘百科：四季映姬·亚玛萨那度",
+    "relatedSceneIds": [
+      "sanzu-river"
+    ]
+  },
+  {
+    "id": "classic-suwako-moriya-01",
+    "category": "love",
+    "tier": "small-blessing",
+    "title": "洩矢心灯微明签",
+    "character": "洩矢诹访子",
+    "alias": "Suwako Moriya",
+    "inspiration": "东方Project经典角色扩展签",
+    "quote": "青蛙会先听见水底的动静。喜欢一个人，也要听见没说出口的部分。",
+    "motif": "青蛙纹、洩矢铁轮、山间水声",
+    "summary": "感情运偏向细微感知。别只听表面话，留意对方语气里的水纹。",
+    "advice": "回应前先停一拍，确认自己听见的是请求、玩笑，还是藏起来的不安。",
+    "luckyColor": "河童青绿",
+    "luckyItem": "一枚青绿色小物",
+    "tags": [
+      "水底动静",
+      "听见语气",
+      "慢半拍回应"
+    ],
+    "rarity": "uncommon",
+    "characterImage": "/images/characters/moegirl/040-suwako-moriya.jpg",
+    "characterImageSource": "萌娘百科：洩矢诹访子",
+    "relatedSceneIds": [
+      "moriya-shrine"
+    ]
+  },
+  {
+    "id": "classic-kanako-yasaka-01",
+    "category": "social",
+    "tier": "small-blessing",
+    "title": "八坂结界外出签",
+    "character": "八坂神奈子",
+    "alias": "Kanako Yasaka",
+    "inspiration": "东方Project经典角色扩展签",
+    "quote": "御柱立起来，风才知道往哪里绕。你也该给场面一个支点。",
+    "motif": "御柱、注连绳、山风神德",
+    "summary": "社交运适合承担组织和定调的角色。不是强压别人，而是把松散的场面固定下来。",
+    "advice": "主动提出时间、地点或流程。今天越有支点，大家越容易安心跟上。",
+    "luckyColor": "山雾青",
+    "luckyItem": "写清流程的消息",
+    "tags": [
+      "御柱支点",
+      "组织定调",
+      "流程清楚"
+    ],
+    "rarity": "rare",
+    "characterImage": "/images/characters/moegirl/042-kanako-yasaka.jpg",
+    "characterImageSource": "萌娘百科：八坂神奈子",
+    "relatedSceneIds": [
+      "moriya-shrine"
+    ]
+  },
+  {
+    "id": "classic-yamame-kurodani-01",
+    "category": "slacking",
+    "tier": "shadow",
+    "title": "黑谷偷闲回血签",
+    "character": "黑谷山女",
+    "alias": "Yamame Kurodani",
+    "inspiration": "东方Project经典角色扩展签",
+    "archetype": "灵感型",
+    "quote": "蛛网不是只用来困住谁，也能拦住过度散开的疲惫。",
+    "motif": "土蜘蛛、地底网线、洞窟阴影",
+    "summary": "休息要避免被杂事缠成一团。先切断几条无用通知，疲惫才不会继续扩散。",
+    "advice": "关掉一个最会打断你的入口，再休息。今天别让自己被碎片时间捕住。",
+    "luckyColor": "河童青绿",
+    "luckyItem": "静音后的手机",
+    "tags": [
+      "切断蛛丝",
+      "防止扩散",
+      "安静休息"
+    ],
+    "rarity": "rare",
+    "characterImage": "/images/characters/moegirl/043-yamame-kurodani.jpg",
+    "characterImageSource": "萌娘百科：黑谷山女",
+    "relatedSceneIds": [
+      "palace-of-earth-spirits"
+    ]
+  },
+  {
+    "id": "classic-parsee-mizuhashi-01",
+    "category": "love",
+    "tier": "small-blessing",
+    "title": "水桥心灯微明签",
+    "character": "水桥帕露西",
+    "alias": "Parsee Mizuhashi",
+    "inspiration": "东方Project经典角色扩展签",
+    "quote": "桥上风大，别一边羡慕别人，一边忘了自己也在过桥。",
+    "motif": "桥姬、旧地狱桥、嫉妒绿火",
+    "summary": "感情里容易拿自己和别人比较。比较会把桥拉长，真正在意的话反而走不过去。",
+    "advice": "少看一眼旁人的热闹，多确认自己的感受。今天别让嫉妒替你说话。",
+    "luckyColor": "河童青绿",
+    "luckyItem": "一段只写给自己的记录",
+    "tags": [
+      "桥上风大",
+      "少作比较",
+      "听见自己"
+    ],
+    "rarity": "uncommon",
+    "characterImage": "/images/characters/moegirl/046-parsee-mizuhashi.jpg",
+    "characterImageSource": "萌娘百科：水桥帕露西",
+    "relatedSceneIds": [
+      "palace-of-earth-spirits"
+    ]
+  },
+  {
+    "id": "classic-satori-komeiji-01",
+    "category": "social",
+    "tier": "middle-blessing",
+    "title": "古明结界外出签",
+    "character": "古明地觉",
+    "alias": "Satori Komeiji",
+    "inspiration": "东方Project经典角色扩展签",
+    "archetype": "守护型",
+    "quote": "别人还没开口，你也许已经听见了半句。先别急着替他们说完。",
+    "motif": "第三只眼、地灵殿书页、心音回廊",
+    "summary": "社交运需要克制读心式预判。你能捕捉气氛，但越早下结论，越容易把对方真正的话盖住。",
+    "advice": "问一个开放问题，再等对方自己答。今天少替人补完心声。",
+    "luckyColor": "永夜蓝白",
+    "luckyItem": "一页空白便签",
+    "tags": [
+      "少作预判",
+      "听完整句",
+      "心音回廊"
+    ],
+    "rarity": "rare",
+    "characterImage": "/images/characters/moegirl/047-satori-komeiji.jpg",
+    "characterImageSource": "萌娘百科：古明地觉",
+    "relatedSceneIds": [
+      "palace-of-earth-spirits"
+    ]
+  },
+  {
+    "id": "classic-nazrin-01",
+    "category": "lateNight",
+    "tier": "middle-blessing",
+    "title": "娜兹玲夜行守心签",
+    "character": "娜兹玲",
+    "alias": "Nazrin",
+    "inspiration": "东方Project经典角色扩展签",
+    "archetype": "稳场型",
+    "quote": "探宝棒摇得厉害时，不一定是宝物，也可能是你漏看的小洞。",
+    "motif": "探宝棒、鼠脚印、夜里闪光的小物",
+    "summary": "今晚适合找回遗漏物和遗漏念头。别被大问题吓住，真正的线索往往藏在桌角或待办末尾。",
+    "advice": "睡前检查一个小角落：桌面、钱包、收件箱都可以。找到一件就收工。",
+    "luckyColor": "星火金",
+    "luckyItem": "一支小手电",
+    "tags": [
+      "探宝棒",
+      "找回遗漏",
+      "小角落"
+    ],
+    "rarity": "rare",
+    "characterImage": "/images/characters/moegirl/048-nazrin.png",
+    "characterImageSource": "萌娘百科：娜兹玲",
+    "relatedSceneIds": [
+      "myouren-temple"
+    ]
+  },
+  {
+    "id": "classic-kogasa-tatara-01",
+    "category": "social",
+    "tier": "small-blessing",
+    "title": "多多结界外出签",
+    "character": "多多良小伞",
+    "alias": "Kogasa Tatara",
+    "inspiration": "东方Project经典角色扩展签",
+    "quote": "想吓人也要选好时机。太早跳出来，只会把自己弄得更尴尬。",
+    "motif": "唐伞单眼、雨后木屐、惊吓闪光",
+    "summary": "社交运适合用轻快方式破冰。小小意外能让气氛活起来，但别把惊喜做成负担。",
+    "advice": "准备一句轻松开场，逗一下就收。今天的可爱比用力更有效。",
+    "luckyColor": "初晴青",
+    "luckyItem": "一把颜色明亮的伞",
+    "tags": [
+      "轻快破冰",
+      "唐伞惊喜",
+      "逗一下就收"
+    ],
+    "rarity": "common",
+    "characterImage": "/images/characters/moegirl/049-kogasa-tatara.jpg",
+    "characterImageSource": "萌娘百科：多多良小伞",
+    "relatedSceneIds": [
+      "myouren-temple",
+      "human-village"
+    ]
+  },
+  {
+    "id": "classic-rin-kaenbyou-01",
+    "category": "lateNight",
+    "tier": "small-blessing",
+    "title": "火焰夜行守心签",
+    "character": "火焰猫燐",
+    "alias": "Rin Kaenbyou",
+    "inspiration": "东方Project经典角色扩展签",
+    "archetype": "观察型",
+    "quote": "猫车推得太晚，炉火会替你记账。该收的心事，趁夜还轻时收走。",
+    "motif": "猫车、怨灵火、旧地狱轨道",
+    "summary": "今晚容易拖着疲惫到处走。把坏情绪收进车里送远一点，别让它在房间里绕圈。",
+    "advice": "关灯前处理一个让你反复想起的小麻烦，哪怕只写下明天的第一步。",
+    "luckyColor": "月夜紫",
+    "luckyItem": "一张明日第一步清单",
+    "tags": [
+      "猫车收心",
+      "怨灵别绕圈",
+      "睡前收尾"
+    ],
+    "rarity": "common",
+    "characterImage": "/images/characters/moegirl/050-rin-kaenbyou.jpg",
+    "characterImageSource": "萌娘百科：火焰猫燐",
+    "relatedSceneIds": [
+      "palace-of-earth-spirits"
+    ]
+  },
+  {
+    "id": "classic-ichirin-kumoi-01",
+    "category": "study",
+    "tier": "middle-blessing",
+    "title": "云居静学回响签",
+    "character": "云居一轮",
+    "alias": "Ichirin Kumoi",
+    "inspiration": "东方Project经典角色扩展签",
+    "quote": "云山出拳前，一轮已经站好了位置。先摆好架势，再谈力气。",
+    "motif": "云山拳影、命莲寺云纹、护法站位",
+    "summary": "学习运适合先定框架。你需要的不是蛮力，而是让重点有一个能落拳的位置。",
+    "advice": "给难题画出三块区域：已懂、卡住、待查。分清之后再开始攻。",
+    "luckyColor": "莲辉金",
+    "luckyItem": "三栏笔记页",
+    "tags": [
+      "先摆架势",
+      "云山助拳",
+      "三栏拆题"
+    ],
+    "rarity": "common",
+    "characterImage": "/images/characters/moegirl/052-ichirin-kumoi.jpg",
+    "characterImageSource": "萌娘百科：云居一轮",
+    "relatedSceneIds": [
+      "myouren-temple"
+    ]
+  },
+  {
+    "id": "classic-komachi-onozuka-01",
+    "category": "love",
+    "tier": "middle-blessing",
+    "title": "小野心灯微明签",
+    "character": "小野塚小町",
+    "alias": "Komachi Onozuka",
+    "inspiration": "东方Project经典角色扩展签",
+    "quote": "距离这种东西，太近会撞船，太远又听不见桨声。",
+    "motif": "三途川渡船、大镰刀、彼岸桨声",
+    "summary": "关系里的距离感正需要调整。别用懒散掩饰在意，也别把船一下划到对方面前。",
+    "advice": "留一段舒服间隔，再发出真诚回应。今天慢一点靠岸更稳。",
+    "luckyColor": "冰汽青",
+    "luckyItem": "一条不催促的消息",
+    "tags": [
+      "调整距离",
+      "慢慢靠岸",
+      "彼岸桨声"
+    ],
+    "rarity": "uncommon",
+    "characterImage": "/images/characters/moegirl/053-komachi-onozuka.png",
+    "characterImageSource": "萌娘百科：小野塚小町",
+    "relatedSceneIds": [
+      "sanzu-river"
+    ]
+  },
+  {
+    "id": "classic-minamitsu-murasa-01",
+    "category": "wealth",
+    "tier": "small-blessing",
+    "title": "村纱小财聚光签",
+    "character": "村纱水蜜",
+    "alias": "Minamitsu Murasa",
+    "inspiration": "东方Project经典角色扩展签",
+    "quote": "船底进水时，最贵的不是船锚，是那个没堵上的洞。",
+    "motif": "船幽灵、锚、无底柄杓",
+    "summary": "财运重点是止住隐性流失。小额支出像水，一开始安静，等发现时已经湿了半船。",
+    "advice": "检查一个自动续费或长期小开销，把不必要的洞补上。",
+    "luckyColor": "冰湖蓝",
+    "luckyItem": "一张取消续费截图",
+    "tags": [
+      "船底止漏",
+      "无底柄杓",
+      "小额进水"
+    ],
+    "rarity": "uncommon",
+    "characterImage": "/images/characters/moegirl/054-minamitsu-murasa.jpg",
+    "characterImageSource": "萌娘百科：村纱水蜜",
+    "relatedSceneIds": [
+      "myouren-temple"
+    ]
+  },
+  {
+    "id": "classic-shou-toramaru-01",
+    "category": "social",
+    "tier": "small-blessing",
+    "title": "寅丸星结界外出签",
+    "character": "寅丸星",
+    "alias": "Shou Toramaru",
+    "inspiration": "东方Project经典角色扩展签",
+    "quote": "宝塔若没拿稳，再庄严的光也会晃。先确认自己带齐了东西。",
+    "motif": "毘沙门天宝塔、虎纹、命莲寺灯光",
+    "summary": "社交运适合以可靠感取胜。出门前把物品、承诺和时间确认好，会让别人更愿意信任你。",
+    "advice": "赴约或开会前做一次随身检查。今天别把重要的小物交给运气。",
+    "luckyColor": "丝线蓝紫",
+    "luckyItem": "出门前检查清单",
+    "tags": [
+      "宝塔别晃",
+      "可靠出门",
+      "确认随身物"
+    ],
+    "rarity": "uncommon",
+    "characterImage": "/images/characters/moegirl/055-shou-toramaru.jpg",
+    "characterImageSource": "萌娘百科：寅丸星",
+    "relatedSceneIds": [
+      "myouren-temple"
+    ]
+  },
+  {
+    "id": "classic-yoshika-miyako-01",
+    "category": "love",
+    "tier": "secret",
+    "title": "宫古心灯微明签",
+    "character": "宫古芳香",
+    "alias": "Yoshika Miyako",
+    "inspiration": "东方Project经典角色扩展签",
+    "archetype": "稳场型",
+    "quote": "脑袋空空也能往前走，但喜欢谁这件事，别只听命令。",
+    "motif": "僵尸符纸、毒爪、欲望灵",
+    "summary": "关系里容易机械回应，像被符纸牵着走。今天要先确认自己的真实感受。",
+    "advice": "别只照对方期待行动。问问自己想不想，再给出简单诚实的答复。",
+    "luckyColor": "蔷薇深红",
+    "luckyItem": "一张写着本心的纸条",
+    "tags": [
+      "不只听令",
+      "确认本心",
+      "僵尸符纸"
+    ],
+    "rarity": "legendary",
+    "characterImage": "/images/characters/moegirl/057-yoshika-miyako.png",
+    "characterImageSource": "萌娘百科：宫古芳香",
+    "relatedSceneIds": [
+      "divine-spirit-mausoleum"
+    ]
+  },
+  {
+    "id": "classic-kyouko-kasodani-01",
+    "category": "study",
+    "tier": "small-blessing",
+    "title": "幽谷静学回响签",
+    "character": "幽谷响子",
+    "alias": "Kyouko Kasodani",
+    "inspiration": "东方Project经典角色扩展签",
+    "quote": "山彦会把声音还给你。读一遍没懂，就换个音量再读一遍。",
+    "motif": "命莲寺扫帚、山彦回声、诵经声",
+    "summary": "学习运适合朗读、复述和回听。让知识在嘴边绕一圈，理解会比闷头看更清楚。",
+    "advice": "把一段内容讲给空气听，听见卡壳处，就是今天该补的地方。",
+    "luckyColor": "莲辉金",
+    "luckyItem": "一支录音笔或备忘录",
+    "tags": [
+      "山彦复述",
+      "讲给空气听",
+      "回声补漏"
+    ],
+    "rarity": "common",
+    "characterImage": "/images/characters/moegirl/058-kyouko-kasodani.png",
+    "characterImageSource": "萌娘百科：幽谷响子",
+    "relatedSceneIds": [
+      "myouren-temple"
+    ]
+  },
+  {
+    "id": "classic-yuugi-hoshiguma-01",
+    "category": "study",
+    "tier": "shadow",
+    "title": "星熊静学回响签",
+    "character": "星熊勇仪",
+    "alias": "Yuugi Hoshiguma",
+    "inspiration": "东方Project经典角色扩展签",
+    "archetype": "稳场型",
+    "quote": "鬼喝酒也讲究痛快。难题别绕三圈，正面打一拳看看。",
+    "motif": "星熊杯、旧都酒香、鬼之怪力",
+    "summary": "学习运偏向直攻难点。今天不太适合磨磨蹭蹭，适合把最硬的一块拿出来碰一碰。",
+    "advice": "选一道最怕的题或最难的段落，先做二十分钟。输赢之后再说。",
+    "luckyColor": "疾风墨青",
+    "luckyItem": "一杯清水或热茶",
+    "tags": [
+      "正面一拳",
+      "旧都胆量",
+      "先攻难题"
+    ],
+    "rarity": "epic",
+    "characterImage": "/images/characters/moegirl/059-yuugi-hoshiguma.jpg",
+    "characterImageSource": "萌娘百科：星熊勇仪",
+    "relatedSceneIds": [
+      "palace-of-earth-spirits"
+    ]
+  },
+  {
+    "id": "classic-nue-houjuu-01",
+    "category": "lateNight",
+    "tier": "shadow",
+    "title": "封兽鵺夜行守心签",
+    "character": "封兽鵺",
+    "alias": "Nue Houjuu",
+    "inspiration": "东方Project经典角色扩展签",
+    "archetype": "稳场型",
+    "quote": "正体不明的夜晚，越盯越不像原来的样子。先别给它取名。",
+    "motif": "鵺之黑影、谜之触手、夜空怪光",
+    "summary": "今晚的不安可能只是形状不明。急着解释会让它更怪，不如先把范围缩小。",
+    "advice": "写下三个确定事实，别和猜测混在一起。今天先识别，不急着定论。",
+    "luckyColor": "微故障粉紫",
+    "luckyItem": "三条事实记录",
+    "tags": [
+      "正体不明",
+      "事实先行",
+      "不急命名"
+    ],
+    "rarity": "rare",
+    "characterImage": "/images/characters/moegirl/060-nue-houjuu.png",
+    "characterImageSource": "萌娘百科：封兽鵺",
+    "relatedSceneIds": [
+      "myouren-temple"
+    ]
+  },
+  {
+    "id": "classic-soga-no-tojiko-01",
+    "category": "slacking",
+    "tier": "middle-blessing",
+    "title": "苏我偷闲回血签",
+    "character": "苏我屠自古",
+    "alias": "Soga no Tojiko",
+    "inspiration": "东方Project经典角色扩展签",
+    "archetype": "稳场型",
+    "quote": "雷声响过就散，怨气留太久反而费电。",
+    "motif": "亡灵雷光、神灵庙石阶、旧氏族影子",
+    "summary": "适合用短休息把情绪放电。别把不满反复充到深夜，响一下就让它过去。",
+    "advice": "找一个不会伤人的出口：走几步、写几句、深呼吸。放电后别继续翻旧账。",
+    "luckyColor": "冰汽青",
+    "luckyItem": "一段空白散步路",
+    "tags": [
+      "雷光放电",
+      "不翻旧账",
+      "短休散气"
+    ],
+    "rarity": "uncommon",
+    "characterImage": "/images/characters/moegirl/061-soga-no-tojiko.jpg",
+    "characterImageSource": "萌娘百科：苏我屠自古",
+    "relatedSceneIds": [
+      "divine-spirit-mausoleum"
+    ]
+  },
+  {
+    "id": "classic-mononobe-no-futo-01",
+    "category": "love",
+    "tier": "great-blessing",
+    "title": "物部心灯微明签",
+    "character": "物部布都",
+    "alias": "Mononobe no Futo",
+    "inspiration": "东方Project经典角色扩展签",
+    "archetype": "灵感型",
+    "quote": "皿摆错了方位，心意也会转错弯。先把风水理顺。",
+    "motif": "风水盘、白瓷皿、仙界道场",
+    "summary": "感情运适合调整表达的位置和时机。话本身没错，摆错地方就会显得冒失。",
+    "advice": "换一个更合适的场合再说重要话。今天先看风向，不要端着盘子硬闯。",
+    "luckyColor": "蔷薇深红",
+    "luckyItem": "一只干净小碟",
+    "tags": [
+      "风水转向",
+      "看准场合",
+      "皿别乱摆"
+    ],
+    "rarity": "rare",
+    "characterImage": "/images/characters/moegirl/062-mononobe-no-futo.jpg",
+    "characterImageSource": "萌娘百科：物部布都",
+    "relatedSceneIds": [
+      "divine-spirit-mausoleum"
+    ]
+  },
+  {
+    "id": "classic-toyosatomimi-no-miko-01",
+    "category": "lateNight",
+    "tier": "shadow",
+    "title": "丰聪夜行守心签",
+    "character": "丰聪耳神子",
+    "alias": "Toyosatomimi no Miko",
+    "inspiration": "东方Project经典角色扩展签",
+    "archetype": "守护型",
+    "quote": "十个人同时说话也能听见，可夜里不必把所有欲望都召来。",
+    "motif": "十人垂听、道场金光、欲望星点",
+    "summary": "今晚信息量容易过载。你听得见很多声音，但不需要全部回应。",
+    "advice": "睡前只保留一个最重要的请求，其余明日再听。耳朵也需要关门。",
+    "luckyColor": "祭典橙",
+    "luckyItem": "一副降噪耳机",
+    "tags": [
+      "十人垂听",
+      "信息减量",
+      "耳朵关门"
+    ],
+    "rarity": "uncommon",
+    "characterImage": "/images/characters/moegirl/063-toyosatomimi-no-miko.jpg",
+    "characterImageSource": "萌娘百科：丰聪耳神子",
+    "relatedSceneIds": [
+      "divine-spirit-mausoleum"
+    ]
+  },
+  {
+    "id": "classic-wakasagihime-01",
+    "category": "lateNight",
+    "tier": "middle-blessing",
+    "title": "若鹭姬夜行守心签",
+    "character": "若鹭姬",
+    "alias": "Wakasagihime",
+    "inspiration": "东方Project经典角色扩展签",
+    "archetype": "回响型",
+    "quote": "水面安静时，鱼尾也知道该慢慢摆。今晚别把湖搅浑。",
+    "motif": "雾之湖人鱼、细鳞、水面月光",
+    "summary": "今晚适合柔和收束。情绪一急，水面就浑；慢下来反而能看清底下的影子。",
+    "advice": "睡前少看刺激内容，给自己留一段像湖水一样平的时间。",
+    "luckyColor": "祭典橙",
+    "luckyItem": "一杯清水",
+    "tags": [
+      "湖水收束",
+      "鱼尾慢摆",
+      "别搅浑"
+    ],
+    "rarity": "uncommon",
+    "characterImage": "/images/characters/moegirl/064-wakasagihime.jpg",
+    "characterImageSource": "萌娘百科：若鹭姬",
+    "relatedSceneIds": [
+      "misty-lake"
+    ]
+  },
+  {
+    "id": "classic-kagerou-imaizumi-01",
+    "category": "study",
+    "tier": "shadow",
+    "title": "今泉静学回响签",
+    "character": "今泉影狼",
+    "alias": "Kagerou Imaizumi",
+    "inspiration": "东方Project经典角色扩展签",
+    "archetype": "回响型",
+    "quote": "月亮太圆的时候，毛发会自己闹起来。先把笔记压住，别让题目跟着满月乱跑。",
+    "motif": "满月、竹影、微微竖起的狼耳",
+    "summary": "今天的学习容易被旁边的声响带偏。影狼把脚步放得很轻，纸页边缘却还是翘起了一点。",
+    "advice": "找个不被打扰的角落，只处理一个章节；杂音来了，就当它从竹林外经过。",
+    "luckyColor": "星火金",
+    "luckyItem": "写好标题的笔记页",
+    "tags": [
+      "满月",
+      "收心",
+      "独处"
+    ],
+    "rarity": "common",
+    "characterImage": "/images/characters/moegirl/065-kagerou-imaizumi.jpg",
+    "characterImageSource": "萌娘百科：今泉影狼",
+    "relatedSceneIds": [
+      "human-village"
+    ]
+  },
+  {
+    "id": "classic-seiga-kaku-01",
+    "category": "wealth",
+    "tier": "secret",
+    "title": "霍青娥小财聚光签",
+    "character": "霍青娥",
+    "alias": "Seiga Kaku",
+    "inspiration": "东方Project经典角色扩展签",
+    "archetype": "观察型",
+    "quote": "墙不是只能正面推开，有时绕一笔账，反而看见暗门。",
+    "motif": "道教符、青色发簪、墙中暗门",
+    "summary": "财运带一点偏门灵感，但不适合贪快。适合重新看规则、合同和账目边角，找出被忽略的小路。",
+    "advice": "别急着下判断，先把条款和数字看全。能绕路，不代表可以乱闯。",
+    "luckyColor": "祭典橙",
+    "luckyItem": "简短记账清单",
+    "tags": [
+      "看清条款",
+      "另寻暗门",
+      "不乱闯"
+    ],
+    "rarity": "legendary",
+    "characterImage": "/images/characters/moegirl/066-seiga-kaku.jpg",
+    "characterImageSource": "萌娘百科：霍青娥",
+    "relatedSceneIds": [
+      "divine-spirit-mausoleum"
+    ]
+  },
+  {
+    "id": "classic-yatsuhashi-tsukumo-01",
+    "category": "love",
+    "tier": "shadow",
+    "title": "九十心灯微明签",
+    "character": "九十九八桥",
+    "alias": "Yatsuhashi Tsukumo",
+    "inspiration": "东方Project经典角色扩展签",
+    "archetype": "灵感型",
+    "quote": "琴弦先别绷太紧。八桥拨一下，藏着的话会顺着余音自己滑出来。",
+    "motif": "古琴弦、付丧神微光、斜放的纸签",
+    "summary": "今天适合用轻一点的方式靠近。太正式的开场会把气氛吓住，一句随手的问候反而更像真心。",
+    "advice": "给对方留一个能接住的话口，不必立刻把整首曲子弹完。",
+    "luckyColor": "月银",
+    "luckyItem": "一条认真回复的消息",
+    "tags": [
+      "温柔",
+      "回应",
+      "靠近"
+    ],
+    "rarity": "common",
+    "characterImage": "/images/characters/moegirl/067-yatsuhashi-tsukumo.jpg",
+    "characterImageSource": "萌娘百科：九十九八桥",
+    "relatedSceneIds": [
+      "myouren-temple"
+    ]
+  },
+  {
+    "id": "classic-benben-tsukumo-01",
+    "category": "love",
+    "tier": "middle-blessing",
+    "title": "九十心灯微明签",
+    "character": "九十九弁弁",
+    "alias": "Benben Tsukumo",
+    "inspiration": "东方Project经典角色扩展签",
+    "quote": "弁弁把拨片收进袖口：该说的话不用弹成大段，半个音也能让人回头。",
+    "motif": "琵琶拨片、旧木乐箱、轻响的弦",
+    "summary": "今天的关系不需要热闹助阵。把语气放慢一点，别急着追问，对方更容易听清你的意思。",
+    "advice": "回消息前停一拍，删掉多余解释，只留下最像你自己的那句。",
+    "luckyColor": "木纹金",
+    "luckyItem": "一枚小拨片",
+    "tags": [
+      "温柔",
+      "回应",
+      "靠近"
+    ],
+    "rarity": "common",
+    "characterImage": "/images/characters/moegirl/068-benben-tsukumo.jpg",
+    "characterImageSource": "萌娘百科：九十九弁弁",
+    "relatedSceneIds": [
+      "myouren-temple"
+    ]
+  },
+  {
+    "id": "classic-seija-kijin-01",
+    "category": "love",
+    "tier": "shadow",
+    "title": "鬼人心灯微明签",
+    "character": "鬼人正邪",
+    "alias": "Seija Kijin",
+    "inspiration": "东方Project经典角色扩展签",
+    "quote": "正邪把签纸倒过来读，反而读出一句老实话：别用逞强来试探喜欢你的人。",
+    "motif": "倒悬纸签、反转箭头、歪掉的茶杯",
+    "summary": "今天容易把好意听成挑衅，也容易把别扭当成保护色。先别急着反着来。",
+    "advice": "如果想靠近，就别故意绕远路；一句直话比十个反话陷阱省事。",
+    "luckyColor": "微故障粉紫",
+    "luckyItem": "倒放一次又摆正的杯子",
+    "tags": [
+      "温柔",
+      "回应",
+      "靠近"
+    ],
+    "rarity": "rare",
+    "characterImage": "/images/characters/moegirl/069-seija-kijin.jpg",
+    "characterImageSource": "萌娘百科：鬼人正邪",
+    "relatedSceneIds": [
+      "human-village"
+    ]
+  },
+  {
+    "id": "classic-mamizou-futatsuiwa-01",
+    "category": "social",
+    "tier": "middle-blessing",
+    "title": "二岩结界外出签",
+    "character": "二岩猯藏",
+    "alias": "Mamizou Futatsuiwa",
+    "inspiration": "东方Project经典角色扩展签",
+    "quote": "猯藏把烟斗一收，人群里多出三张熟脸。别慌，先分清谁是真的有事找你。",
+    "motif": "化狸烟雾、旧烟斗、会自己改字的路牌",
+    "summary": "今天的社交里有些热闹只是障眼法。你不必每一句寒暄都接住，挑可信的那几句就好。",
+    "advice": "出门前确认目的和退路，遇到临时邀约，先问清时间再答应。",
+    "luckyColor": "木纹金",
+    "luckyItem": "写着回程时间的纸条",
+    "tags": [
+      "边界",
+      "观察",
+      "外出"
+    ],
+    "rarity": "uncommon",
+    "characterImage": "/images/characters/moegirl/070-mamizou-futatsuiwa.jpg",
+    "characterImageSource": "萌娘百科：二岩猯藏",
+    "relatedSceneIds": [
+      "myouren-temple",
+      "human-village"
+    ]
+  },
+  {
+    "id": "classic-raiko-horikawa-01",
+    "category": "wealth",
+    "tier": "middle-blessing",
+    "title": "堀川小财聚光签",
+    "character": "堀川雷鼓",
+    "alias": "Raiko Horikawa",
+    "inspiration": "东方Project经典角色扩展签",
+    "archetype": "稳场型",
+    "quote": "雷鼓敲了两下空鼓，零钱在抽屉里跟着回声排队。先听漏掉的那一拍。",
+    "motif": "太鼓鼓面、回声、跳动的零钱影",
+    "summary": "今天适合查一查周期性花费。账目不必写得漂亮，把重复的鼓点找出来就够了。",
+    "advice": "关掉一个已经不用的订阅，或把常买的小东西记上三天。",
+    "luckyColor": "星尘黄",
+    "luckyItem": "简短记账清单",
+    "tags": [
+      "止损",
+      "记录",
+      "积累"
+    ],
+    "rarity": "common",
+    "characterImage": "/images/characters/moegirl/071-raiko-horikawa.jpg",
+    "characterImageSource": "萌娘百科：堀川雷鼓",
+    "relatedSceneIds": [
+      "myouren-temple"
+    ]
+  },
+  {
+    "id": "classic-sagume-kishin-01",
+    "category": "social",
+    "tier": "shadow",
+    "title": "稀神结界外出签",
+    "character": "稀神探女",
+    "alias": "Sagume Kishin",
+    "inspiration": "东方Project经典角色扩展签",
+    "quote": "探女把话停在舌尖，空气就先变了方向。今天别把没想好的话随手放出去。",
+    "motif": "月都羽饰、未出口的话、反向转动的风",
+    "summary": "今天一句轻飘飘的评价可能被听得很重。沉默不是退缩，是给局面留一点余白。",
+    "advice": "重要对话先写草稿，删掉会引发误会的半句，再开口。",
+    "luckyColor": "月白",
+    "luckyItem": "折过一次的草稿纸",
+    "tags": [
+      "边界",
+      "观察",
+      "外出"
+    ],
+    "rarity": "common",
+    "characterImage": "/images/characters/moegirl/072-sagume-kishin.jpg",
+    "characterImageSource": "萌娘百科：稀神探女",
+    "relatedSceneIds": [
+      "eientei"
+    ]
+  },
+  {
+    "id": "classic-ringo-01",
+    "category": "slacking",
+    "tier": "great-blessing",
+    "title": "铃瑚偷闲回血签",
+    "character": "铃瑚",
+    "alias": "Ringo",
+    "inspiration": "东方Project经典角色扩展签",
+    "quote": "铃瑚说团子要趁软吃，任务也别趁累硬啃。先把嘴里的那一口咽下去。",
+    "motif": "月兔团子、通信耳机、浅黄纸签",
+    "summary": "今天适合偷一小段明目张胆的闲。休息若有边界，就不会变成拖延的洞。",
+    "advice": "给自己二十分钟，把零食、茶和暂停时间都摆明白。",
+    "luckyColor": "星尘黄",
+    "luckyItem": "一串团子",
+    "tags": [
+      "回血",
+      "松弛",
+      "续航"
+    ],
+    "rarity": "common",
+    "characterImage": "/images/characters/moegirl/073-ringo.png",
+    "characterImageSource": "萌娘百科：铃瑚",
+    "relatedSceneIds": [
+      "eientei"
+    ]
+  },
+  {
+    "id": "classic-seiran-01",
+    "category": "social",
+    "tier": "small-blessing",
+    "title": "清兰结界外出签",
+    "character": "清兰",
+    "alias": "Seiran",
+    "inspiration": "东方Project经典角色扩展签",
+    "archetype": "灵感型",
+    "quote": "清兰的耳机里全是杂讯。先别冲进频道，等信号稳了再回话。",
+    "motif": "月兔耳机、蓝色弹痕、断续通信",
+    "summary": "今天适合减少误会源。消息太多时，先确认对方真正问的是什么。",
+    "advice": "把要回复的人按紧急程度排一下，别在噪声里同时应付所有频道。",
+    "luckyColor": "博丽朱红",
+    "luckyItem": "静音十分钟的耳机",
+    "tags": [
+      "边界",
+      "观察",
+      "外出"
+    ],
+    "rarity": "common",
+    "characterImage": "/images/characters/moegirl/074-seiran.jpg",
+    "characterImageSource": "萌娘百科：清兰",
+    "relatedSceneIds": [
+      "eientei"
+    ]
+  },
+  {
+    "id": "classic-sekibanki-01",
+    "category": "social",
+    "tier": "middle-blessing",
+    "title": "赤蛮奇结界外出签",
+    "character": "赤蛮奇",
+    "alias": "Sekibanki",
+    "inspiration": "东方Project经典角色扩展签",
+    "quote": "赤蛮奇的头先一步飘到门口，又若无其事地回来。别让心思跑得比身体还远。",
+    "motif": "飞头影子、黄昏小巷、歪掉的围巾",
+    "summary": "今天容易过度预演别人怎么看你。真实场面通常没脑内剧场那么吵。",
+    "advice": "到场后先做一件具体小事，比如倒水、落座、打招呼，让自己回到身体里。",
+    "luckyColor": "绯月红",
+    "luckyItem": "整理好的围巾",
+    "tags": [
+      "边界",
+      "观察",
+      "外出"
+    ],
+    "rarity": "common",
+    "characterImage": "/images/characters/moegirl/075-sekibanki.jpg",
+    "characterImageSource": "萌娘百科：赤蛮奇",
+    "relatedSceneIds": [
+      "human-village"
+    ]
+  },
+  {
+    "id": "classic-doremy-sweet-01",
+    "category": "lateNight",
+    "tier": "middle-blessing",
+    "title": "哆来夜行守心签",
+    "character": "哆来咪·苏伊特",
+    "alias": "Doremy Sweet",
+    "inspiration": "东方Project经典角色扩展签",
+    "quote": "哆来咪把梦境团成软球，塞回枕边。今晚别追着每个念头跑，它们会自己换门牌。",
+    "motif": "梦魂、枕边小门、淡紫色睡意",
+    "summary": "今晚的情绪像梦一样会变形。越盯着它看，越容易把影子看成急事。",
+    "advice": "睡前写下一个明天再处理的问题，剩下的交给被褥和黑夜。",
+    "luckyColor": "丝线蓝紫",
+    "luckyItem": "一杯温水",
+    "tags": [
+      "夜间",
+      "收束",
+      "自护"
+    ],
+    "rarity": "rare",
+    "characterImage": "/images/characters/moegirl/076-doremy-sweet.png",
+    "characterImageSource": "萌娘百科：哆来咪·苏伊特",
+    "relatedSceneIds": [
+      "eientei"
+    ]
+  },
+  {
+    "id": "classic-shinmyoumaru-sukuna-01",
+    "category": "wealth",
+    "tier": "small-blessing",
+    "title": "少名小财聚光签",
+    "character": "少名针妙丸",
+    "alias": "Shinmyoumaru Sukuna",
+    "inspiration": "东方Project经典角色扩展签",
+    "quote": "针妙丸举起小槌，零钱罐发出很小但很得意的一声响。小数目也算数。",
+    "motif": "万宝槌、倒扣茶碗、小小零钱罐",
+    "summary": "今天适合从小处补财运。别嫌一笔节省太薄，几枚硬币聚在一起也会吵醒抽屉。",
+    "advice": "给常用钱包或支付账户做一次小整理，把零散余额归到一个地方。",
+    "luckyColor": "星火金",
+    "luckyItem": "零钱罐",
+    "tags": [
+      "止损",
+      "记录",
+      "积累"
+    ],
+    "rarity": "uncommon",
+    "characterImage": "/images/characters/moegirl/077-shinmyoumaru-sukuna.jpg",
+    "characterImageSource": "萌娘百科：少名针妙丸",
+    "relatedSceneIds": [
+      "human-village"
+    ]
+  },
+  {
+    "id": "classic-clownpiece-01",
+    "category": "social",
+    "tier": "middle-blessing",
+    "title": "克劳结界外出签",
+    "character": "克劳恩皮丝",
+    "alias": "Clownpiece",
+    "inspiration": "东方Project经典角色扩展签",
+    "archetype": "守护型",
+    "quote": "克劳恩皮丝把火把举得太高，大家的影子都开始跳舞。热闹可以有，别把屋顶点着。",
+    "motif": "地狱火把、星条灯影、乱跳的影子",
+    "summary": "今天的社交运很亮，也很容易过火。你可以带动气氛，但要留意谁已经开始退后半步。",
+    "advice": "开玩笑前看一眼对方反应；气氛升温时，主动给大家留个台阶。",
+    "luckyColor": "绯月红",
+    "luckyItem": "一盏小夜灯",
+    "tags": [
+      "边界",
+      "观察",
+      "外出"
+    ],
+    "rarity": "common",
+    "characterImage": "/images/characters/moegirl/078-clownpiece.jpg",
+    "characterImageSource": "萌娘百科：克劳恩皮丝",
+    "relatedSceneIds": [
+      "eientei"
+    ]
+  },
+  {
+    "id": "classic-hecatia-lapislazuli-01",
+    "category": "wealth",
+    "tier": "small-blessing",
+    "title": "赫卡小财聚光签",
+    "character": "赫卡提亚·拉碧斯拉祖利",
+    "alias": "Hecatia Lapislazuli",
+    "inspiration": "东方Project经典角色扩展签",
+    "archetype": "稳场型",
+    "quote": "赫卡提亚把三个月亮摆在桌上：花钱、存钱、想买但先不买，各有各的盘子。",
+    "motif": "三色月球、地狱灯架、分开的账盘",
+    "summary": "今天适合给钱分区。混在一起的预算会互相串门，最后谁都说不清自己去了哪。",
+    "advice": "把本周可花的钱单独列出来，别让愿望清单直接碰到余额。",
+    "luckyColor": "月夜紫",
+    "luckyItem": "分栏账本",
+    "tags": [
+      "止损",
+      "记录",
+      "积累"
+    ],
+    "rarity": "epic",
+    "characterImage": "/images/characters/moegirl/079-hecatia-lapislazuli.jpg",
+    "characterImageSource": "萌娘百科：赫卡提亚·拉碧斯拉祖利",
+    "relatedSceneIds": [
+      "eientei"
+    ]
+  },
+  {
+    "id": "classic-eternity-larva-01",
+    "category": "social",
+    "tier": "great-blessing",
+    "title": "爱塔结界外出签",
+    "character": "爱塔妮缇拉尔瓦",
+    "alias": "Eternity Larva",
+    "inspiration": "东方Project经典角色扩展签",
+    "archetype": "突进型",
+    "quote": "拉尔瓦停在叶背上，翅粉把日程蹭亮了一角。小小的邀请，可能就是今天的顺风。",
+    "motif": "蝶翼鳞粉、嫩叶、夏日小风",
+    "summary": "今天适合接受轻巧的社交。别把每次见面都想成任务，有些关系只是顺路晒一会儿太阳。",
+    "advice": "答应一个低负担的邀约，时间不要拉太长，开心就及时收翅。",
+    "luckyColor": "疾风墨青",
+    "luckyItem": "叶形书签",
+    "tags": [
+      "边界",
+      "观察",
+      "外出"
+    ],
+    "rarity": "common",
+    "characterImage": "/images/characters/moegirl/080-eternity-larva.jpg",
+    "characterImageSource": "萌娘百科：爱塔妮缇拉尔瓦",
+    "relatedSceneIds": [
+      "sunflower-field"
+    ]
+  },
+  {
+    "id": "classic-nemuno-sakata-01",
+    "category": "slacking",
+    "tier": "great-blessing",
+    "title": "坂田偷闲回血签",
+    "character": "坂田合欢",
+    "alias": "Nemuno Sakata",
+    "inspiration": "东方Project经典角色扩展签",
+    "archetype": "观察型",
+    "quote": "合欢把山刀靠在门边：休息就休息，别一边躺着一边惦记山路尽头。",
+    "motif": "山姥小屋、柴火、靠墙的山刀",
+    "summary": "今天需要粗糙一点的放松。别把休息也安排得像考核，给身体一点真正没人催的时间。",
+    "advice": "离开屏幕半小时，做一件手上有触感的事：洗杯子、叠衣服，或者只是坐着。",
+    "luckyColor": "莲辉金",
+    "luckyItem": "一杯热茶",
+    "tags": [
+      "回血",
+      "松弛",
+      "续航"
+    ],
+    "rarity": "common",
+    "characterImage": "/images/characters/moegirl/081-nemuno-sakata.jpg",
+    "characterImageSource": "萌娘百科：坂田合欢",
+    "relatedSceneIds": [
+      "moriya-shrine"
+    ]
+  },
+  {
+    "id": "classic-junko-01",
+    "category": "slacking",
+    "tier": "shadow",
+    "title": "纯狐偷闲回血签",
+    "character": "纯狐",
+    "alias": "Junko",
+    "inspiration": "东方Project经典角色扩展签",
+    "quote": "纯狐把杂念一层层剥掉，只剩很亮的一点。休息也可以这样，别让噪声跟进来。",
+    "motif": "纯白月光、被剥净的符纸、寂静的月都边缘",
+    "summary": "今天适合把休息做得干净一点。不是躲开事情，而是暂时不让多余情绪继续污染你。",
+    "advice": "关掉会刺激你的信息源，留一段没有解释、没有回应的空白。",
+    "luckyColor": "月白",
+    "luckyItem": "一页空白纸",
+    "tags": [
+      "回血",
+      "松弛",
+      "续航"
+    ],
+    "rarity": "epic",
+    "characterImage": "/images/characters/moegirl/082-junko.jpg",
+    "characterImageSource": "萌娘百科：纯狐",
+    "relatedSceneIds": [
+      "eientei"
+    ]
+  },
+  {
+    "id": "classic-narumi-yatadera-01",
+    "category": "slacking",
+    "tier": "small-blessing",
+    "title": "矢田偷闲回血签",
+    "character": "矢田寺成美",
+    "alias": "Narumi Yatadera",
+    "inspiration": "东方Project经典角色扩展签",
+    "quote": "成美站在雪里的时间太久，连地藏围巾都学会了偷懒。你也可以慢慢热起来。",
+    "motif": "雪地藏、红围巾、魔法森林边的石阶",
+    "summary": "今天的松弛来自不急着启动。身体先暖，脑袋后面自然会跟上。",
+    "advice": "先做一件很小的准备：倒水、开灯、披外套。别一醒来就逼自己冲刺。",
+    "luckyColor": "冷银蓝",
+    "luckyItem": "暖手杯",
+    "tags": [
+      "回血",
+      "松弛",
+      "续航"
+    ],
+    "rarity": "common",
+    "characterImage": "/images/characters/moegirl/083-narumi-yatadera.jpg",
+    "characterImageSource": "萌娘百科：矢田寺成美",
+    "relatedSceneIds": [
+      "forest-of-magic"
+    ]
+  },
+  {
+    "id": "classic-satono-nishida-01",
+    "category": "lateNight",
+    "tier": "secret",
+    "title": "尔子夜行守心签",
+    "character": "尔子田里乃",
+    "alias": "Satono Nishida",
+    "inspiration": "东方Project经典角色扩展签",
+    "archetype": "稳场型",
+    "quote": "里乃在背后轻轻踏一步，心里的门就吱呀开了。今晚别让旧念头趁机排队进屋。",
+    "motif": "后户、竹叶舞步、被掀开的夜色",
+    "summary": "今晚容易被看不见的情绪推一把。它不一定坏，只是来得太靠后，声音也太近。",
+    "advice": "睡前别复盘整天的人际细节，挑一个念头写下，就把门合上。",
+    "luckyColor": "能乐青紫",
+    "luckyItem": "一杯温水",
+    "tags": [
+      "夜间",
+      "收束",
+      "自护"
+    ],
+    "rarity": "legendary",
+    "characterImage": "/images/characters/moegirl/084-satono-nishida.jpg",
+    "characterImageSource": "萌娘百科：尔子田里乃",
+    "relatedSceneIds": [
+      "hakurei"
+    ]
+  },
+  {
+    "id": "classic-mai-teireida-01",
+    "category": "social",
+    "tier": "middle-blessing",
+    "title": "丁礼结界外出签",
+    "character": "丁礼田舞",
+    "alias": "Mai Teireida",
+    "inspiration": "东方Project经典角色扩展签",
+    "quote": "舞在你背后跺了一下脚，场面忽然热闹。先看清节拍，再跟着进去。",
+    "motif": "后户舞步、冬青叶、突然亮起的地板",
+    "summary": "今天适合参与人群，但别被第一阵起哄带走。真正适合你的节奏会慢半拍出现。",
+    "advice": "加入话题前先听两轮，找到能自然接上的位置再开口。",
+    "luckyColor": "山雾青",
+    "luckyItem": "一张节目单",
+    "tags": [
+      "边界",
+      "观察",
+      "外出"
+    ],
+    "rarity": "common",
+    "characterImage": "/images/characters/moegirl/085-mai-teireida.jpg",
+    "characterImageSource": "萌娘百科：丁礼田舞",
+    "relatedSceneIds": [
+      "hakurei"
+    ]
+  },
+  {
+    "id": "classic-okina-matara-01",
+    "category": "study",
+    "tier": "small-blessing",
+    "title": "摩多静学回响签",
+    "character": "摩多罗隐岐奈",
+    "alias": "Okina Matara",
+    "inspiration": "东方Project经典角色扩展签",
+    "quote": "隐岐奈没有敲门，门已经在你椅背后。今天的问题，入口可能不在正面。",
+    "motif": "椅背后的门、季节符、暗处的神座",
+    "summary": "今天适合换一个切入点学习。卡住的地方别硬撞，去看目录、例题或反面条件。",
+    "advice": "把难题从最后一步往前推，先找出哪扇门其实已经半开。",
+    "luckyColor": "境界紫",
+    "luckyItem": "折角的目录页",
+    "tags": [
+      "专注",
+      "整理",
+      "推进"
+    ],
+    "rarity": "epic",
+    "characterImage": "/images/characters/moegirl/086-okina-matara.png",
+    "characterImageSource": "萌娘百科：摩多罗隐岐奈",
+    "relatedSceneIds": [
+      "hakurei"
+    ]
+  },
+  {
+    "id": "classic-eika-ebisu-01",
+    "category": "study",
+    "tier": "great-blessing",
+    "title": "戎璎花静学回响签",
+    "character": "戎璎花",
+    "alias": "Eika Ebisu",
+    "inspiration": "东方Project经典角色扩展签",
+    "archetype": "观察型",
+    "quote": "璎花在河滩上叠石头，少一块都不肯算赢。今天的进步也要一层一层放。",
+    "motif": "赛河原石塔、小手印、河边湿纸签",
+    "summary": "今天适合做基础题和重复练习。看起来慢，但每一块石头都会让后面的结构稳一点。",
+    "advice": "别急着跳到大题，先把一个基础动作练到不用多想。",
+    "luckyColor": "星尘黄",
+    "luckyItem": "写好标题的笔记页",
+    "tags": [
+      "专注",
+      "整理",
+      "推进"
+    ],
+    "rarity": "epic",
+    "characterImage": "/images/characters/moegirl/087-eika-ebisu.jpg",
+    "characterImageSource": "萌娘百科：戎璎花",
+    "relatedSceneIds": [
+      "sanzu-river"
+    ]
+  },
+  {
+    "id": "classic-urumi-ushizaki-01",
+    "category": "love",
+    "tier": "middle-blessing",
+    "title": "牛崎心灯微明签",
+    "character": "牛崎润美",
+    "alias": "Urumi Ushizaki",
+    "inspiration": "东方Project经典角色扩展签",
+    "quote": "润美抱着沉甸甸的石婴站在河边：想靠近谁，先确认自己抱着的不是误会。",
+    "motif": "石婴、三途河岸、湿重的篮子",
+    "summary": "今天的关系里有一点重量。对方未必不懂你，只是你带去的情绪太沉，话还没开口就先压住了水面。",
+    "advice": "把请求说清楚，别让对方猜你是在撒娇、求助，还是单纯累了。",
+    "luckyColor": "丝线蓝紫",
+    "luckyItem": "一条认真回复的消息",
+    "tags": [
+      "温柔",
+      "回应",
+      "靠近"
+    ],
+    "rarity": "uncommon",
+    "characterImage": "/images/characters/moegirl/088-urumi-ushizaki.png",
+    "characterImageSource": "萌娘百科：牛崎润美",
+    "relatedSceneIds": [
+      "sanzu-river"
+    ]
+  },
+  {
+    "id": "classic-kutaka-niwatari-01",
+    "category": "slacking",
+    "tier": "small-blessing",
+    "title": "庭渡偷闲回血签",
+    "character": "庭渡久侘歌",
+    "alias": "Kutaka Niwatari",
+    "inspiration": "东方Project经典角色扩展签",
+    "archetype": "守护型",
+    "quote": "久侘歌在关口认真点名：没睡够的人，今天不准硬闯地狱入口。",
+    "motif": "鸡冠神使、关口木牌、清晨第一声鸣叫",
+    "summary": "今天适合把休息当成通行检查。状态不齐就先补齐，别拿疲惫去换一张勉强通关的票。",
+    "advice": "给自己设一个最低恢复线：吃饭、闭眼、离屏，少一项就先别加新任务。",
+    "luckyColor": "星尘黄",
+    "luckyItem": "十分钟散步",
+    "tags": [
+      "回血",
+      "松弛",
+      "续航"
+    ],
+    "rarity": "rare",
+    "characterImage": "/images/characters/moegirl/089-kutaka-niwatari.jpg",
+    "characterImageSource": "萌娘百科：庭渡久侘歌",
+    "relatedSceneIds": [
+      "sanzu-river"
+    ]
+  },
+  {
+    "id": "classic-keiki-haniyasushin-01",
+    "category": "love",
+    "tier": "great-blessing",
+    "title": "埴安心灯微明签",
+    "character": "埴安神袿姬",
+    "alias": "Keiki Haniyasushin",
+    "inspiration": "东方Project经典角色扩展签",
+    "quote": "袿姬捏出一尊小偶，又用指腹抹平裂缝。关系也是泥土，太急会留下指印。",
+    "motif": "埴轮、陶土手印、未干的偶像",
+    "summary": "今天适合慢慢修补关系。与其追求立刻亲密，不如先把边缘不平的地方压顺。",
+    "advice": "主动补一句解释或感谢，不要等对方先指出裂缝。",
+    "luckyColor": "木纹金",
+    "luckyItem": "一小块陶土色便签",
+    "tags": [
+      "温柔",
+      "回应",
+      "靠近"
+    ],
+    "rarity": "rare",
+    "characterImage": "/images/characters/moegirl/090-keiki-haniyasushin.jpg",
+    "characterImageSource": "萌娘百科：埴安神袿姬",
+    "relatedSceneIds": [
+      "sanzu-river"
+    ]
+  },
+  {
+    "id": "classic-saki-kurokoma-01",
+    "category": "love",
+    "tier": "small-blessing",
+    "title": "骊驹心灯微明签",
+    "character": "骊驹早鬼",
+    "alias": "Saki Kurokoma",
+    "inspiration": "东方Project经典角色扩展签",
+    "quote": "早鬼已经跑到坡顶回头喊你。喜欢不是赛跑，但拖太久也会让尘土盖住路。",
+    "motif": "黑驹蹄印、畜生界风尘、扬起的外套",
+    "summary": "今天适合直接一点表达好感。别把每句话都训练成完美姿势，真诚本来就会带一点喘气声。",
+    "advice": "如果想约见面，就给出时间和地点；别只丢一句模糊的“改天”。",
+    "luckyColor": "余烬红",
+    "luckyItem": "写好时间的便签",
+    "tags": [
+      "温柔",
+      "回应",
+      "靠近"
+    ],
+    "rarity": "common",
+    "characterImage": "/images/characters/moegirl/091-saki-kurokoma.png",
+    "characterImageSource": "萌娘百科：骊驹早鬼",
+    "relatedSceneIds": [
+      "sanzu-river"
+    ]
+  },
+  {
+    "id": "classic-mayumi-joutouguu-01",
+    "category": "wealth",
+    "tier": "small-blessing",
+    "title": "杖刀小财聚光签",
+    "character": "杖刀偶磨弓",
+    "alias": "Mayumi Joutouguu",
+    "inspiration": "东方Project经典角色扩展签",
+    "archetype": "观察型",
+    "quote": "磨弓把埴轮队列重新排齐，少收一枚也要记名。今天的钱，先列队再出发。",
+    "motif": "埴轮兵队、长弓、整齐排开的账目",
+    "summary": "今天适合做预算排阵。散乱的小支出一旦站好队，哪一项越界会变得很明显。",
+    "advice": "把本周支出分成必要、可延后、可取消三列，先删最吵的那一列。",
+    "luckyColor": "山雾青",
+    "luckyItem": "简短记账清单",
+    "tags": [
+      "止损",
+      "记录",
+      "积累"
+    ],
+    "rarity": "uncommon",
+    "characterImage": "/images/characters/moegirl/092-mayumi-joutouguu.jpg",
+    "characterImageSource": "萌娘百科：杖刀偶磨弓",
+    "relatedSceneIds": [
+      "sanzu-river"
+    ]
+  },
+  {
+    "id": "classic-yachie-kicchou-01",
+    "category": "wealth",
+    "tier": "small-blessing",
+    "title": "吉吊小财聚光签",
+    "character": "吉吊八千慧",
+    "alias": "Yachie Kicchou",
+    "inspiration": "东方Project经典角色扩展签",
+    "archetype": "守护型",
+    "quote": "八千慧把算盘推到你面前，笑得很稳。别急着点头，先看清条件写在哪里。",
+    "motif": "龟甲纹、畜生界账册、慢慢合上的扇子",
+    "summary": "今天的财务判断要防被话术牵着走。看似体贴的安排，也可能把主动权悄悄挪走。",
+    "advice": "涉及钱和承诺时，把规则写下来；口头约定先别当成已经落袋。",
+    "luckyColor": "境界紫",
+    "luckyItem": "简短记账清单",
+    "tags": [
+      "止损",
+      "记录",
+      "积累"
+    ],
+    "rarity": "epic",
+    "characterImage": "/images/characters/moegirl/093-yachie-kicchou.jpg",
+    "characterImageSource": "萌娘百科：吉吊八千慧",
+    "relatedSceneIds": [
+      "sanzu-river"
+    ]
+  },
+  {
+    "id": "classic-mike-goutokuji-01",
+    "category": "wealth",
+    "tier": "small-blessing",
+    "title": "豪德小财聚光签",
+    "character": "豪德寺三花",
+    "alias": "Mike Goutokuji",
+    "inspiration": "东方Project经典角色扩展签",
+    "quote": "三花招了招手，来的却是打折券和一张小票。好运也要会算账。",
+    "motif": "招财猫手、三色花纹、小票纸带",
+    "summary": "今天可能遇到看起来划算的小诱惑。便宜不是坏事，但只买真正用得上的。",
+    "advice": "下单前问自己一次：如果不打折，我还会买吗？",
+    "luckyColor": "星火金",
+    "luckyItem": "折好的小票",
+    "tags": [
+      "止损",
+      "记录",
+      "积累"
+    ],
+    "rarity": "common",
+    "characterImage": "/images/characters/moegirl/094-mike-goutokuji.jpg",
+    "characterImageSource": "萌娘百科：豪德寺三花",
+    "relatedSceneIds": [
+      "myouren-temple",
+      "human-village"
+    ]
+  },
+  {
+    "id": "classic-takane-yamashiro-01",
+    "category": "lateNight",
+    "tier": "great-blessing",
+    "title": "山城夜行守心签",
+    "character": "山城高岭",
+    "alias": "Takane Yamashiro",
+    "inspiration": "东方Project经典角色扩展签",
+    "archetype": "守护型",
+    "quote": "高岭把卡牌摊在夜摊灯下，价码写得很小。今晚别在困意里谈交换。",
+    "motif": "山童卡牌、夜摊灯、湿润的河童工具箱",
+    "summary": "今晚不适合临时做决定。疲惫会让条件看起来简单，其实边角还藏着小字。",
+    "advice": "任何需要付款、承诺或换资源的事，先放到明早再看一遍。",
+    "luckyColor": "博丽朱红",
+    "luckyItem": "一杯温水",
+    "tags": [
+      "夜间",
+      "收束",
+      "自护"
+    ],
+    "rarity": "epic",
+    "characterImage": "/images/characters/moegirl/095-takane-yamashiro.png",
+    "characterImageSource": "萌娘百科：山城高岭",
+    "relatedSceneIds": [
+      "moriya-shrine"
+    ]
+  },
+  {
+    "id": "classic-sannyo-komakusa-01",
+    "category": "study",
+    "tier": "middle-blessing",
+    "title": "驹草静学回响签",
+    "character": "驹草山如",
+    "alias": "Sannyo Komakusa",
+    "inspiration": "东方Project经典角色扩展签",
+    "quote": "山如吐出一圈烟，牌桌上的人都安静了。读题也一样，先别急着下注。",
+    "motif": "高原烟草、牌桌、山风吹皱的纸签",
+    "summary": "今天适合慢读和判断题意。看似熟悉的题，可能在最后一句换了牌面。",
+    "advice": "动笔前先圈出限制条件，确认自己没有被第一眼的熟悉感骗到。",
+    "luckyColor": "山雾青",
+    "luckyItem": "一支红笔",
+    "tags": [
+      "专注",
+      "整理",
+      "推进"
+    ],
+    "rarity": "common",
+    "characterImage": "/images/characters/moegirl/096-sannyo-komakusa.png",
+    "characterImageSource": "萌娘百科：驹草山如",
+    "relatedSceneIds": [
+      "moriya-shrine"
+    ]
+  },
+  {
+    "id": "classic-misumaru-tamatsukuri-01",
+    "category": "social",
+    "tier": "small-blessing",
+    "title": "玉造结界外出签",
+    "character": "玉造魅须丸",
+    "alias": "Misumaru Tamatsukuri",
+    "inspiration": "东方Project经典角色扩展签",
+    "archetype": "稳场型",
+    "quote": "魅须丸把勾玉串好，少一枚都能看出来。今天的人际边界，也要一颗颗数清。",
+    "motif": "勾玉串、矿石微光、掌心里的圆孔",
+    "summary": "今天适合确认关系里的位置。谁能靠近一点，谁需要保持距离，答案其实已经在你手心转了很久。",
+    "advice": "答应别人之前先看自己的余量，不要为了显得合群把整串勾玉拆散。",
+    "luckyColor": "碎晶虹彩",
+    "luckyItem": "一枚圆孔珠子",
+    "tags": [
+      "边界",
+      "观察",
+      "外出"
+    ],
+    "rarity": "rare",
+    "characterImage": "/images/characters/moegirl/097-misumaru-tamatsukuri.png",
+    "characterImageSource": "萌娘百科：玉造魅须丸",
+    "relatedSceneIds": [
+      "moriya-shrine"
+    ]
+  },
+  {
+    "id": "classic-megumu-iizunamaru-01",
+    "category": "slacking",
+    "tier": "middle-blessing",
+    "title": "饭纲偷闲回血签",
+    "character": "饭纲丸龙",
+    "alias": "Megumu Iizunamaru",
+    "inspiration": "东方Project经典角色扩展签",
+    "quote": "龙把报纸卷成筒，敲了敲山风：情报会自己追人，休息时别再替它跑腿。",
+    "motif": "天狗报纸、山风、长鼻影子",
+    "summary": "今天适合暂时离开消息流。不是所有新鲜事都需要立刻知道，有些风吹过去就算了。",
+    "advice": "给通知设一段安静时间，休息结束后再统一处理。",
+    "luckyColor": "疾风墨青",
+    "luckyItem": "反扣的手机",
+    "tags": [
+      "回血",
+      "松弛",
+      "续航"
+    ],
+    "rarity": "rare",
+    "characterImage": "/images/characters/moegirl/098-megumu-iizunamaru.jpg",
+    "characterImageSource": "萌娘百科：饭纲丸龙",
+    "relatedSceneIds": [
+      "moriya-shrine"
+    ]
+  },
+  {
+    "id": "classic-momoyo-himemushi-01",
+    "category": "study",
+    "tier": "great-blessing",
+    "title": "姬虫静学回响签",
+    "character": "姬虫百百世",
+    "alias": "Momoyo Himemushi",
+    "inspiration": "东方Project经典角色扩展签",
+    "quote": "百百世在矿洞里啃出一条路。难题也一样，别绕着怕，先咬第一口。",
+    "motif": "矿洞晶石、蜈蚣足音、被咬开的岩缝",
+    "summary": "今天适合啃硬内容。开头会慢，但只要进入纹理，后面会自己露出通道。",
+    "advice": "把最难的一节拆成三个小口，先完成第一口，不要评判速度。",
+    "luckyColor": "碎晶虹彩",
+    "luckyItem": "粗铅笔",
+    "tags": [
+      "专注",
+      "整理",
+      "推进"
+    ],
+    "rarity": "rare",
+    "characterImage": "/images/characters/moegirl/099-momoyo-himemushi.png",
+    "characterImageSource": "萌娘百科：姬虫百百世",
+    "relatedSceneIds": [
+      "moriya-shrine"
+    ]
+  },
+  {
+    "id": "classic-yuuma-toutetsu-01",
+    "category": "slacking",
+    "tier": "great-blessing",
+    "title": "饕餮偷闲回血签",
+    "character": "饕餮尤魔",
+    "alias": "Yuuma Toutetsu",
+    "inspiration": "东方Project经典角色扩展签",
+    "archetype": "灵感型",
+    "quote": "尤魔看见什么都想吞下去，连休息也差点被她当点心。今天少吃一点信息。",
+    "motif": "黑色油潭、饕餮勺、被咬缺的纸签",
+    "summary": "今天最需要管住的是摄入。视频、消息、零食和烦恼混在一起，会让人越歇越累。",
+    "advice": "休息时只选一种放松方式，别边刷边吃边想事情。",
+    "luckyColor": "能乐青紫",
+    "luckyItem": "十分钟散步",
+    "tags": [
+      "回血",
+      "松弛",
+      "续航"
+    ],
+    "rarity": "rare",
+    "characterImage": "/images/characters/moegirl/100-yuuma-toutetsu.jpg",
+    "characterImageSource": "萌娘百科：饕餮尤魔",
+    "relatedSceneIds": [
+      "palace-of-earth-spirits"
+    ]
+  },
+  {
+    "id": "classic-chimata-tenkyuu-01",
+    "category": "wealth",
+    "tier": "middle-blessing",
+    "title": "天弓小财聚光签",
+    "character": "天弓千亦",
+    "alias": "Chimata Tenkyuu",
+    "inspiration": "东方Project经典角色扩展签",
+    "archetype": "突进型",
+    "quote": "千亦把摊位摆在彩虹尽头：交换之前，先确认你交出去的真是多余之物。",
+    "motif": "虹色市场、能力卡牌、摊位价签",
+    "summary": "今天适合整理交换和消费边界。热闹的市场会让所有东西都显得刚好需要。",
+    "advice": "买东西或答应交换前，先列出你会失去什么。",
+    "luckyColor": "星火金",
+    "luckyItem": "简短记账清单",
+    "tags": [
+      "止损",
+      "记录",
+      "积累"
+    ],
+    "rarity": "epic",
+    "characterImage": "/images/characters/moegirl/101-chimata-tenkyuu.png",
+    "characterImageSource": "萌娘百科：天弓千亦",
+    "relatedSceneIds": [
+      "human-village"
+    ]
+  },
+  {
+    "id": "classic-son-biten-01",
+    "category": "wealth",
+    "tier": "middle-blessing",
+    "title": "孙美天小财聚光签",
+    "character": "孙美天",
+    "alias": "Son Biten",
+    "inspiration": "东方Project经典角色扩展签",
+    "archetype": "灵感型",
+    "quote": "美天把桃核往空中一抛，账本差点跟着翻跟头。别让兴头替你付钱。",
+    "motif": "桃核、山风、翻到一半的账页",
+    "summary": "今天容易为了好玩多花一点。快乐值得留预算，但临时起意要有上限。",
+    "advice": "给娱乐支出设一个小封顶，到了就收手，别和自己的兴致讨价还价。",
+    "luckyColor": "冷银蓝",
+    "luckyItem": "简短记账清单",
+    "tags": [
+      "止损",
+      "记录",
+      "积累"
+    ],
+    "rarity": "epic",
+    "characterImage": "/images/characters/moegirl/102-son-biten.png",
+    "characterImageSource": "萌娘百科：孙美天",
+    "relatedSceneIds": [
+      "sanzu-river"
+    ]
+  },
+  {
+    "id": "classic-chiyari-tenkajin-01",
+    "category": "wealth",
+    "tier": "small-blessing",
+    "title": "天火小财聚光签",
+    "character": "天火人血枪",
+    "alias": "Chiyari Tenkajin",
+    "inspiration": "东方Project经典角色扩展签",
+    "quote": "血枪把火星拨进水洼，滋的一声就没了。冲动消费也是这样，亮得快，冷得也快。",
+    "motif": "血色火星、湿地水洼、烫卷的纸角",
+    "summary": "今天不适合被强烈欲望牵着结账。越是马上想要，越该等一等。",
+    "advice": "把想买的东西放进清单，至少隔一晚再决定。",
+    "luckyColor": "余烬红",
+    "luckyItem": "冷掉的茶杯",
+    "tags": [
+      "止损",
+      "记录",
+      "积累"
+    ],
+    "rarity": "uncommon",
+    "characterImage": "/images/characters/moegirl/103-chiyari-tenkajin.jpg",
+    "characterImageSource": "萌娘百科：天火人血枪",
+    "relatedSceneIds": [
+      "sanzu-river"
+    ]
+  },
+  {
+    "id": "classic-enoko-mitsugashira-01",
+    "category": "love",
+    "tier": "middle-blessing",
+    "title": "三头心灯微明签",
+    "character": "三头慧之子",
+    "alias": "Enoko Mitsugashira",
+    "inspiration": "东方Project经典角色扩展签",
+    "quote": "慧之子耳朵动了三下，听见你没说出口的那句。别让对方只猜到一半。",
+    "motif": "兽耳、三道足迹、林间回头的影子",
+    "summary": "今天适合把暧昧的话说得清楚些。含糊能留余地，也会留下误会。",
+    "advice": "表达关心时带上具体动作，比如约时间、递东西、说明原因。",
+    "luckyColor": "庭院青绿",
+    "luckyItem": "写着地点的小纸条",
+    "tags": [
+      "温柔",
+      "回应",
+      "靠近"
+    ],
+    "rarity": "common",
+    "characterImage": "/images/characters/moegirl/104-enoko-mitsugashira.png",
+    "characterImageSource": "萌娘百科：三头慧之子",
+    "relatedSceneIds": [
+      "sanzu-river"
+    ]
+  },
+  {
+    "id": "classic-hisami-yomotsu-01",
+    "category": "social",
+    "tier": "shadow",
+    "title": "豫母结界外出签",
+    "character": "豫母都日狭美",
+    "alias": "Hisami Yomotsu",
+    "inspiration": "东方Project经典角色扩展签",
+    "archetype": "观察型",
+    "quote": "日狭美在黄泉路口笑着招手。有人太热情时，先确认他是不是正把你往岔路带。",
+    "motif": "黄泉路标、藤蔓花、弯到看不见尽头的小径",
+    "summary": "今天社交里要留意过度邀请。亲切不等于安全，熟络也不等于你必须跟上。",
+    "advice": "不确定的邀约先说“我看一下安排”，把决定权留回自己手里。",
+    "luckyColor": "微故障粉紫",
+    "luckyItem": "清晰的路线图",
+    "tags": [
+      "边界",
+      "观察",
+      "外出"
+    ],
+    "rarity": "rare",
+    "characterImage": "/images/characters/moegirl/105-hisami-yomotsu.jpg",
+    "characterImageSource": "萌娘百科：豫母都日狭美",
+    "relatedSceneIds": [
+      "sanzu-river"
+    ]
+  },
+  {
+    "id": "classic-sunny-milk-01",
+    "category": "lateNight",
+    "tier": "small-blessing",
+    "title": "桑妮夜行守心签",
+    "character": "桑妮·米尔克",
+    "alias": "Sunny Milk",
+    "inspiration": "东方Project经典角色扩展签",
+    "quote": "桑妮把月光折成白天，窗帘都被骗了一下。今晚别被一时兴奋照得太亮。",
+    "motif": "折射的光、妖精小窗、亮过头的枕边",
+    "summary": "今晚容易突然精神起来。那不一定是好状态，也可能只是脑内小妖精在捣乱。",
+    "advice": "睡前把灯调暗，别开新的话题和新的视频。",
+    "luckyColor": "初晴青",
+    "luckyItem": "一杯温水",
+    "tags": [
+      "夜间",
+      "收束",
+      "自护"
+    ],
+    "rarity": "common",
+    "characterImage": "/images/characters/moegirl/106-sunny-milk.jpg",
+    "characterImageSource": "萌娘百科：桑妮·米尔克",
+    "relatedSceneIds": [
+      "hakurei"
+    ]
+  },
+  {
+    "id": "classic-zanmu-nippaku-01",
+    "category": "social",
+    "tier": "shadow",
+    "title": "日白结界外出签",
+    "character": "日白残无",
+    "alias": "Zanmu Nippaku",
+    "inspiration": "东方Project经典角色扩展签",
+    "quote": "残无合掌坐着，场上吵得再凶，她只挪了一枚棋子。今天少被阵仗吓住。",
+    "motif": "僧衣、棋盘、沉到地面的白光",
+    "summary": "今天社交场面可能有暗流。你不必抢话，先看谁在推局，谁只是被推着走。",
+    "advice": "重要决定别在热闹中答应，等人散一点再表态。",
+    "luckyColor": "月白",
+    "luckyItem": "一枚白色棋子",
+    "tags": [
+      "边界",
+      "观察",
+      "外出"
+    ],
+    "rarity": "common",
+    "characterImage": "/images/characters/moegirl/107-zanmu-nippaku.jpg",
+    "characterImageSource": "萌娘百科：日白残无",
+    "relatedSceneIds": [
+      "sanzu-river"
+    ]
+  },
+  {
+    "id": "classic-aunn-komano-01",
+    "category": "lateNight",
+    "tier": "small-blessing",
+    "title": "高丽夜行守心签",
+    "character": "高丽野阿吽",
+    "alias": "Aunn Komano",
+    "inspiration": "东方Project经典角色扩展签",
+    "archetype": "突进型",
+    "quote": "阿吽蹲在鸟居旁，一边睡眼惺忪，一边还在守门。今晚你也只守最要紧的门。",
+    "motif": "狛犬石阶、鸟居影子、半醒的守夜",
+    "summary": "今晚适合降低警戒范围。别把所有担心都抱在门口，只留一个真正需要处理的。",
+    "advice": "睡前只检查一次必要事项，其余念头明天再巡逻。",
+    "luckyColor": "初晴青",
+    "luckyItem": "一杯温水",
+    "tags": [
+      "夜间",
+      "收束",
+      "自护"
+    ],
+    "rarity": "rare",
+    "characterImage": "/images/characters/moegirl/108-aunn-komano.jpg",
+    "characterImageSource": "萌娘百科：高丽野阿吽",
+    "relatedSceneIds": [
+      "hakurei"
+    ]
+  },
+  {
+    "id": "classic-watatsuki-no-toyohime-01",
+    "category": "love",
+    "tier": "great-blessing",
+    "title": "绵月心灯微明签",
+    "character": "绵月丰姬",
+    "alias": "Watatsuki no Toyohime",
+    "inspiration": "东方Project经典角色扩展签",
+    "quote": "丰姬轻轻挥扇，海与月之间就多了一条路。想见的人，不一定要绕很远。",
+    "motif": "月都羽扇、海面通道、白桃香气",
+    "summary": "今天适合把距离说得温柔一点。真正的靠近不总是热烈，有时只是把路铺清楚。",
+    "advice": "如果想联系对方，就给一个简单理由，别把思念藏成谜题。",
+    "luckyColor": "月辉白金",
+    "luckyItem": "一把小折扇",
+    "tags": [
+      "温柔",
+      "回应",
+      "靠近"
+    ],
+    "rarity": "rare",
+    "characterImage": "/images/characters/moegirl/109-watatsuki-no-toyohime.jpg",
+    "characterImageSource": "萌娘百科：绵月丰姬",
+    "relatedSceneIds": [
+      "eientei"
+    ]
+  },
+  {
+    "id": "classic-star-sapphire-01",
+    "category": "social",
+    "tier": "small-blessing",
+    "title": "斯塔结界外出签",
+    "character": "斯塔·萨菲雅",
+    "alias": "Star Sapphire",
+    "inspiration": "东方Project经典角色扩展签",
+    "quote": "斯塔躲在树后数气息，谁靠近她都知道。今天先听场上的呼吸，再决定站哪边。",
+    "motif": "星光感应、树后小影子、静下来的草丛",
+    "summary": "今天适合观察人群里的细微信号。真正的态度常常不在话里，而在停顿和视线里。",
+    "advice": "进场后先别急着选边，听完两个人的说法再回应。",
+    "luckyColor": "星尘黄",
+    "luckyItem": "一颗蓝色玻璃珠",
+    "tags": [
+      "边界",
+      "观察",
+      "外出"
+    ],
+    "rarity": "common",
+    "characterImage": "/images/characters/moegirl/110-star-sapphire.png",
+    "characterImageSource": "萌娘百科：斯塔·萨菲雅",
+    "relatedSceneIds": [
+      "hakurei"
+    ]
+  },
+  {
+    "id": "classic-watatsuki-no-yorihime-01",
+    "category": "love",
+    "tier": "small-blessing",
+    "title": "绵月心灯微明签",
+    "character": "绵月依姬",
+    "alias": "Watatsuki no Yorihime",
+    "inspiration": "东方Project经典角色扩展签",
+    "quote": "依姬把刀收回鞘里，神名还停在空气中。喜欢也需要分寸，别把诚意挥成命令。",
+    "motif": "月都佩刀、神降微光、整齐的衣袖",
+    "summary": "今天适合表达认真，但不要压迫。清楚和温柔可以同时存在。",
+    "advice": "把你的期待说出来，也给对方拒绝或改期的空间。",
+    "luckyColor": "月银",
+    "luckyItem": "系紧的发绳",
+    "tags": [
+      "温柔",
+      "回应",
+      "靠近"
+    ],
+    "rarity": "rare",
+    "characterImage": "/images/characters/moegirl/111-watatsuki-no-yorihime.jpg",
+    "characterImageSource": "萌娘百科：绵月依姬",
+    "relatedSceneIds": [
+      "eientei"
+    ]
+  },
+  {
+    "id": "classic-hieda-no-akyuu-01",
+    "category": "wealth",
+    "tier": "small-blessing",
+    "title": "稗田小财聚光签",
+    "character": "稗田阿求",
+    "alias": "Hieda no Akyuu",
+    "inspiration": "东方Project经典角色扩展签",
+    "archetype": "稳场型",
+    "quote": "阿求把账页夹进《求闻》旁边：记下来，别让小钱也变成传闻。",
+    "motif": "稗田家账册、书签、墨迹未干的边注",
+    "summary": "今天适合把收支写成事实。只凭印象判断，很容易把漏掉的支出讲成没发生。",
+    "advice": "补记最近三笔花费，金额不大也照写。",
+    "luckyColor": "木纹金",
+    "luckyItem": "夹在书里的收据",
+    "tags": [
+      "止损",
+      "记录",
+      "积累"
+    ],
+    "rarity": "uncommon",
+    "characterImage": "/images/characters/moegirl/112-hieda-no-akyuu.jpg",
+    "characterImageSource": "萌娘百科：稗田阿求",
+    "relatedSceneIds": [
+      "human-village"
+    ]
+  },
+  {
+    "id": "classic-sumireko-usami-01",
+    "category": "study",
+    "tier": "shadow",
+    "title": "宇佐静学回响签",
+    "character": "宇佐见堇子",
+    "alias": "Sumireko Usami",
+    "inspiration": "东方Project经典角色扩展签",
+    "archetype": "回响型",
+    "quote": "堇子把城市传说贴进笔记本，旁边还画了问号。好奇心可以跑远，证据要留在桌上。",
+    "motif": "秘封笔记、红框眼镜、半透明都市传说",
+    "summary": "今天适合研究新东西，但别被第一个奇怪线索拐走。先确认来源，再继续追。",
+    "advice": "查资料时开一页来源清单，看到有趣内容先标注出处。",
+    "luckyColor": "境界紫",
+    "luckyItem": "写好标题的笔记页",
+    "tags": [
+      "专注",
+      "整理",
+      "推进"
+    ],
+    "rarity": "common",
+    "characterImage": "/images/characters/moegirl/113-sumireko-usami.png",
+    "characterImageSource": "萌娘百科：宇佐见堇子",
+    "relatedSceneIds": [
+      "hakurei",
+      "human-village"
+    ]
+  },
+  {
+    "id": "classic-luna-child-01",
+    "category": "wealth",
+    "tier": "shadow",
+    "title": "露娜小财聚光签",
+    "character": "露娜·切露德",
+    "alias": "Luna Child",
+    "inspiration": "东方Project经典角色扩展签",
+    "archetype": "观察型",
+    "quote": "露娜把声音藏起来，小票却在口袋里沙沙响。安静的时候最适合听见漏财声。",
+    "motif": "静音月光、口袋小票、无声恶作剧",
+    "summary": "今天适合安静查账。别被大的开销吓住，小小的重复支出才容易躲在声音后面。",
+    "advice": "翻一遍自动扣费和零散消费，把不再需要的那项取消。",
+    "luckyColor": "余烬红",
+    "luckyItem": "简短记账清单",
+    "tags": [
+      "止损",
+      "记录",
+      "积累"
+    ],
+    "rarity": "uncommon",
+    "characterImage": "/images/characters/moegirl/114-luna-child.jpg",
+    "characterImageSource": "萌娘百科：露娜·切露德",
+    "relatedSceneIds": [
+      "hakurei"
+    ]
+  },
+  {
+    "id": "classic-kosuzu-motoori-01",
+    "category": "social",
+    "tier": "shadow",
+    "title": "本居结界外出签",
+    "character": "本居小铃",
+    "alias": "Kosuzu Motoori",
+    "inspiration": "东方Project经典角色扩展签",
+    "archetype": "回响型",
+    "quote": "小铃把妖魔书页合上一半：好奇可以，别把每个传闻都借回家。",
+    "motif": "铃奈庵书架、妖魔书、夹着铃铛的书签",
+    "summary": "今天社交里容易听到有趣消息。听见是一回事，转述又是另一回事。",
+    "advice": "遇到八卦先停一停，确认来源再决定要不要参与讨论。",
+    "luckyColor": "博丽朱红",
+    "luckyItem": "清晰的路线图",
+    "tags": [
+      "边界",
+      "观察",
+      "外出"
+    ],
+    "rarity": "uncommon",
+    "characterImage": "/images/characters/moegirl/115-kosuzu-motoori.jpg",
+    "characterImageSource": "萌娘百科：本居小铃",
+    "relatedSceneIds": [
+      "human-village"
+    ]
+  },
+  {
+    "id": "classic-joon-yorigami-01",
+    "category": "study",
+    "tier": "small-blessing",
+    "title": "依神静学回响签",
+    "character": "依神女苑",
+    "alias": "Joon Yorigami",
+    "inspiration": "东方Project经典角色扩展签",
+    "quote": "女苑把闪亮的东西全摊在桌上，题目反而被压在最下面。先把炫目的移开。",
+    "motif": "珠宝、账单边角、过亮的装饰扣",
+    "summary": "今天学习容易被表面热闹吸走。漂亮工具、复杂计划、仪式感都先靠边。",
+    "advice": "只留下一个资料页和一支笔，先完成最朴素的那道题。",
+    "luckyColor": "星火金",
+    "luckyItem": "普通黑笔",
+    "tags": [
+      "专注",
+      "整理",
+      "推进"
+    ],
+    "rarity": "uncommon",
+    "characterImage": "/images/characters/moegirl/116-joon-yorigami.png",
+    "characterImageSource": "萌娘百科：依神女苑",
+    "relatedSceneIds": [
+      "human-village"
+    ]
+  },
+  {
+    "id": "classic-iku-nagae-01",
+    "category": "study",
+    "tier": "small-blessing",
+    "title": "永江静学回响签",
+    "character": "永江衣玖",
+    "alias": "Iku Nagae",
+    "inspiration": "东方Project经典角色扩展签",
+    "archetype": "灵感型",
+    "quote": "衣玖先读空气，再开口。今天的题也有气流，别逆着它硬游。",
+    "motif": "绯色羽衣、雷云缝隙、缓慢摆动的空气",
+    "summary": "今天适合先判断整体结构。看清题目的气氛，再决定从哪里下手。",
+    "advice": "开始前先写一句“这题在问什么”，别急着代公式。",
+    "luckyColor": "烛影紫",
+    "luckyItem": "写好标题的笔记页",
+    "tags": [
+      "专注",
+      "整理",
+      "推进"
+    ],
+    "rarity": "epic",
+    "characterImage": "/images/characters/moegirl/117-iku-nagae.jpg",
+    "characterImageSource": "萌娘百科：永江衣玖",
+    "relatedSceneIds": [
+      "moriya-shrine"
+    ]
+  },
+  {
+    "id": "classic-hatate-himekaidou-01",
+    "category": "study",
+    "tier": "shadow",
+    "title": "姬海静学回响签",
+    "character": "姬海棠果",
+    "alias": "Hatate Himekaidou",
+    "inspiration": "东方Project经典角色扩展签",
+    "archetype": "守护型",
+    "quote": "果举着念写相机，答案还没拍清，标题已经想好了。今天先别急着下结论。",
+    "motif": "念写相机、天狗号外、半显影照片",
+    "summary": "今天适合核对信息。第一眼看到的重点可能只是曝光过度，真正的线索在暗处。",
+    "advice": "写结论前先找两条证据，别让标题替内容跑在前面。",
+    "luckyColor": "祭典橙",
+    "luckyItem": "写好标题的笔记页",
+    "tags": [
+      "专注",
+      "整理",
+      "推进"
+    ],
+    "rarity": "uncommon",
+    "characterImage": "/images/characters/moegirl/118-hatate-himekaidou.jpg",
+    "characterImageSource": "萌娘百科：姬海棠果",
+    "relatedSceneIds": [
+      "moriya-shrine"
+    ]
+  },
+  {
+    "id": "classic-tenshi-hinanawi-01",
+    "category": "wealth",
+    "tier": "small-blessing",
+    "title": "比那小财聚光签",
+    "character": "比那名居天子",
+    "alias": "Tenshi Hinanawi",
+    "inspiration": "东方Project经典角色扩展签",
+    "archetype": "观察型",
+    "quote": "天子用要石压住账本，桌子都震了一下。今天别让任性把预算砸出坑。",
+    "motif": "要石、桃子、震歪的账本",
+    "summary": "今天可能为了心情花钱。偶尔犒劳没问题，但别把一时不爽当成购买理由。",
+    "advice": "想冲动消费时先去走一圈，回来还想要再决定。",
+    "luckyColor": "河童青绿",
+    "luckyItem": "简短记账清单",
+    "tags": [
+      "止损",
+      "记录",
+      "积累"
+    ],
+    "rarity": "uncommon",
+    "characterImage": "/images/characters/moegirl/119-tenshi-hinanawi.jpg",
+    "characterImageSource": "萌娘百科：比那名居天子",
+    "relatedSceneIds": [
+      "moriya-shrine"
+    ]
+  },
+  {
+    "id": "classic-shion-yorigami-01",
+    "category": "love",
+    "tier": "shadow",
+    "title": "依神心灯微明签",
+    "character": "依神紫苑",
+    "alias": "Shion Yorigami",
+    "inspiration": "东方Project经典角色扩展签",
+    "archetype": "灵感型",
+    "quote": "紫苑把破伞往你这边挪了挪，雨还是漏下来一点。有人愿意陪你，就别假装没冷。",
+    "motif": "破伞、贫乏神的旧袖口、滴水的屋檐",
+    "summary": "今天适合坦白自己的低落。关系不只在顺利时靠近，也会在狼狈时露出温度。",
+    "advice": "需要安慰就说需要，不要用反话把人推远。",
+    "luckyColor": "绯月红",
+    "luckyItem": "一条认真回复的消息",
+    "tags": [
+      "温柔",
+      "回应",
+      "靠近"
+    ],
+    "rarity": "rare",
+    "characterImage": "/images/characters/moegirl/121-shion-yorigami.jpg",
+    "characterImageSource": "萌娘百科：依神紫苑",
+    "relatedSceneIds": [
+      "human-village"
+    ]
+  },
+  {
+    "id": "classic-kasen-ibaraki-01",
+    "category": "wealth",
+    "tier": "middle-blessing",
+    "title": "茨木小财聚光签",
+    "character": "茨木华扇",
+    "alias": "Kasen Ibaraki",
+    "inspiration": "东方Project经典角色扩展签",
+    "quote": "华扇把仙桃放到一边，先看你的账本。修行也好，花钱也好，别靠嘴上清心。",
+    "motif": "仙人袖、绷带手臂、山中小账本",
+    "summary": "今天适合把自律落到数字上。想节制，先知道钱去了哪里。",
+    "advice": "给自己定一个当天上限，超过之前必须停下重算。",
+    "luckyColor": "山雾青",
+    "luckyItem": "写着上限的纸签",
+    "tags": [
+      "止损",
+      "记录",
+      "积累"
+    ],
+    "rarity": "rare",
+    "characterImage": "/images/characters/moegirl/122-kasen-ibaraki.jpg",
+    "characterImageSource": "萌娘百科：茨木华扇",
+    "relatedSceneIds": [
+      "hakurei"
+    ]
+  }
+]

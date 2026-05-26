@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Hakurei shrine foreground props">
+  <defs>
+    <linearGradient id="vermillion" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f47a69" stop-opacity=".78"/>
+      <stop offset=".52" stop-color="#b52c31" stop-opacity=".74"/>
+      <stop offset="1" stop-color="#3b0b13" stop-opacity=".86"/>
+    </linearGradient>
+    <linearGradient id="rope" x1="250" y1="58" x2="1350" y2="148" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff1c8" stop-opacity=".78"/>
+      <stop offset=".48" stop-color="#d8b15f" stop-opacity=".68"/>
+      <stop offset="1" stop-color="#78512f" stop-opacity=".72"/>
+    </linearGradient>
+    <radialGradient id="paperGlow" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#fff4dc" stop-opacity=".72"/>
+      <stop offset="1" stop-color="#d8b15f" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="none"/>
+  <g opacity=".78">
+    <path d="M252 96c128-50 318-72 548-72s420 22 548 72" fill="none" stroke="url(#rope)" stroke-width="18" stroke-linecap="round"/>
+    <path d="M292 130c118-34 288-50 508-50s390 16 508 50" fill="none" stroke="url(#rope)" stroke-width="11" stroke-linecap="round" opacity=".7"/>
+    <g fill="#fff2db" opacity=".72">
+      <path d="M412 128l42 18-22 74-42-22z"/>
+      <path d="M620 126l42 18-22 76-42-24z"/>
+      <path d="M936 126l42 18-22 76-42-24z"/>
+      <path d="M1144 128l42 18-22 74-42-22z"/>
+    </g>
+  </g>
+  <g opacity=".62">
+    <path d="M120 330h1360v48H120z" fill="url(#vermillion)"/>
+    <path d="M174 286h1252v38H174z" fill="#2c0810" opacity=".84"/>
+    <path d="M220 378h62l-32 430h-82zM1318 378h62l52 430h-82z" fill="url(#vermillion)"/>
+    <path d="M536 378h58v330h-58zM1006 378h58v330h-58z" fill="#4a1018" opacity=".7"/>
+    <path d="M472 430h656" stroke="#d8b15f" stroke-width="6" stroke-linecap="round" stroke-opacity=".32"/>
+  </g>
+  <g opacity=".78">
+    <ellipse cx="176" cy="488" rx="130" ry="210" fill="url(#paperGlow)"/>
+    <ellipse cx="1424" cy="488" rx="130" ry="210" fill="url(#paperGlow)"/>
+    <g transform="translate(128 294)">
+      <path d="M48 0v78" stroke="#f0d89f" stroke-width="4" stroke-linecap="round"/>
+      <rect x="14" y="74" width="68" height="172" rx="32" fill="#e8b172" opacity=".84"/>
+      <path d="M22 118h52M24 160h48M28 202h40" stroke="#6a1822" stroke-width="4" stroke-linecap="round" opacity=".36"/>
+    </g>
+    <g transform="translate(1376 294)">
+      <path d="M48 0v78" stroke="#f0d89f" stroke-width="4" stroke-linecap="round"/>
+      <rect x="14" y="74" width="68" height="172" rx="32" fill="#e8b172" opacity=".84"/>
+      <path d="M22 118h52M24 160h48M28 202h40" stroke="#6a1822" stroke-width="4" stroke-linecap="round" opacity=".36"/>
+    </g>
+  </g>
+  <g opacity=".58">
+    <path d="M220 688c182-48 330-46 488 8 132 45 250 42 382-2 120-40 226-40 342 8" fill="none" stroke="#fff0da" stroke-width="2"/>
+    <path d="M286 746c164-30 292-28 430 8 118 31 232 30 350-2 118-32 218-29 322 8" fill="none" stroke="#d8b15f" stroke-width="2" stroke-opacity=".48"/>
+    <rect x="706" y="730" width="188" height="64" rx="10" fill="#fff0da" opacity=".14"/>
+    <path d="M738 760h124" stroke="#bf3132" stroke-width="8" stroke-linecap="round" opacity=".34"/>
+  </g>
+</svg>

@@ -1,0 +1,385 @@
+@import "tailwindcss";
+
+:root {
+  --background-base: #fff7e8;
+  --background-elevated: #fffdf8;
+  --background-panel: rgba(255, 255, 255, 0.74);
+  --background-card: rgba(255, 252, 245, 0.94);
+  --background-card-soft: rgba(255, 250, 240, 0.8);
+  --ink-primary: #493344;
+  --ink-secondary: rgba(90, 68, 78, 0.76);
+  --ink-muted: rgba(116, 91, 98, 0.58);
+  --accent-crimson: #e84f72;
+  --accent-gold: #d8aa4e;
+  --accent-cyan: #74c8ff;
+  --accent-mist: #8fc5ff;
+  --accent-violet: #b69aff;
+  --border-soft: rgba(255, 255, 255, 0.7);
+  --border-strong: rgba(255, 255, 255, 0.95);
+  --ring-soft: rgba(232, 79, 114, 0.28);
+  --shadow-glow: 0 24px 80px rgba(232, 126, 142, 0.22);
+  --shadow-card: 0 18px 55px rgba(163, 105, 92, 0.16);
+  --radius-sm: 16px;
+  --radius-md: 24px;
+  --radius-lg: 32px;
+  --radius-xl: 44px;
+}
+
+@theme inline {
+  --color-background-base: var(--background-base);
+  --color-background-elevated: var(--background-elevated);
+  --color-background-panel: var(--background-panel);
+  --color-background-card: var(--background-card);
+  --color-ink-primary: var(--ink-primary);
+  --color-ink-secondary: var(--ink-secondary);
+  --color-ink-muted: var(--ink-muted);
+  --color-accent-crimson: var(--accent-crimson);
+  --color-accent-gold: var(--accent-gold);
+  --color-accent-cyan: var(--accent-cyan);
+  --color-accent-mist: var(--accent-mist);
+  --color-accent-violet: var(--accent-violet);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(255, 188, 204, 0.36), transparent 26%),
+    radial-gradient(circle at 82% 18%, rgba(159, 220, 255, 0.34), transparent 24%),
+    radial-gradient(circle at 52% 92%, rgba(191, 244, 207, 0.34), transparent 32%),
+    linear-gradient(180deg, #fff8ec 0%, #fff1f6 46%, #eaf8ff 100%);
+  color: var(--ink-primary);
+  font-family: var(--font-body), sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.skip-link {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  z-index: 1000;
+  transform: translateY(-140%);
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.82);
+  background: rgba(255, 255, 255, 0.92);
+  padding: 0.75rem 1rem;
+  color: var(--ink-primary);
+  box-shadow: 0 18px 44px rgba(72, 42, 50, 0.18);
+  transition: transform 0.16s ease-out;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  transform: translateY(0);
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  outline: none;
+  touch-action: manipulation;
+}
+
+button,
+a {
+  cursor: pointer;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid rgba(120, 217, 232, 0.72);
+  outline-offset: 2px;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.16),
+    0 0 0 4px rgba(120, 217, 232, 0.18),
+    0 0 30px rgba(120, 217, 232, 0.2);
+  border-radius: 999px;
+}
+
+input[type="range"]:focus-visible {
+  border-radius: 999px;
+}
+
+button:disabled,
+input:disabled {
+  filter: saturate(0.84);
+}
+
+::selection {
+  background: rgba(217, 75, 75, 0.22);
+  color: #fffdf8;
+}
+
+.scene-shell {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.scene-shell::before {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.68), rgba(255, 247, 229, 0.18)),
+    url("/images/textures/washi-noise.svg");
+  opacity: 0.54;
+  content: "";
+}
+
+.scene-shell::after {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(transparent 0 96%, rgba(255, 168, 190, 0.12) 96% 100%),
+    linear-gradient(90deg, transparent 0 96%, rgba(116, 200, 255, 0.1) 96% 100%);
+  background-size: 100% 32px, 32px 100%;
+  mask-image: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.32) 18%, rgba(0, 0, 0, 0.48) 84%, transparent);
+  opacity: 0.26;
+  content: "";
+}
+
+.glass-panel {
+  border: 1px solid rgba(255, 255, 255, 0.76);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(255, 245, 232, 0.48)),
+    rgba(255, 255, 255, 0.58);
+  box-shadow:
+    0 22px 60px rgba(180, 111, 101, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(16px) saturate(128%);
+}
+
+.collection-panel {
+  border-color: rgba(255, 255, 255, 0.58);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.68), rgba(255, 246, 234, 0.46)),
+    rgba(255, 255, 255, 0.42);
+}
+
+.washi-card {
+  border: 1px solid rgba(104, 76, 36, 0.16);
+  background:
+    linear-gradient(180deg, rgba(255, 253, 247, 0.96), rgba(245, 236, 220, 0.86)),
+    url("/images/textures/washi-noise.svg");
+  box-shadow: var(--shadow-card);
+  color: #342922;
+}
+
+.lantern-glow {
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.72),
+    0 0 40px rgba(255, 187, 115, 0.26),
+    0 0 90px rgba(232, 79, 114, 0.18);
+}
+
+.soft-title {
+  font-family: var(--font-display), serif;
+  letter-spacing: 0.08em;
+  text-wrap: balance;
+}
+
+.paper-texture {
+  background-image: url("/images/textures/washi-noise.svg");
+  background-size: 240px 240px;
+}
+
+.mask-fade-up {
+  mask-image: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.35) 10%, rgba(0, 0, 0, 1) 26%);
+}
+
+.ritual-paper-closed-closed {
+  opacity: 1;
+  transform: translateY(0) scale(1) rotate(-0.4deg);
+  animation: ritual-paper-closed-enter 260ms ease-out both;
+}
+
+.ritual-paper-closed-shaking {
+  opacity: 1;
+  animation: ritual-paper-closed-shake 820ms ease-in-out infinite;
+}
+
+.ritual-paper-emerging {
+  opacity: 1;
+  transform: translateY(-18px) scale(1.02);
+  animation: ritual-paper-emerging 1040ms ease-out both;
+}
+
+.ritual-paper-open {
+  opacity: 1;
+  transform: translateY(-16px) scale(1.04);
+  animation: ritual-paper-open 620ms ease-out both;
+}
+
+.ritual-paper-open-revealed {
+  opacity: 1;
+  transform: translateY(-16px) scale(1.04);
+}
+
+.ritual-fx-particles-shaking {
+  opacity: 0.46;
+  transform: scale(1.22);
+  animation: ritual-particles-drift 2400ms ease-in-out infinite;
+}
+
+.ritual-fx-reveal {
+  opacity: 0;
+  transform: scale(1.42);
+  animation: ritual-fx-reveal 560ms ease-out 90ms both;
+}
+
+@keyframes ritual-paper-closed-enter {
+  from {
+    opacity: 1;
+    transform: translateY(8px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotate(-0.4deg);
+  }
+}
+
+@keyframes ritual-paper-closed-shake {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  26% {
+    transform: translateY(-4px) rotate(-1.1deg);
+  }
+
+  52% {
+    transform: translateY(3px) rotate(1.2deg);
+  }
+
+  76% {
+    transform: translateY(-2px) rotate(-0.8deg);
+  }
+}
+
+@keyframes ritual-paper-emerging {
+  0% {
+    opacity: 1;
+    transform: translateY(12px) scale(0.92);
+  }
+
+  42% {
+    opacity: 1;
+    transform: translateY(-18px) scale(1.02);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(-24px) scale(1.02);
+  }
+}
+
+@keyframes ritual-paper-open {
+  0% {
+    opacity: 1;
+    transform: translateY(12px) scale(0.84);
+  }
+
+  42% {
+    opacity: 1;
+    transform: translateY(-8px) scale(0.94);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(-16px) scale(1.04);
+  }
+}
+
+@keyframes ritual-fx-reveal {
+  0% {
+    opacity: 0;
+    transform: scale(1.34);
+  }
+
+  18% {
+    opacity: 0.98;
+    transform: scale(1.42);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.86);
+  }
+}
+
+@keyframes ritual-particles-drift {
+  0%,
+  100% {
+    opacity: 0.42;
+    transform: translateY(0) scale(1.22);
+  }
+
+  50% {
+    opacity: 0.72;
+    transform: translateY(-10px) scale(1.36);
+  }
+}
+
+.thin-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(232, 79, 114, 0.36) transparent;
+}
+
+.thin-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.thin-scrollbar::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(232, 79, 114, 0.34);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .skip-link {
+    transition: none;
+  }
+
+  [data-reduced-motion="true"] .ritual-paper-closed-closed,
+  [data-reduced-motion="true"] .ritual-paper-closed-shaking,
+  [data-reduced-motion="true"] .ritual-paper-emerging,
+  [data-reduced-motion="true"] .ritual-paper-open,
+  [data-reduced-motion="true"] .ritual-fx-particles-shaking,
+  [data-reduced-motion="true"] .ritual-fx-reveal {
+    animation-duration: 180ms;
+    animation-iteration-count: 1;
+    transform: none;
+  }
+}

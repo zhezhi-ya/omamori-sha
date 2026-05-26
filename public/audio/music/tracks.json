@@ -1,0 +1,35 @@
+{
+  "playbackMode": "random",
+  "tracks": [
+    {
+      "title": "001",
+      "circle": "Touhou Music",
+      "src": "/audio/music/001.mp3",
+      "source": "38BEETS - 銇曘亸銈夈伄瀛ｇ瘈.mp3"
+    },
+    {
+      "title": "002",
+      "circle": "Touhou Music",
+      "src": "/audio/music/002.mp3",
+      "source": "鐧姐亜銇椼伨銇椼伨銇嗐仌銇?- 涓滄柟濡栥€呮ⅵ(鍘熸洸涓滄柟濡栥€呮ⅵ銆€~ Ancient Temple (涓滄柟濡栥€呮ⅵ)).mp3"
+    },
+    {
+      "title": "003",
+      "circle": "Touhou Music",
+      "src": "/audio/music/003.mp3",
+      "source": "鐧姐亜銇椼伨銇椼伨銇嗐仌銇?- 寮€瀹?~寰呮湜鐧惧勾(鍘熸洸涓滄柟绾㈤瓟閮?).mp3"
+    },
+    {
+      "title": "004",
+      "circle": "Touhou Music",
+      "src": "/audio/music/004.mp3",
+      "source": "鏉变含銈偗銉嗐偅銉朜EETs - 浜洪棿銇噷.mp3"
+    },
+    {
+      "title": "005",
+      "circle": "Touhou Music",
+      "src": "/audio/music/005.mp3",
+      "source": "鐧虹啽宸コ~銇?- The Other Side(鍘熸洸涓滄柟鑺辨槧鍐倛銈婂郊宀稿赴鑸?銆?Riverside View).mp3"
+    }
+  ]
+}

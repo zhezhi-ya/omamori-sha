@@ -1,0 +1,58 @@
+[
+  {
+    "id": "study",
+    "label": "学业运",
+    "subtitle": "适合慢热开机，也适合突然开窍",
+    "accent": "#7bb8ff",
+    "glow": "#c4dcff",
+    "motif": "雾蓝笔记"
+  },
+  {
+    "id": "love",
+    "label": "感情运",
+    "subtitle": "不一定轰烈，但会更接近心意",
+    "accent": "#f0a6ba",
+    "glow": "#ffdce6",
+    "motif": "樱粉心拍"
+  },
+  {
+    "id": "slacking",
+    "label": "摸鱼运",
+    "subtitle": "偷一点空白，反而更像在认真活着",
+    "accent": "#79e2dc",
+    "glow": "#d7fffb",
+    "motif": "霓青气泡"
+  },
+  {
+    "id": "lateNight",
+    "label": "熬夜运",
+    "subtitle": "月色会帮你，但别让它替你买单",
+    "accent": "#d9b26f",
+    "glow": "#f7e6bf",
+    "motif": "暖金月相"
+  },
+  {
+    "id": "social",
+    "label": "社恐出门运",
+    "subtitle": "世界没有那么凶，至少今天不会",
+    "accent": "#ff9377",
+    "glow": "#ffe0d3",
+    "motif": "朱霞路标"
+  },
+  {
+    "id": "wealth",
+    "label": "财富运",
+    "subtitle": "不一定暴富，但会更懂得让钱往自己这边站",
+    "accent": "#f0c97a",
+    "glow": "#fff0c5",
+    "motif": "琥珀金流"
+  },
+  {
+    "id": "hidden",
+    "label": "隐藏稀有签",
+    "subtitle": "电子鸟居偶尔也会掉落异常回响",
+    "accent": "#c7a5ff",
+    "glow": "#efe3ff",
+    "motif": "幻紫异响"
+  }
+]

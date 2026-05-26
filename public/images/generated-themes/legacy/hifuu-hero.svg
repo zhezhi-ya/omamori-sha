@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Illustrated Secret Sealing Club city observatory">
+  <defs>
+    <linearGradient id="night" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#06111f"/>
+      <stop offset="0.45" stop-color="#112a3e"/>
+      <stop offset="1" stop-color="#05070d"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="0.62" cy="0.2" r="0.4">
+      <stop offset="0" stop-color="#66c7b4" stop-opacity=".42"/>
+      <stop offset=".52" stop-color="#66c7b4" stop-opacity=".12"/>
+      <stop offset="1" stop-color="#66c7b4" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="stars" width="120" height="120" patternUnits="userSpaceOnUse">
+      <circle cx="14" cy="24" r="1.5" fill="#e9f5f2" opacity=".55"/>
+      <circle cx="76" cy="18" r="1" fill="#d7c46a" opacity=".48"/>
+      <circle cx="98" cy="76" r="1.4" fill="#e9f5f2" opacity=".45"/>
+      <circle cx="38" cy="94" r="1" fill="#66c7b4" opacity=".48"/>
+    </pattern>
+    <pattern id="scan" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M0 40h80M40 0v80" stroke="#e9f5f2" stroke-opacity=".035"/>
+    </pattern>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#night)"/>
+  <rect width="1600" height="1000" fill="url(#stars)"/>
+  <rect width="1600" height="1000" fill="url(#scan)"/>
+  <circle cx="990" cy="182" r="430" fill="url(#halo)"/>
+  <g stroke="#e9f5f2" stroke-opacity=".34" fill="none">
+    <path d="M214 230l220 82 176-122 250 190 210-146 286 104" stroke-width="2"/>
+    <path d="M302 390l210-86 190 142 164-70 246 120 194-168" stroke-width="1.5" opacity=".72"/>
+    <circle cx="434" cy="312" r="7" fill="#e9f5f2" fill-opacity=".55"/>
+    <circle cx="860" cy="380" r="8" fill="#66c7b4" fill-opacity=".6"/>
+    <circle cx="1356" cy="338" r="7" fill="#d7c46a" fill-opacity=".6"/>
+  </g>
+  <g opacity=".92">
+    <path d="M0 732h1600v268H0z" fill="#05070d"/>
+    <rect x="88" y="590" width="90" height="280" rx="12" fill="#0d1c2b"/>
+    <rect x="218" y="528" width="126" height="342" rx="16" fill="#10283d"/>
+    <rect x="404" y="642" width="118" height="228" rx="16" fill="#0b1d2e"/>
+    <rect x="620" y="500" width="150" height="370" rx="18" fill="#13324a"/>
+    <rect x="842" y="610" width="110" height="260" rx="14" fill="#0c2236"/>
+    <rect x="1062" y="552" width="138" height="318" rx="16" fill="#112b42"/>
+    <rect x="1274" y="622" width="98" height="248" rx="14" fill="#0c1e30"/>
+    <rect x="1428" y="488" width="116" height="382" rx="16" fill="#132d45"/>
+  </g>
+  <g fill="#d7c46a" opacity=".44">
+    <rect x="242" y="574" width="14" height="6"/>
+    <rect x="284" y="620" width="18" height="6"/>
+    <rect x="650" y="552" width="18" height="6"/>
+    <rect x="704" y="618" width="14" height="6"/>
+    <rect x="1094" y="610" width="20" height="6"/>
+    <rect x="1462" y="548" width="18" height="6"/>
+  </g>
+  <g transform="translate(795 534)">
+    <circle r="138" fill="#07111d" opacity=".72"/>
+    <circle r="112" fill="none" stroke="#66c7b4" stroke-opacity=".34" stroke-width="3"/>
+    <circle r="74" fill="none" stroke="#e9f5f2" stroke-opacity=".22" stroke-width="2"/>
+    <path d="M-142 0h284M0-142v284" stroke="#e9f5f2" stroke-opacity=".18"/>
+    <path d="M-86-86l172 172M86-86L-86 86" stroke="#66c7b4" stroke-opacity=".16"/>
+    <circle cx="48" cy="-42" r="7" fill="#d7c46a"/>
+    <circle cx="-54" cy="58" r="5" fill="#66c7b4"/>
+  </g>
+  <path d="M0 880c180-42 332-58 494-28 210 39 364 45 572-7 176-44 338-31 534 18v137H0z" fill="#03050a"/>
+  <rect width="1600" height="1000" fill="#020409" opacity=".12"/>
+</svg>

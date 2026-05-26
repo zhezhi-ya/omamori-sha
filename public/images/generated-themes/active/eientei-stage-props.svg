@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Eientei bamboo moon stage props">
+  <rect width="1600" height="1000" fill="none"/>
+  <g fill="#65b987" opacity=".6">
+    <rect x="116" y="72" width="36" height="840" rx="18"/>
+    <rect x="282" y="44" width="30" height="890" rx="15"/>
+    <rect x="1280" y="64" width="34" height="850" rx="17"/>
+    <rect x="1450" y="36" width="30" height="900" rx="15"/>
+  </g>
+  <g stroke="#f7fff7" stroke-width="8" stroke-linecap="round" opacity=".6">
+    <path d="M88 270h94M86 502h96M250 228h94M248 482h96M1248 260h96M1246 506h94M1418 224h94M1416 472h94"/>
+  </g>
+  <g stroke="#d6b8ff" fill="none" opacity=".44">
+    <path d="M356 270c160 64 310 58 460-20 150-78 294-72 432 18" stroke-width="3"/>
+    <path d="M300 344c174 42 328 34 482-22 154-56 298-50 432 18" stroke-width="2"/>
+  </g>
+  <g fill="#ffffff" opacity=".78">
+    <ellipse cx="800" cy="640" rx="92" ry="48"/>
+    <circle cx="756" cy="590" r="24"/>
+    <circle cx="844" cy="590" r="24"/>
+    <path d="M744 572l-30-86M858 572l34-86" stroke="#ffffff" stroke-width="18" stroke-linecap="round"/>
+    <circle cx="768" cy="640" r="6" fill="#d88aa6"/>
+    <circle cx="832" cy="640" r="6" fill="#d88aa6"/>
+  </g>
+  <rect x="560" y="720" width="480" height="74" rx="37" fill="#fff7df" opacity=".46"/>
+</svg>

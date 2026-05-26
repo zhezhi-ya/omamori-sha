@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Scarlet Devil Mansion stage props">
+  <rect width="1600" height="1000" fill="none"/>
+  <g opacity=".68">
+    <path d="M174 660c130-100 286-118 468-42 174 72 330 60 510-42 112-64 210-70 318-20" stroke="#fff8f6" stroke-width="4" fill="none"/>
+    <path d="M230 736c178-56 334-42 488 22 160 66 314 46 480-52" stroke="#8fc5ff" stroke-width="3" fill="none"/>
+  </g>
+  <g opacity=".72">
+    <rect x="126" y="250" width="140" height="500" rx="70" fill="#fff8f6" opacity=".28"/>
+    <rect x="1334" y="250" width="140" height="500" rx="70" fill="#fff8f6" opacity=".28"/>
+    <circle cx="196" cy="284" r="42" fill="#ff7f9f"/>
+    <circle cx="1404" cy="284" r="42" fill="#ff7f9f"/>
+  </g>
+  <g fill="#392245" opacity=".38">
+    <path d="M326 230c66-48 138-48 212 0-76-16-144-16-212 0z"/>
+    <path d="M1064 238c74-52 150-52 228 0-80-18-154-18-228 0z"/>
+  </g>
+  <g fill="#fff7d8" opacity=".78">
+    <rect x="650" y="632" width="300" height="80" rx="40"/>
+    <path d="M688 632c20-58 204-58 224 0z" fill="#ffdbe5"/>
+    <circle cx="800" cy="590" r="34" fill="#ff6f91"/>
+  </g>
+</svg>

@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Bright anime Hakurei shrine on a sunny day">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9edcff"/>
+      <stop offset="0.52" stop-color="#ffe8ee"/>
+      <stop offset="1" stop-color="#fff8df"/>
+    </linearGradient>
+    <linearGradient id="vermilion" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f06b5e"/>
+      <stop offset="0.48" stop-color="#bf3132"/>
+      <stop offset="1" stop-color="#511218"/>
+    </linearGradient>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff0da"/>
+      <stop offset="1" stop-color="#d8b15f"/>
+    </linearGradient>
+    <radialGradient id="moon" cx="0.64" cy="0.2" r="0.22">
+      <stop offset="0" stop-color="#fff2cc" stop-opacity="0.95"/>
+      <stop offset="0.5" stop-color="#e7bf72" stop-opacity="0.24"/>
+      <stop offset="1" stop-color="#e7bf72" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+    <pattern id="grain" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M4 8h1M18 18h1M34 11h1M29 31h1M8 37h1" stroke="#fff1d5" stroke-opacity=".18"/>
+    </pattern>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#sky)"/>
+  <rect width="1600" height="1000" fill="url(#grain)" opacity=".55"/>
+  <circle cx="1030" cy="170" r="250" fill="url(#moon)"/>
+  <path d="M0 710c210-90 360-90 570-10 180 68 351 48 511-20 172-73 326-82 519 5v315H0z" fill="#07070b"/>
+  <path d="M208 618c164-66 299-57 441-6 161 57 269 41 410-15 146-57 290-64 446-9v116H208z" fill="#211017" opacity=".72"/>
+  <path d="M310 635h980l-78 365H388z" fill="#11090d"/>
+  <path d="M770 638c-58 100-104 224-136 362h332c-38-142-88-266-148-362z" fill="#261116"/>
+  <path d="M770 638c-48 96-83 211-106 362h272c-26-154-65-270-118-362z" fill="#3b171b" opacity=".74"/>
+  <g opacity=".95">
+    <path d="M550 446h500l58 58H492z" fill="#2a1416"/>
+    <path d="M590 502h420v154H590z" fill="#281015"/>
+    <path d="M570 480h460v46H570z" fill="url(#vermilion)"/>
+    <path d="M630 526h78v130h-78zM892 526h78v130h-78z" fill="#16090d"/>
+    <path d="M742 528h116v128H742z" fill="#4b1719"/>
+    <path d="M724 568h152" stroke="#d8b15f" stroke-opacity=".38" stroke-width="8"/>
+    <path d="M518 438h564" stroke="#d8b15f" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <g opacity=".95">
+    <path d="M305 292h990v54H305z" fill="url(#vermilion)"/>
+    <path d="M347 262h906v40H347z" fill="#3a1015"/>
+    <path d="M407 346h58v382h-58zM1135 346h58v382h-58z" fill="url(#vermilion)"/>
+    <path d="M374 390h124v24H374zM1102 390h124v24h-124z" fill="#2a0c11"/>
+    <path d="M432 728c-46 24-74 50-86 78h178c-12-32-43-57-92-78zM1164 728c-46 24-74 50-86 78h178c-12-32-43-57-92-78z" fill="#07070b"/>
+  </g>
+  <g stroke="#fff0da" stroke-opacity=".45" fill="none">
+    <path d="M206 335c175 78 337 78 486 0s300-78 455 0 284 78 420 0" stroke-width="2"/>
+    <path d="M236 372c165 68 323 68 475 0s302-68 450 0 270 68 402 0" stroke-width="1.5" opacity=".6"/>
+  </g>
+  <g>
+    <path d="M154 532l54 24-54 24-54-24zM1420 514l60 26-60 26-60-26z" fill="#d8b15f" opacity=".55"/>
+    <rect x="112" y="558" width="84" height="142" rx="8" fill="#fff0da" opacity=".76" transform="rotate(-8 154 629)"/>
+    <rect x="1370" y="548" width="92" height="152" rx="8" fill="#fff0da" opacity=".72" transform="rotate(7 1416 624)"/>
+    <path d="M138 606h42M1392 604h52" stroke="#bf3132" stroke-width="6" opacity=".58"/>
+  </g>
+  <g filter="url(#soft)" opacity=".78">
+    <circle cx="292" cy="228" r="4" fill="#fff0da"/>
+    <circle cx="365" cy="512" r="3" fill="#d8b15f"/>
+    <circle cx="1215" cy="246" r="4" fill="#fff0da"/>
+    <circle cx="1328" cy="632" r="3" fill="#d8b15f"/>
+    <circle cx="740" cy="326" r="3" fill="#fff0da"/>
+    <circle cx="890" cy="760" r="5" fill="#d8b15f"/>
+  </g>
+  <rect width="1600" height="1000" fill="#fff8ef" opacity=".42"/>
+</svg>

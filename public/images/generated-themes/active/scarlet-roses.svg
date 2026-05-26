@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Rose and tea ornament">
+  <rect width="1200" height="800" fill="none"/>
+  <g opacity=".82">
+    <path d="M112 540c140-92 280-96 420-12 136 82 284 74 456-26" stroke="#fff8f6" stroke-width="3" fill="none" stroke-opacity=".5"/>
+    <path d="M176 614c148-58 280-52 408 18 128 70 256 58 422-28" stroke="#8fc5ff" stroke-width="2" fill="none" stroke-opacity=".45"/>
+  </g>
+  <g fill="#ff6f91" opacity=".8">
+    <circle cx="192" cy="252" r="38"/>
+    <circle cx="958" cy="228" r="44"/>
+    <circle cx="782" cy="558" r="34"/>
+  </g>
+  <g fill="#fff7d8" opacity=".72">
+    <rect x="478" y="300" width="120" height="72" rx="36"/>
+    <rect x="626" y="302" width="120" height="72" rx="36"/>
+  </g>
+  <g fill="#392245" opacity=".32">
+    <path d="M324 194c54-38 110-38 168 0-58-14-112-14-168 0z"/>
+    <path d="M842 408c58-40 120-40 184 0-62-14-122-14-184 0z"/>
+  </g>
+  <g font-family="serif" font-size="28" fill="#fff8f6" opacity=".42">
+    <text x="470" y="220">Tea Time</text>
+    <text x="820" y="650">Scarlet Sign</text>
+  </g>
+</svg>

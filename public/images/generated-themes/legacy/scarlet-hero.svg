@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Bright anime Scarlet Devil Mansion by the lake">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9ed9ff"/>
+      <stop offset=".48" stop-color="#ffd6e6"/>
+      <stop offset="1" stop-color="#fff7ee"/>
+    </linearGradient>
+    <linearGradient id="brick" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ff7f91"/>
+      <stop offset=".55" stop-color="#d94c66"/>
+      <stop offset="1" stop-color="#9c2d4a"/>
+    </linearGradient>
+    <radialGradient id="sun" cx=".76" cy=".16" r=".34">
+      <stop offset="0" stop-color="#fff7cf" stop-opacity=".95"/>
+      <stop offset=".5" stop-color="#fff1b8" stop-opacity=".32"/>
+      <stop offset="1" stop-color="#fff1b8" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="sparkle" width="90" height="90" patternUnits="userSpaceOnUse">
+      <circle cx="18" cy="24" r="2" fill="#fff" opacity=".42"/>
+      <circle cx="66" cy="42" r="1.4" fill="#fff5c9" opacity=".5"/>
+      <path d="M38 70l4 8 4-8 8-4-8-4-4-8-4 8-8 4z" fill="#fff" opacity=".28"/>
+    </pattern>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#sky)"/>
+  <rect width="1600" height="1000" fill="url(#sparkle)" opacity=".8"/>
+  <circle cx="1210" cy="145" r="430" fill="url(#sun)"/>
+  <path d="M0 690c190-52 322-50 470-18 196 42 352 40 542-12 190-52 374-42 588 22v318H0z" fill="#7dc8ff" opacity=".42"/>
+  <path d="M0 766c222-44 396-34 604 14 180 42 358 28 552-22 150-38 286-28 444 18v224H0z" fill="#9ad9ff" opacity=".52"/>
+  <path d="M296 456h1008l-80 338H376z" fill="#ffe8ec"/>
+  <path d="M372 402h856l100 92H272z" fill="#7f4266"/>
+  <path d="M438 334h724l70 74H368z" fill="#8c496d"/>
+  <path d="M482 476h636v318H482z" fill="url(#brick)"/>
+  <path d="M592 256h416l54 84H538z" fill="#94506f"/>
+  <path d="M632 316h336v164H632z" fill="url(#brick)"/>
+  <path d="M730 482h140v312H730z" fill="#ffe6b4" opacity=".78"/>
+  <path d="M746 520h108v274H746z" fill="#6a3153" opacity=".72"/>
+  <g fill="#fff7d8" opacity=".88">
+    <rect x="548" y="530" width="72" height="92" rx="34"/>
+    <rect x="980" y="530" width="72" height="92" rx="34"/>
+    <rect x="650" y="374" width="56" height="76" rx="28"/>
+    <rect x="894" y="374" width="56" height="76" rx="28"/>
+  </g>
+  <g fill="#ffffff" opacity=".42">
+    <path d="M200 274c84-56 178-54 282 8-114-20-206-10-282-8z"/>
+    <path d="M1058 282c100-62 208-58 324 10-120-24-224-12-324-10z"/>
+  </g>
+  <g opacity=".76">
+    <path d="M240 748c84-80 144-88 210-20-86 8-148 22-210 20z" fill="#ff7f9f"/>
+    <path d="M1180 746c92-74 158-82 220-14-88 4-152 18-220 14z" fill="#ff7f9f"/>
+    <circle cx="334" cy="690" r="34" fill="#ff6f91"/>
+    <circle cx="1268" cy="684" r="38" fill="#ff6f91"/>
+  </g>
+  <g fill="#392245" opacity=".32">
+    <path d="M250 336c34-24 70-24 106 0-36-8-70-8-106 0z"/>
+    <path d="M1216 342c36-26 76-26 114 0-40-8-76-8-114 0z"/>
+  </g>
+  <rect width="1600" height="1000" fill="#fff" opacity=".08"/>
+</svg>
