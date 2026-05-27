@@ -20,6 +20,9 @@ interface FortuneTubeProps {
   onClick: () => void;
 }
 
+const ritualAssetSizeClass = "h-[min(68vw,16.5rem)] w-[min(68vw,16.5rem)] sm:h-80 sm:w-80";
+const ritualAssetSizes = "(max-width: 640px) 68vw, 20rem";
+
 function RevealFlash({ reducedMotion, src }: { reducedMotion: boolean; src: string }) {
   return (
     <div
@@ -30,7 +33,7 @@ function RevealFlash({ reducedMotion, src }: { reducedMotion: boolean; src: stri
         animationDelay: reducedMotion ? "40ms" : undefined,
       }}
     >
-      <Image src={assetPath(src)} alt="" fill sizes="20rem" className="object-contain" />
+      <Image src={assetPath(src)} alt="" fill sizes={ritualAssetSizes} className="object-contain" />
     </div>
   );
 }
@@ -69,7 +72,7 @@ export function FortuneTube({
       aria-label={label}
       className={cn(
         "group relative flex items-end justify-center rounded-[2.8rem] bg-transparent",
-        ritualAssets ? "h-80 w-80 pb-0" : "h-64 w-48 pb-7",
+        ritualAssets ? `${ritualAssetSizeClass} pb-0` : "h-64 w-48 pb-7",
         "drop-shadow-[0_30px_64px_rgba(0,0,0,0.42)] transition-opacity disabled:cursor-not-allowed",
       )}
       data-ritual-phase={ritualPhase}
@@ -85,7 +88,7 @@ export function FortuneTube({
     >
       <motion.span
         aria-hidden
-        className="absolute inset-x-1/2 bottom-8 h-36 w-36 -translate-x-1/2 rounded-full bg-[#d8b15f]/18 blur-3xl"
+        className="absolute inset-x-1/2 bottom-8 h-24 w-24 -translate-x-1/2 rounded-full bg-[#d8b15f]/18 blur-2xl sm:h-36 sm:w-36 sm:blur-3xl"
         style={{ background: `${glowColor}2e` }}
         animate={
           active && !reducedMotion
@@ -96,7 +99,7 @@ export function FortuneTube({
       />
       {ritualAssets ? (
         <div
-          className="relative z-10 h-80 w-80"
+          className={cn("relative z-10", ritualAssetSizeClass)}
           data-ritual-stage="asset-stack"
           data-reduced-motion={reducedMotion ? "true" : "false"}
         >
@@ -108,7 +111,14 @@ export function FortuneTube({
               animate={reducedMotion ? { scale: 1 } : { scale: [1, 1.012, 1] }}
               transition={{ duration: 4.6, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
             >
-              <Image src={assetPath(ritualAssets.ritualBase)} alt="" fill sizes="20rem" className="object-contain" />
+              <Image
+                src={assetPath(ritualAssets.ritualBase)}
+                alt=""
+                fill
+                sizes={ritualAssetSizes}
+                fetchPriority="high"
+                className="object-contain"
+              />
             </motion.div>
           ) : null}
           {shouldShowClosedPaper ? (
@@ -121,7 +131,7 @@ export function FortuneTube({
                 isShaking && "ritual-paper-closed-shaking",
               )}
             >
-              <Image src={assetPath(ritualAssets.paperClosed)} alt="" fill sizes="20rem" className="object-contain" />
+              <Image src={assetPath(ritualAssets.paperClosed)} alt="" fill sizes={ritualAssetSizes} className="object-contain" />
             </div>
           ) : null}
           {shouldShowEmerging ? (
@@ -130,7 +140,7 @@ export function FortuneTube({
               data-ritual-layer="paper-emerging"
               className="absolute inset-0 ritual-paper-emerging"
             >
-              <Image src={assetPath(ritualAssets.paperEmerging)} alt="" fill sizes="20rem" className="object-contain" />
+              <Image src={assetPath(ritualAssets.paperEmerging)} alt="" fill sizes={ritualAssetSizes} className="object-contain" />
             </div>
           ) : null}
           {shouldShowParticles ? (
@@ -139,7 +149,7 @@ export function FortuneTube({
               data-ritual-layer="fx-particles"
               className="absolute inset-0 ritual-fx-particles-shaking"
             >
-              <Image src={assetPath(ritualAssets.fxParticles)} alt="" fill sizes="20rem" className="object-contain" />
+              <Image src={assetPath(ritualAssets.fxParticles)} alt="" fill sizes={ritualAssetSizes} className="object-contain" />
             </div>
           ) : null}
           {isFlash ? (
@@ -151,7 +161,7 @@ export function FortuneTube({
               data-ritual-layer="paper-open"
               className={cn("absolute inset-0 z-10", isOpen || isFlash ? "ritual-paper-open" : "ritual-paper-open-revealed")}
             >
-              <Image src={assetPath(ritualAssets.paperOpen)} alt="" fill sizes="20rem" className="object-contain" />
+              <Image src={assetPath(ritualAssets.paperOpen)} alt="" fill sizes={ritualAssetSizes} className="object-contain" />
             </div>
           ) : null}
         </div>

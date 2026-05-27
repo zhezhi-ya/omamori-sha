@@ -23,6 +23,8 @@ import type { Fortune, OmamoriRouteConfig, OmikujiCategory, SceneCandidate } fro
 
 type DrawPhase = "idle" | "closed" | "shaking" | "emerging" | "open" | "flash" | "revealed";
 
+type ActionIcon = "collection" | "route" | "settings";
+
 interface DailyDrawPanelProps {
   categories: OmikujiCategory[];
   fortunes: Fortune[];
@@ -32,6 +34,42 @@ function wait(duration: number): Promise<void> {
   return new Promise((resolve) => {
     window.setTimeout(resolve, duration);
   });
+}
+
+function HeaderActionIcon({ icon }: { icon: ActionIcon }) {
+  if (icon === "collection") {
+    return (
+      <svg aria-hidden="true" viewBox="0 0 24 24" className="h-4.5 w-4.5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M6 4.75h11.5A1.5 1.5 0 0 1 19 6.25v13l-3.5-2-3.5 2-3.5-2-3.5 2v-13a1.5 1.5 0 0 1 1.5-1.5Z" />
+        <path d="M8.5 8.5h7" />
+        <path d="M8.5 12h5" />
+      </svg>
+    );
+  }
+
+  if (icon === "route") {
+    return (
+      <svg aria-hidden="true" viewBox="0 0 24 24" className="h-4.5 w-4.5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M6.5 6.5h11v11h-11z" />
+        <path d="M9 12h6" />
+        <path d="m12 9 3 3-3 3" />
+      </svg>
+    );
+  }
+
+  return (
+    <svg aria-hidden="true" viewBox="0 0 24 24" className="h-4.5 w-4.5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 8.25a3.75 3.75 0 1 1 0 7.5 3.75 3.75 0 0 1 0-7.5Z" />
+      <path d="M12 3.75v2" />
+      <path d="M12 18.25v2" />
+      <path d="m5.8 5.8 1.4 1.4" />
+      <path d="m16.8 16.8 1.4 1.4" />
+      <path d="M3.75 12h2" />
+      <path d="M18.25 12h2" />
+      <path d="m5.8 18.2 1.4-1.4" />
+      <path d="m16.8 7.2 1.4-1.4" />
+    </svg>
+  );
 }
 
 function SceneArtwork({
@@ -615,9 +653,11 @@ export function DailyDrawPanel({ categories, fortunes }: DailyDrawPanelProps) {
           <>
             <Link
               href="/collection"
-              className="glass-panel min-h-11 rounded-full px-4 py-2 text-sm text-ink-primary transition hover:border-white/20 hover:text-white"
+              className="glass-panel grid h-10 w-10 place-items-center rounded-full text-ink-primary transition hover:border-white/20 hover:text-white sm:h-11 sm:w-11"
+              aria-label="签册"
+              title="签册"
             >
-              签册
+              <HeaderActionIcon icon="collection" />
             </Link>
             <button
               type="button"
@@ -627,26 +667,30 @@ export function DailyDrawPanel({ categories, fortunes }: DailyDrawPanelProps) {
                 setResultOpen(false);
                 clearRouteSelection();
               }}
-              className="glass-panel min-h-11 rounded-full px-4 py-2 text-sm text-ink-primary transition hover:border-white/20 hover:text-white"
+              className="glass-panel grid h-10 w-10 place-items-center rounded-full text-ink-primary transition hover:border-white/20 hover:text-white sm:h-11 sm:w-11"
+              aria-label={activeRouteConfig.backLabel}
+              title={activeRouteConfig.backLabel}
             >
-              {activeRouteConfig.backLabel}
+              <HeaderActionIcon icon="route" />
             </button>
             <button
               type="button"
               onClick={() => setSettingsOpen(true)}
               aria-haspopup="dialog"
               aria-expanded={settingsOpen}
-              className="glass-panel min-h-11 rounded-full px-4 py-2 text-sm text-ink-primary transition hover:border-white/20 hover:text-white"
+              className="glass-panel grid h-10 w-10 place-items-center rounded-full text-ink-primary transition hover:border-white/20 hover:text-white sm:h-11 sm:w-11"
+              aria-label="设置"
+              title="设置"
             >
-              设置
+              <HeaderActionIcon icon="settings" />
             </button>
           </>
         }
         stage={
-          <div className="relative flex h-full min-h-0 flex-col items-center justify-center overflow-hidden py-3">
+          <div className="relative flex h-full min-h-0 flex-col items-center justify-between overflow-hidden py-1.5 sm:justify-center sm:py-3">
             <motion.div
               aria-hidden
-              className="absolute inset-x-1/2 top-14 h-72 w-72 -translate-x-1/2 rounded-full bg-accent-cyan/16 blur-[90px]"
+              className="absolute inset-x-1/2 top-8 h-44 w-44 -translate-x-1/2 rounded-full bg-accent-cyan/10 blur-[46px] sm:top-14 sm:h-72 sm:w-72 sm:bg-accent-cyan/16 sm:blur-[90px]"
               animate={
                 reducedMotion
                   ? undefined
@@ -659,25 +703,25 @@ export function DailyDrawPanel({ categories, fortunes }: DailyDrawPanelProps) {
             />
             <motion.div
               aria-hidden
-              className="absolute bottom-12 left-1/2 h-44 w-[32rem] -translate-x-1/2 rounded-full bg-accent-crimson/20 blur-[88px]"
+              className="absolute bottom-7 left-1/2 h-24 w-[16rem] -translate-x-1/2 rounded-full bg-accent-crimson/10 blur-[44px] sm:bottom-12 sm:h-44 sm:w-[32rem] sm:bg-accent-crimson/20 sm:blur-[88px]"
               animate={reducedMotion ? undefined : { x: visiblePhase === "shaking" ? [-10, 18, -14, 10, 0] : [0, 10, 0] }}
               transition={{ duration: visiblePhase === "shaking" ? 0.65 : 5.2, repeat: visiblePhase === "shaking" ? 3 : Number.POSITIVE_INFINITY, ease: "easeInOut" }}
             />
 
-            <div className="relative z-10 flex w-full flex-col items-center gap-4">
-              <div className="text-center">
+            <div className="relative z-10 flex h-full w-full flex-col items-center justify-between gap-2 sm:h-auto sm:justify-center sm:gap-4">
+              <div className="-mt-1 text-center sm:mt-0">
                 <p className="text-xs tracking-[0.34em] text-white/84 drop-shadow uppercase">
                   {activeRouteConfig.stage.eyebrow}
                 </p>
-                <h2 className="soft-title mt-2 text-2xl text-white drop-shadow-[0_4px_18px_rgba(72,42,50,0.36)] sm:text-3xl lg:text-4xl">
+                <h2 className="soft-title mt-1 text-2xl text-white drop-shadow-[0_4px_18px_rgba(72,42,50,0.36)] sm:mt-2 sm:text-3xl lg:text-4xl">
                   {activeRouteConfig.stage.title}
                 </h2>
-                <p className="mx-auto mt-2 max-w-xl rounded-[1.25rem] border border-white/40 bg-white/28 px-4 py-2 text-sm leading-6 text-[#54384a] shadow-[0_14px_38px_rgba(72,42,50,0.08)] backdrop-blur-sm">
+                <p className="mx-auto mt-1.5 max-w-xl rounded-[1.15rem] border border-white/36 bg-white/44 px-3 py-1.5 text-xs leading-5 text-[#54384a] shadow-[0_14px_38px_rgba(72,42,50,0.08)] sm:mt-2 sm:rounded-[1.25rem] sm:bg-white/28 sm:px-4 sm:py-2 sm:text-sm sm:leading-6 sm:backdrop-blur-sm">
                   {activeRouteConfig.stage.description}
                 </p>
               </div>
 
-              <div className="relative flex min-h-[15.5rem] w-full items-center justify-center sm:min-h-[16.5rem]">
+              <div className="relative -mt-1 flex min-h-[min(40dvh,17rem)] w-full flex-1 items-center justify-center sm:mt-0 sm:min-h-[16.5rem] sm:flex-none">
                 {showTube ? (
                   <AnimatePresence mode="popLayout">
                     <motion.div
@@ -703,24 +747,9 @@ export function DailyDrawPanel({ categories, fortunes }: DailyDrawPanelProps) {
                   </AnimatePresence>
                 ) : null}
               </div>
-
-              <motion.div
-                className="mt-2 flex flex-col items-center gap-3 sm:mt-3"
-                animate={reducedMotion ? undefined : visiblePhase === "emerging" || visiblePhase === "open" || visiblePhase === "flash" ? { scale: [1, 1.04, 1] } : { scale: 1 }}
-                transition={{ duration: 0.5 }}
-              >
-                <button
-                  type="button"
-                  onClick={handleDraw}
-                  disabled={isBusy}
-                  className={cn(
-                    "lantern-glow min-h-12 rounded-full border border-white/72 bg-[linear-gradient(180deg,rgba(255,255,255,0.78),rgba(255,238,229,0.66))] px-7 py-3 text-sm tracking-[0.28em] text-[#6f3f52] uppercase transition",
-                    "hover:translate-y-[-1px] hover:border-[#e84f72]/45 hover:bg-white disabled:cursor-not-allowed disabled:opacity-60",
-                  )}
-                >
-              {hasTodayRecordForCurrentRoute ? recordRouteConfig.revisitLabel : isBusy ? statusText : activeRouteConfig.drawLabel}
-                </button>
-              </motion.div>
+              <p className="sr-only" aria-live="polite">
+                {statusText}
+              </p>
             </div>
           </div>
         }
