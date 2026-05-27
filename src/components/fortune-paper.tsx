@@ -25,7 +25,7 @@ export function FortunePaper({ open, rarity, reducedMotion, children }: FortuneP
           exit={reducedMotion ? { opacity: 0 } : { opacity: 0, scale: 0.99, y: 8 }}
           transition={{ duration: reducedMotion ? 0.14 : 0.24, ease: "easeOut" }}
           className={cn(
-            "relative mx-auto w-full max-w-2xl overflow-hidden rounded-[1.45rem] px-3 py-3 sm:rounded-[2rem] sm:px-6 sm:py-6",
+            "relative mx-auto w-full max-w-2xl overflow-hidden rounded-[1.45rem] px-3 py-3 transform-gpu [backface-visibility:hidden] [will-change:opacity,transform] sm:rounded-[2rem] sm:px-6 sm:py-6",
             "washi-card paper-texture",
           )}
           style={{ boxShadow: rarityGlow[rarity] }}
@@ -38,6 +38,8 @@ export function FortunePaper({ open, rarity, reducedMotion, children }: FortuneP
             alt=""
             width={240}
             height={240}
+            priority
+            loading="eager"
             className="absolute left-0 top-0 w-24 opacity-55 sm:w-28"
           />
           <Image
@@ -45,6 +47,8 @@ export function FortunePaper({ open, rarity, reducedMotion, children }: FortuneP
             alt=""
             width={240}
             height={240}
+            priority
+            loading="eager"
             className="absolute bottom-0 right-0 w-24 rotate-180 opacity-45 sm:w-28"
           />
           <div className="relative">{children}</div>

@@ -170,17 +170,18 @@ export function FortuneTube({
           {isFlash ? (
             <RevealFlash reducedMotion={reducedMotion} src={ritualAssets.fxReveal} />
           ) : null}
-          <div
-            aria-hidden
-            data-ritual-layer="paper-open"
-            className={cn(
-              "absolute inset-0 z-10 transition-opacity duration-150",
-              shouldShowOpen ? "opacity-100" : "opacity-0",
-              isOpen || isFlash ? "ritual-paper-open" : "ritual-paper-open-revealed",
-            )}
-          >
-            <RitualLayerImage src={ritualAssets.paperOpen} />
-          </div>
+          {shouldShowOpen ? (
+            <div
+              aria-hidden
+              data-ritual-layer="paper-open"
+              className={cn(
+                "absolute inset-0 z-10 opacity-100 transition-opacity duration-150",
+                isOpen || isFlash ? "ritual-paper-open" : "ritual-paper-open-revealed",
+              )}
+            >
+              <RitualLayerImage src={ritualAssets.paperOpen} />
+            </div>
+          ) : null}
         </div>
       ) : (
       <motion.div

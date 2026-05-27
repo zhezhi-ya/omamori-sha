@@ -50,10 +50,10 @@ function CharacterPortrait({
 
   return (
     <motion.div
-      initial={reducedMotion ? false : { opacity: 0, scale: 0.92, rotate: -1.5 }}
-      animate={reducedMotion ? { opacity: 1 } : { opacity: 1, scale: 1, rotate: 0 }}
-      transition={{ duration: reducedMotion ? 0.18 : 0.46, ease: [0.21, 0.9, 0.24, 1] }}
-      className="character-portrait relative min-h-[13rem] overflow-hidden rounded-[1.35rem] border sm:min-h-[19rem] sm:rounded-[1.75rem]"
+      initial={false}
+      animate={{ opacity: 1 }}
+      transition={{ duration: reducedMotion ? 0.12 : 0.18, ease: "easeOut" }}
+      className="character-portrait relative min-h-[13rem] overflow-hidden rounded-[1.35rem] border transform-gpu sm:min-h-[19rem] sm:rounded-[1.75rem]"
       style={{
         borderColor: `${frameColor}30`,
         background: `${theme?.aura ?? `radial-gradient(circle at 35% 20%, ${frameColor}55, transparent 56%)`}, linear-gradient(180deg, rgba(37, 27, 42, 0.2), rgba(255, 249, 238, 0.72))`,
@@ -74,6 +74,8 @@ function CharacterPortrait({
             alt={`${characterName} 角色图`}
             width={520}
             height={720}
+            priority
+            loading="eager"
             className="absolute inset-x-0 bottom-0 mx-auto h-full w-full object-contain object-bottom saturate-[0.92] sepia-[0.08] drop-shadow-[0_24px_40px_rgba(35,20,26,0.28)]"
             sizes="(max-width: 768px) 100vw, 360px"
           />
@@ -165,12 +167,14 @@ export function FortuneCard({
   const resultCornerFallback = optimizedImageFallbackPath(routeConfig.ritualAssets.resultCorner);
 
   return (
-    <div className="relative space-y-3 overflow-hidden rounded-[1.45rem] border border-[#8f714b]/14 bg-[linear-gradient(180deg,rgba(255,252,245,0.92),rgba(237,220,190,0.88))] p-2.5 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.38)] sm:space-y-6 sm:rounded-[2rem] sm:p-5">
+    <div className="relative space-y-3 overflow-hidden rounded-[1.45rem] border border-[#8f714b]/14 bg-[linear-gradient(180deg,rgba(255,252,245,0.92),rgba(237,220,190,0.88))] p-2.5 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.38)] [contain:paint] sm:space-y-6 sm:rounded-[2rem] sm:p-5">
       <div className="pointer-events-none absolute right-1 top-1 h-24 w-24 opacity-65 sm:h-40 sm:w-40 sm:opacity-100 lg:h-44 lg:w-44">
         <Image
           src={assetPath(resultCornerSrc)}
           alt=""
           fill
+          priority
+          loading="eager"
           sizes="(max-width: 640px) 6rem, 8rem"
           className="object-contain opacity-85"
           onError={() => {
@@ -246,12 +250,7 @@ export function FortuneCard({
       </div>
 
       <div className="grid gap-3 md:grid-cols-[1.25fr_0.75fr] sm:gap-4">
-        <motion.div
-          initial={reducedMotion ? false : { opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.45, delay: 0.08 }}
-          className="space-y-3 sm:space-y-4"
-        >
+        <div className="space-y-3 sm:space-y-4">
           <CharacterPortrait
             fortune={fortune}
             image={characterImage}
@@ -279,6 +278,7 @@ export function FortuneCard({
                     alt=""
                     width={160}
                     height={160}
+                    loading="eager"
                     className="h-full w-full object-cover object-top"
                     sizes="96px"
                   />
@@ -310,14 +310,9 @@ export function FortuneCard({
               <p className="mt-1.5 text-sm leading-6 text-[#342922] sm:mt-2 sm:text-[0.98rem] sm:leading-7">{advice}</p>
             </div>
           </div>
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={reducedMotion ? false : { opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.45, delay: 0.16 }}
-          className="grid gap-2.5 sm:space-y-4"
-        >
+        <div className="grid gap-2.5 sm:space-y-4">
           <div className="rounded-[1.25rem] border p-3 sm:rounded-[1.5rem] sm:p-4" style={{ borderColor: `${frameColor}18`, background: "rgba(255,255,255,0.58)" }}>
             <p className="text-[0.68rem] tracking-[0.2em] text-[#8b7664] uppercase sm:text-xs sm:tracking-[0.22em]">{labels.luckyColor}</p>
             <div className="mt-2 flex items-center gap-2.5 sm:mt-3 sm:gap-3">
@@ -352,15 +347,10 @@ export function FortuneCard({
               ))}
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
 
-      <motion.div
-        initial={reducedMotion ? false : { opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.4, delay: 0.24 }}
-        className="space-y-2 border-t border-[#8f714b]/12 pt-2 sm:space-y-3"
-      >
+      <div className="space-y-2 border-t border-[#8f714b]/12 pt-2 sm:space-y-3">
         <p className="text-[0.68rem] leading-5 text-[#7a6452] sm:text-xs sm:leading-6">东方Project同人风格角色签。</p>
         <div className="flex flex-wrap items-center gap-2 sm:gap-3">
           <button
@@ -390,7 +380,7 @@ export function FortuneCard({
             当前环境不支持自动复制，请手动复制这段签文文案。
           </p>
         ) : null}
-      </motion.div>
+      </div>
     </div>
   );
 }

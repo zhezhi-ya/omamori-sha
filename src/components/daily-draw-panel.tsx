@@ -14,7 +14,7 @@ import { categoryAccentFallback, characterThemeMap } from "@/constants/design-to
 import { DRAW_TIMINGS, getOmamoriRoute, SCENE_CANDIDATES } from "@/constants/fortune";
 import { getShanghaiReadableDate } from "@/lib/date";
 import { omamoriAudio } from "@/lib/audio";
-import { filterFortunesForScene } from "@/lib/fortune-engine";
+import { filterFortunesForScene, pickDailyFortune } from "@/lib/fortune-engine";
 import { assetPath, optimizedImageFallbackPath } from "@/lib/paths";
 import { buildShareText, cn, copyTextSafely } from "@/lib/utils";
 import { useMounted } from "@/hooks/use-mounted";
@@ -41,7 +41,14 @@ function preloadImage(path: string): Promise<void> {
     const image = new window.Image();
     const fallbackPath = optimizedImageFallbackPath(path);
 
-    image.onload = () => resolve();
+    image.onload = () => {
+      if (typeof image.decode !== "function") {
+        resolve();
+        return;
+      }
+
+      image.decode().catch(() => undefined).then(() => resolve());
+    };
     image.onerror = () => {
       if (fallbackPath && image.src !== assetPath(fallbackPath)) {
         image.src = assetPath(fallbackPath);
@@ -108,6 +115,18 @@ function getRoutePreloadImages(route: OmamoriRouteConfig): string[] {
     route.ritualAssets.fxParticles,
     route.ritualAssets.fxReveal,
     route.ritualAssets.resultCorner,
+  ].filter((path): path is string => Boolean(path));
+}
+
+function getFortunePreloadImages(fortune: Fortune, route: OmamoriRouteConfig): string[] {
+  const characterTheme = characterThemeMap[fortune.character];
+  const characterImage = fortune.characterImage ?? characterTheme?.portrait;
+
+  return [
+    route.ritualAssets.resultCorner,
+    "/images/ui/paper-corner.svg",
+    "/images/textures/washi-noise.svg",
+    characterImage,
   ].filter((path): path is string => Boolean(path));
 }
 
@@ -421,6 +440,7 @@ export function DailyDrawPanel({ categories, fortunes }: DailyDrawPanelProps) {
   const {
     initialize,
     isHydrated,
+    userId,
     selectedRouteId,
     todayRecord,
     favorites,
@@ -581,6 +601,9 @@ export function DailyDrawPanel({ categories, fortunes }: DailyDrawPanelProps) {
 
     try {
       const drawStartedAt = window.performance.now();
+      const drawn = currentFortune ?? (userId ? pickDailyFortune(fortunes, userId, undefined, routeConfig.id) : drawFortune(fortunes, routeConfig.id));
+      const resultPreloadPromise = preloadImages(getFortunePreloadImages(drawn, routeConfig), 2600);
+
       if (!preloadedRouteIdsRef.current.has(routeConfig.id)) {
         await preloadImages(getRoutePreloadImages(routeConfig), 1600);
         preloadedRouteIdsRef.current.add(routeConfig.id);
@@ -599,8 +622,6 @@ export function DailyDrawPanel({ categories, fortunes }: DailyDrawPanelProps) {
       omamoriAudio.playPaper(routeConfig.id);
       await wait(reducedMotion ? DRAW_TIMINGS.reducedEmerging : DRAW_TIMINGS.emerging);
 
-      const drawn = currentFortune ?? drawFortune(fortunes, routeConfig.id);
-
       setPhase("open");
       await wait(reducedMotion ? DRAW_TIMINGS.reducedOpen : DRAW_TIMINGS.open);
       setPhase("flash");
@@ -610,7 +631,8 @@ export function DailyDrawPanel({ categories, fortunes }: DailyDrawPanelProps) {
         await wait(minimumDuration - elapsedBeforeFlash);
       }
       await wait(reducedMotion ? DRAW_TIMINGS.reducedFlash : DRAW_TIMINGS.flash);
-      finishSequence(drawn);
+      await Promise.race([resultPreloadPromise, wait(reducedMotion ? 80 : 220)]);
+      finishSequence(currentFortune ?? (userId ? drawFortune(fortunes, routeConfig.id) : drawn));
     } finally {
       setIsDrawing(false);
     }
@@ -867,10 +889,10 @@ export function DailyDrawPanel({ categories, fortunes }: DailyDrawPanelProps) {
                   <AnimatePresence initial={false}>
                     <motion.div
                       key="fortune-tube"
-                      className="absolute"
+                      className="absolute transform-gpu"
                       initial={false}
-                      animate={{ opacity: resultOpen ? 0.34 : 1, scale: resultOpen ? 0.985 : 1, rotate: 0, y: 0 }}
-                      transition={{ duration: resultOpen ? 0 : reducedMotion ? 0.12 : 0.4, ease: [0.21, 0.9, 0.24, 1] }}
+                      animate={{ opacity: 1, scale: 1, rotate: 0, y: 0 }}
+                      transition={{ duration: reducedMotion ? 0.12 : 0.24, ease: [0.21, 0.9, 0.24, 1] }}
                     >
                       <FortuneTube
                         active={visiblePhase === "shaking"}
@@ -898,7 +920,7 @@ export function DailyDrawPanel({ categories, fortunes }: DailyDrawPanelProps) {
       <AnimatePresence>
         {resultOpen && currentFortune ? (
           <motion.div
-            className="fixed inset-0 z-[80] flex items-center justify-center bg-[#05070f]/76 px-2.5 py-3 sm:bg-[#05070f]/72 sm:px-6 sm:py-6 sm:backdrop-blur-xl"
+            className="fixed inset-0 z-[80] flex transform-gpu items-center justify-center bg-[#05070f]/76 px-2.5 py-3 [backface-visibility:hidden] [will-change:opacity] sm:bg-[#05070f]/72 sm:px-6 sm:py-6 sm:backdrop-blur-xl"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
