@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useMemo, useRef, useState, useTransition } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion as useMotionReducedMotion } from "motion/react";
 import { AmbientAudioController } from "@/components/ambient-audio-controller";
 import { FortuneCard } from "@/components/fortune-card";
@@ -15,7 +15,7 @@ import { DRAW_TIMINGS, getOmamoriRoute, SCENE_CANDIDATES } from "@/constants/for
 import { getShanghaiReadableDate } from "@/lib/date";
 import { omamoriAudio } from "@/lib/audio";
 import { filterFortunesForScene } from "@/lib/fortune-engine";
-import { assetPath } from "@/lib/paths";
+import { assetPath, optimizedImageFallbackPath } from "@/lib/paths";
 import { buildShareText, cn, copyTextSafely } from "@/lib/utils";
 import { useMounted } from "@/hooks/use-mounted";
 import { useOmamoriStore } from "@/store/omamori-store";
@@ -34,6 +34,81 @@ function wait(duration: number): Promise<void> {
   return new Promise((resolve) => {
     window.setTimeout(resolve, duration);
   });
+}
+
+function preloadImage(path: string): Promise<void> {
+  return new Promise((resolve) => {
+    const image = new window.Image();
+    const fallbackPath = optimizedImageFallbackPath(path);
+
+    image.onload = () => resolve();
+    image.onerror = () => {
+      if (fallbackPath && image.src !== assetPath(fallbackPath)) {
+        image.src = assetPath(fallbackPath);
+        return;
+      }
+
+      resolve();
+    };
+    image.src = assetPath(path);
+  });
+}
+
+type FallbackImageProps = Omit<React.ComponentProps<typeof Image>, "src"> & {
+  src: string;
+};
+
+function FallbackImage({ src, onError, ...props }: FallbackImageProps) {
+  const [imageState, setImageState] = useState({ source: src, resolved: src });
+  const resolvedSrc = imageState.source === src ? imageState.resolved : src;
+  const fallbackSrc = optimizedImageFallbackPath(src);
+
+  return (
+    <Image
+      key={src}
+      {...props}
+      alt={props.alt ?? ""}
+      src={assetPath(resolvedSrc)}
+      onError={(event) => {
+        if (fallbackSrc && resolvedSrc !== fallbackSrc) {
+          setImageState({ source: src, resolved: fallbackSrc });
+          return;
+        }
+
+        onError?.(event);
+      }}
+    />
+  );
+}
+
+async function preloadImages(paths: string[], timeout = 1400): Promise<void> {
+  if (typeof window === "undefined") {
+    return;
+  }
+
+  const uniquePaths = Array.from(new Set(paths.filter(Boolean)));
+  if (uniquePaths.length === 0) {
+    return;
+  }
+
+  await Promise.race([
+    Promise.allSettled(uniquePaths.map((path) => preloadImage(path))),
+    wait(timeout),
+  ]);
+}
+
+function getRoutePreloadImages(route: OmamoriRouteConfig): string[] {
+  return [
+    route.sceneImage,
+    route.ritualImage,
+    route.ritualAssets.ritualBase,
+    route.ritualAssets.paperClosed,
+    route.ritualAssets.paperEmerging,
+    route.ritualAssets.paperOpen,
+    route.ritualAssets.fxParticles,
+    route.ritualAssets.fxReveal,
+    route.ritualAssets.resultCorner,
+  ].filter((path): path is string => Boolean(path));
 }
 
 function HeaderActionIcon({ icon }: { icon: ActionIcon }) {
@@ -83,8 +158,8 @@ function SceneArtwork({
 }) {
   return (
     <>
-      <Image
-        src={assetPath(scene.sceneImage)}
+      <FallbackImage
+        src={scene.sceneImage}
         alt=""
         fill
         loading={eager ? "eager" : "lazy"}
@@ -336,11 +411,12 @@ export function DailyDrawPanel({ categories, fortunes }: DailyDrawPanelProps) {
   const [resetConfirmOpen, setResetConfirmOpen] = useState(false);
   const [isDrawing, setIsDrawing] = useState(false);
   const [hasConfirmedRouteThisSession, setHasConfirmedRouteThisSession] = useState(false);
-  const [isPending, startTransition] = useTransition();
+  const [enteringRoute, setEnteringRoute] = useState<OmamoriRouteConfig | null>(null);
   const resultDialogRef = useRef<HTMLDivElement>(null);
   const resultCloseButtonRef = useRef<HTMLButtonElement>(null);
   const previousFocusBeforeResultRef = useRef<HTMLElement | null>(null);
   const hasCapturedResultFocusRef = useRef(false);
+  const preloadedRouteIdsRef = useRef<Set<string>>(new Set());
 
   const {
     initialize,
@@ -365,7 +441,7 @@ export function DailyDrawPanel({ categories, fortunes }: DailyDrawPanelProps) {
   const recordRouteConfig = getOmamoriRoute(todayRecord?.routeId ?? routeConfig.id);
   const shouldShowRouteSelection =
     !isHydrated || !selectedRouteId || (settings.askRouteOnLaunch && !hasConfirmedRouteThisSession);
-  const isBusy = isPending || isDrawing;
+  const isBusy = isDrawing || Boolean(enteringRoute);
   const hasTodayRecordForCurrentRoute =
     todayRecord?.routeId === routeConfig.id && todayRecord.fortune.relatedSceneIds?.includes(routeConfig.id);
   const currentFortune = hasTodayRecordForCurrentRoute ? todayRecord.fortune : null;
@@ -373,7 +449,7 @@ export function DailyDrawPanel({ categories, fortunes }: DailyDrawPanelProps) {
   const visiblePhase = phase;
   const currentCategory = currentFortune ? categories.find((item) => item.id === currentFortune.category) : categories[0];
   const currentTheme = currentFortune ? characterThemeMap[currentFortune.character] : null;
-  const showTube = !resultOpen;
+  const showTube = true;
   const activeRouteConfig = hasTodayRecordForCurrentRoute ? recordRouteConfig : routeConfig;
   const stageTint = currentTheme?.stageGlow ?? activeRouteConfig.visual.glow ?? (currentCategory ? `${currentCategory.accent}22` : `${categoryAccentFallback.study}22`);
   const stageAura =
@@ -383,6 +459,17 @@ export function DailyDrawPanel({ categories, fortunes }: DailyDrawPanelProps) {
   useEffect(() => {
     initialize();
   }, [initialize]);
+
+  useEffect(() => {
+    if (!selectedRouteId) {
+      return;
+    }
+
+    const route = getOmamoriRoute(selectedRouteId);
+    void preloadImages(getRoutePreloadImages(route), 1800).then(() => {
+      preloadedRouteIdsRef.current.add(route.id);
+    });
+  }, [selectedRouteId]);
 
   useEffect(() => {
     if (copyStatus === "idle") {
@@ -489,16 +576,16 @@ export function DailyDrawPanel({ categories, fortunes }: DailyDrawPanelProps) {
       return;
     }
 
-    if (hasTodayRecordForCurrentRoute) {
-      setPhase("revealed");
-      setResultOpen(true);
-      return;
-    }
-
     setIsDrawing(true);
     setResultOpen(false);
 
     try {
+      const drawStartedAt = window.performance.now();
+      if (!preloadedRouteIdsRef.current.has(routeConfig.id)) {
+        await preloadImages(getRoutePreloadImages(routeConfig), 1600);
+        preloadedRouteIdsRef.current.add(routeConfig.id);
+      }
+
       setPhase("closed");
       await omamoriAudio.unlock();
       omamoriAudio.playBell(routeConfig.id);
@@ -512,14 +599,18 @@ export function DailyDrawPanel({ categories, fortunes }: DailyDrawPanelProps) {
       omamoriAudio.playPaper(routeConfig.id);
       await wait(reducedMotion ? DRAW_TIMINGS.reducedEmerging : DRAW_TIMINGS.emerging);
 
-      let drawn: Fortune | null = null;
-      startTransition(() => {
-        drawn = drawFortune(fortunes, routeConfig.id);
-      });
+      const drawn = currentFortune ?? drawFortune(fortunes, routeConfig.id);
 
+      setPhase("open");
+      await wait(reducedMotion ? DRAW_TIMINGS.reducedOpen : DRAW_TIMINGS.open);
       setPhase("flash");
+      const elapsedBeforeFlash = window.performance.now() - drawStartedAt;
+      const minimumDuration = reducedMotion ? 1200 : 4200;
+      if (elapsedBeforeFlash < minimumDuration) {
+        await wait(minimumDuration - elapsedBeforeFlash);
+      }
       await wait(reducedMotion ? DRAW_TIMINGS.reducedFlash : DRAW_TIMINGS.flash);
-      finishSequence((drawn ?? fortunes[0]) as Fortune);
+      finishSequence(drawn);
     } finally {
       setIsDrawing(false);
     }
@@ -586,6 +677,27 @@ export function DailyDrawPanel({ categories, fortunes }: DailyDrawPanelProps) {
     );
   };
 
+  const enterRouteWithBuffer = async (route: OmamoriRouteConfig) => {
+    setEnteringRoute(route);
+    setPhase("idle");
+    setResultOpen(false);
+
+    const preloadPromise = preloadImages(getRoutePreloadImages(route), 1800).then(() => {
+      preloadedRouteIdsRef.current.add(route.id);
+    });
+
+    await Promise.all([preloadPromise, wait(reducedMotion ? 120 : 420)]);
+    selectRoute(route.id);
+    setHasConfirmedRouteThisSession(true);
+    window.scrollTo({ top: 0, behavior: reducedMotion ? "auto" : "smooth" });
+    showNotice({
+      tone: "info",
+      title: `已切换到${route.label}`,
+      message: route.description,
+    });
+    setEnteringRoute(null);
+  };
+
   const statusText = useMemo(() => {
     if (!mounted) {
       return "正在准备入口...";
@@ -612,16 +724,7 @@ export function DailyDrawPanel({ categories, fortunes }: DailyDrawPanelProps) {
         <RouteSelectionPanel
           currentRoute={routeConfig}
           reducedMotion={reducedMotion}
-          onSelectRoute={(route) => {
-            selectRoute(route.id);
-            setHasConfirmedRouteThisSession(true);
-            window.scrollTo({ top: 0, behavior: reducedMotion ? "auto" : "smooth" });
-            showNotice({
-              tone: "info",
-            title: `已切换到${route.label}`,
-            message: route.description,
-          });
-          }}
+          onSelectRoute={(route) => void enterRouteWithBuffer(route)}
           onPreviewLocked={(scene) => {
             showNotice({
               tone: "info",
@@ -630,6 +733,44 @@ export function DailyDrawPanel({ categories, fortunes }: DailyDrawPanelProps) {
             });
           }}
         />
+        <AnimatePresence>
+          {enteringRoute ? (
+            <motion.div
+              className="fixed inset-0 z-[90] flex items-center justify-center bg-[#211620]/48 px-6 backdrop-blur-md"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: reducedMotion ? 0.12 : 0.22 }}
+              aria-live="polite"
+              aria-label="少女祈祷中......"
+            >
+              <motion.div
+                className="relative w-full max-w-xs overflow-hidden rounded-[1.65rem] border border-white/58 bg-white/72 p-5 text-center text-[#54384a] shadow-[0_28px_82px_rgba(42,26,36,0.24)]"
+                initial={reducedMotion ? { opacity: 0 } : { opacity: 0, y: 12, scale: 0.96 }}
+                animate={reducedMotion ? { opacity: 1 } : { opacity: 1, y: 0, scale: 1 }}
+                exit={reducedMotion ? { opacity: 0 } : { opacity: 0, y: 8, scale: 0.98 }}
+                transition={{ duration: reducedMotion ? 0.12 : 0.28, ease: "easeOut" }}
+              >
+                <div className="absolute inset-0 bg-[image:var(--asset-washi-noise)] opacity-[0.18]" />
+                <div
+                  className="absolute inset-x-8 top-0 h-24 rounded-full blur-3xl"
+                  style={{ background: enteringRoute.visual.glow }}
+                />
+                <div className="relative">
+                  <p className="text-xs tracking-[0.28em] text-[#806673] uppercase">少女祈祷中......</p>
+                  <div className="mx-auto mt-4 h-1.5 w-28 overflow-hidden rounded-full bg-[#c7aa8d]/22">
+                    <motion.span
+                      className="block h-full w-12 rounded-full bg-[#d8b15f]"
+                      style={{ background: enteringRoute.visual.accent }}
+                      animate={reducedMotion ? { x: 64 } : { x: [-48, 112] }}
+                      transition={{ duration: reducedMotion ? 0.14 : 0.82, repeat: reducedMotion ? 0 : Number.POSITIVE_INFINITY, ease: "easeInOut" }}
+                    />
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>
+          ) : null}
+        </AnimatePresence>
       </>
     );
   }
@@ -661,6 +802,17 @@ export function DailyDrawPanel({ categories, fortunes }: DailyDrawPanelProps) {
             </Link>
             <button
               type="button"
+              onClick={() => setSettingsOpen(true)}
+              aria-haspopup="dialog"
+              aria-expanded={settingsOpen}
+              className="glass-panel grid h-10 w-10 place-items-center rounded-full text-ink-primary transition hover:border-white/20 hover:text-white sm:h-11 sm:w-11"
+              aria-label="设置"
+              title="设置"
+            >
+              <HeaderActionIcon icon="settings" />
+            </button>
+            <button
+              type="button"
               onClick={() => {
                 setHasConfirmedRouteThisSession(false);
                 setPhase("idle");
@@ -673,21 +825,10 @@ export function DailyDrawPanel({ categories, fortunes }: DailyDrawPanelProps) {
             >
               <HeaderActionIcon icon="route" />
             </button>
-            <button
-              type="button"
-              onClick={() => setSettingsOpen(true)}
-              aria-haspopup="dialog"
-              aria-expanded={settingsOpen}
-              className="glass-panel grid h-10 w-10 place-items-center rounded-full text-ink-primary transition hover:border-white/20 hover:text-white sm:h-11 sm:w-11"
-              aria-label="设置"
-              title="设置"
-            >
-              <HeaderActionIcon icon="settings" />
-            </button>
           </>
         }
         stage={
-          <div className="relative flex h-full min-h-0 flex-col items-center justify-between overflow-hidden py-1.5 sm:justify-center sm:py-3">
+          <div className={cn("relative flex h-full min-h-0 flex-col items-center justify-between overflow-hidden py-1.5 sm:justify-center sm:py-3", resultOpen && "pointer-events-none")}>
             <motion.div
               aria-hidden
               className="absolute inset-x-1/2 top-8 h-44 w-44 -translate-x-1/2 rounded-full bg-accent-cyan/10 blur-[46px] sm:top-14 sm:h-72 sm:w-72 sm:bg-accent-cyan/16 sm:blur-[90px]"
@@ -723,13 +864,12 @@ export function DailyDrawPanel({ categories, fortunes }: DailyDrawPanelProps) {
 
               <div className="relative -mt-1 flex min-h-[min(40dvh,17rem)] w-full flex-1 items-center justify-center sm:mt-0 sm:min-h-[16.5rem] sm:flex-none">
                 {showTube ? (
-                  <AnimatePresence mode="popLayout">
+                  <AnimatePresence initial={false}>
                     <motion.div
                       key="fortune-tube"
                       className="absolute"
-                      initial={reducedMotion ? { opacity: 0 } : { opacity: 0, scale: 0.78, rotate: -7, y: 24 }}
-                      animate={reducedMotion ? { opacity: 1 } : { opacity: 1, scale: 1, rotate: 0, y: 0 }}
-                      exit={{ opacity: 0 }}
+                      initial={false}
+                      animate={{ opacity: resultOpen ? 0.34 : 1, scale: resultOpen ? 0.985 : 1, rotate: 0, y: 0 }}
                       transition={{ duration: resultOpen ? 0 : reducedMotion ? 0.12 : 0.4, ease: [0.21, 0.9, 0.24, 1] }}
                     >
                       <FortuneTube
@@ -758,7 +898,7 @@ export function DailyDrawPanel({ categories, fortunes }: DailyDrawPanelProps) {
       <AnimatePresence>
         {resultOpen && currentFortune ? (
           <motion.div
-            className="fixed inset-0 z-[80] flex items-center justify-center bg-[#05070f]/72 px-3 py-6 backdrop-blur-xl sm:px-6"
+            className="fixed inset-0 z-[80] flex items-center justify-center bg-[#05070f]/76 px-2.5 py-3 sm:bg-[#05070f]/72 sm:px-6 sm:py-6 sm:backdrop-blur-xl"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -770,18 +910,18 @@ export function DailyDrawPanel({ categories, fortunes }: DailyDrawPanelProps) {
           >
             <motion.div
               ref={resultDialogRef}
-              className="relative max-h-[92vh] w-full max-w-4xl overflow-y-auto thin-scrollbar"
-              initial={reducedMotion ? { opacity: 0 } : { opacity: 0, scale: 0.9, y: 26 }}
+              className="relative max-h-[calc(100dvh-1.25rem)] w-full max-w-4xl overflow-y-auto thin-scrollbar sm:max-h-[92vh]"
+              initial={reducedMotion ? { opacity: 0 } : { opacity: 0, scale: 0.98, y: 14 }}
               animate={reducedMotion ? { opacity: 1 } : { opacity: 1, scale: 1, y: 0 }}
-              exit={reducedMotion ? { opacity: 0 } : { opacity: 0, scale: 0.96, y: 14 }}
-              transition={{ duration: reducedMotion ? 0.16 : 0.42, ease: [0.21, 0.9, 0.24, 1] }}
+              exit={reducedMotion ? { opacity: 0 } : { opacity: 0, scale: 0.99, y: 8 }}
+              transition={{ duration: reducedMotion ? 0.12 : 0.22, ease: "easeOut" }}
               onClick={(event) => event.stopPropagation()}
             >
               <button
                 ref={resultCloseButtonRef}
                 type="button"
                 onClick={() => setResultOpen(false)}
-                className="glass-panel sticky top-0 z-20 ml-auto mb-3 flex min-h-11 rounded-full px-4 py-2 text-sm text-ink-primary transition hover:border-white/20 hover:text-white"
+                className="glass-panel sticky top-0 z-20 ml-auto mb-2 flex min-h-10 rounded-full px-3.5 py-2 text-sm text-ink-primary transition hover:border-white/20 hover:text-white sm:mb-3 sm:min-h-11 sm:px-4"
               >
                 关闭签面
               </button>

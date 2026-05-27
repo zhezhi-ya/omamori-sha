@@ -1,8 +1,9 @@
 ﻿"use client";
 
 import Image from "next/image";
+import { useState } from "react";
 import { motion } from "motion/react";
-import { assetPath } from "@/lib/paths";
+import { assetPath, optimizedImageFallbackPath } from "@/lib/paths";
 import { cn } from "@/lib/utils";
 import type { OmamoriRouteId, RitualAssetSet } from "@/types/omikuji";
 
@@ -23,6 +24,35 @@ interface FortuneTubeProps {
 const ritualAssetSizeClass = "h-[min(68vw,16.5rem)] w-[min(68vw,16.5rem)] sm:h-80 sm:w-80";
 const ritualAssetSizes = "(max-width: 640px) 68vw, 20rem";
 
+function RitualLayerImage({
+  src,
+  priority = false,
+}: {
+  src: string;
+  priority?: boolean;
+}) {
+  const [imageState, setImageState] = useState({ source: src, resolved: src });
+  const resolvedSrc = imageState.source === src ? imageState.resolved : src;
+  const fallbackSrc = optimizedImageFallbackPath(src);
+
+  return (
+    <Image
+      src={assetPath(resolvedSrc)}
+      alt=""
+      fill
+      sizes={ritualAssetSizes}
+      priority={priority}
+      fetchPriority={priority ? "high" : "auto"}
+      className="object-contain"
+      onError={() => {
+        if (fallbackSrc && resolvedSrc !== fallbackSrc) {
+          setImageState({ source: src, resolved: fallbackSrc });
+        }
+      }}
+    />
+  );
+}
+
 function RevealFlash({ reducedMotion, src }: { reducedMotion: boolean; src: string }) {
   return (
     <div
@@ -33,7 +63,7 @@ function RevealFlash({ reducedMotion, src }: { reducedMotion: boolean; src: stri
         animationDelay: reducedMotion ? "40ms" : undefined,
       }}
     >
-      <Image src={assetPath(src)} alt="" fill sizes={ritualAssetSizes} className="object-contain" />
+      <RitualLayerImage src={src} />
     </div>
   );
 }
@@ -58,7 +88,6 @@ export function FortuneTube({
   const isOpen = ritualPhase === "open";
   const isFlash = ritualPhase === "flash";
   const isRevealed = ritualPhase === "revealed";
-  const shouldShowBase = ritualPhase === "idle";
   const shouldShowClosedPaper = isClosed || isShaking;
   const shouldShowParticles = isShaking;
   const shouldShowEmerging = isEmerging;
@@ -103,67 +132,55 @@ export function FortuneTube({
           data-ritual-stage="asset-stack"
           data-reduced-motion={reducedMotion ? "true" : "false"}
         >
-          {shouldShowBase ? (
-            <motion.div
-              aria-hidden
-              data-ritual-layer="ritual-base"
-              className="absolute inset-0"
-              animate={reducedMotion ? { scale: 1 } : { scale: [1, 1.012, 1] }}
-              transition={{ duration: 4.6, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
-            >
-              <Image
-                src={assetPath(ritualAssets.ritualBase)}
-                alt=""
-                fill
-                sizes={ritualAssetSizes}
-                fetchPriority="high"
-                className="object-contain"
-              />
-            </motion.div>
-          ) : null}
-          {shouldShowClosedPaper ? (
-            <div
-              aria-hidden
-              data-ritual-layer="paper-closed"
-              className={cn(
-                "absolute inset-0",
-                isClosed && "ritual-paper-closed-closed",
-                isShaking && "ritual-paper-closed-shaking",
-              )}
-            >
-              <Image src={assetPath(ritualAssets.paperClosed)} alt="" fill sizes={ritualAssetSizes} className="object-contain" />
-            </div>
-          ) : null}
-          {shouldShowEmerging ? (
-            <div
-              aria-hidden
-              data-ritual-layer="paper-emerging"
-              className="absolute inset-0 ritual-paper-emerging"
-            >
-              <Image src={assetPath(ritualAssets.paperEmerging)} alt="" fill sizes={ritualAssetSizes} className="object-contain" />
-            </div>
-          ) : null}
-          {shouldShowParticles ? (
-            <div
-              aria-hidden
-              data-ritual-layer="fx-particles"
-              className="absolute inset-0 ritual-fx-particles-shaking"
-            >
-              <Image src={assetPath(ritualAssets.fxParticles)} alt="" fill sizes={ritualAssetSizes} className="object-contain" />
-            </div>
-          ) : null}
+          <motion.div
+            aria-hidden
+            data-ritual-layer="ritual-base"
+            className={cn("absolute inset-0 transition-opacity duration-200", ritualPhase === "idle" ? "opacity-100" : "opacity-0")}
+            animate={reducedMotion ? { scale: 1 } : { scale: [1, 1.012, 1] }}
+            transition={{ duration: 4.6, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
+          >
+            <RitualLayerImage src={ritualAssets.ritualBase} priority />
+          </motion.div>
+          <div
+            aria-hidden
+            data-ritual-layer="paper-closed"
+            className={cn(
+              "absolute inset-0 transition-opacity duration-150",
+              shouldShowClosedPaper ? "opacity-100" : "opacity-0",
+              isClosed && "ritual-paper-closed-closed",
+              isShaking && "ritual-paper-closed-shaking",
+            )}
+          >
+            <RitualLayerImage src={ritualAssets.paperClosed} priority />
+          </div>
+          <div
+            aria-hidden
+            data-ritual-layer="paper-emerging"
+            className={cn("absolute inset-0 transition-opacity duration-150", shouldShowEmerging ? "opacity-100 ritual-paper-emerging" : "opacity-0")}
+          >
+            <RitualLayerImage src={ritualAssets.paperEmerging} />
+          </div>
+          <div
+            aria-hidden
+            data-ritual-layer="fx-particles"
+            className={cn("absolute inset-0 transition-opacity duration-150", shouldShowParticles ? "opacity-100 ritual-fx-particles-shaking" : "opacity-0")}
+          >
+            <RitualLayerImage src={ritualAssets.fxParticles} />
+          </div>
           {isFlash ? (
             <RevealFlash reducedMotion={reducedMotion} src={ritualAssets.fxReveal} />
           ) : null}
-          {shouldShowOpen ? (
-            <div
-              aria-hidden
-              data-ritual-layer="paper-open"
-              className={cn("absolute inset-0 z-10", isOpen || isFlash ? "ritual-paper-open" : "ritual-paper-open-revealed")}
-            >
-              <Image src={assetPath(ritualAssets.paperOpen)} alt="" fill sizes={ritualAssetSizes} className="object-contain" />
-            </div>
-          ) : null}
+          <div
+            aria-hidden
+            data-ritual-layer="paper-open"
+            className={cn(
+              "absolute inset-0 z-10 transition-opacity duration-150",
+              shouldShowOpen ? "opacity-100" : "opacity-0",
+              isOpen || isFlash ? "ritual-paper-open" : "ritual-paper-open-revealed",
+            )}
+          >
+            <RitualLayerImage src={ritualAssets.paperOpen} />
+          </div>
         </div>
       ) : (
       <motion.div

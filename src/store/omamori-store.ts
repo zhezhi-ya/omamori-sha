@@ -64,15 +64,18 @@ export const useOmamoriStore = create<OmamoriState>((set, get) => ({
     const todayRecord = storedRecord?.dateKey === todayKey ? storedRecord : null;
 
     const settings = loadSettings();
-    const selectedRouteId = settings.askRouteOnLaunch ? null : (loadSelectedRouteId() ?? settings.defaultRouteId);
+    const storedRouteId = loadSelectedRouteId();
 
     set({
       isHydrated: true,
       userId,
-      selectedRouteId,
+      selectedRouteId: null,
       todayRecord,
       favorites: loadFavorites(),
-      settings,
+      settings: {
+        ...settings,
+        defaultRouteId: storedRouteId ?? settings.defaultRouteId,
+      },
     });
   },
   selectRoute: (routeId) => {

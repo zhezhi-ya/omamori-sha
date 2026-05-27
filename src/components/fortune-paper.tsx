@@ -20,12 +20,12 @@ export function FortunePaper({ open, rarity, reducedMotion, children }: FortuneP
       {open ? (
         <motion.section
           key="fortune-paper"
-          initial={reducedMotion ? { opacity: 0 } : { opacity: 0, rotateX: -50, scaleY: 0.75, y: 18 }}
-          animate={reducedMotion ? { opacity: 1 } : { opacity: 1, rotateX: 0, scaleY: 1, y: 0 }}
-          exit={reducedMotion ? { opacity: 0 } : { opacity: 0, y: 16 }}
-          transition={{ duration: reducedMotion ? 0.22 : 0.7, ease: [0.21, 0.9, 0.24, 1] }}
+          initial={reducedMotion ? { opacity: 0 } : { opacity: 0, scale: 0.98, y: 12 }}
+          animate={reducedMotion ? { opacity: 1 } : { opacity: 1, scale: 1, y: 0 }}
+          exit={reducedMotion ? { opacity: 0 } : { opacity: 0, scale: 0.99, y: 8 }}
+          transition={{ duration: reducedMotion ? 0.14 : 0.24, ease: "easeOut" }}
           className={cn(
-            "relative mx-auto w-full max-w-2xl overflow-hidden rounded-[2rem] px-4 py-4 sm:px-6 sm:py-6",
+            "relative mx-auto w-full max-w-2xl overflow-hidden rounded-[1.45rem] px-3 py-3 sm:rounded-[2rem] sm:px-6 sm:py-6",
             "washi-card paper-texture",
           )}
           style={{ boxShadow: rarityGlow[rarity] }}

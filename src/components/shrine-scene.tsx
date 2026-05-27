@@ -1,11 +1,11 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "motion/react";
 import { particleOffsets } from "@/constants/design-tokens";
 import { OMAMORI_ROUTES } from "@/constants/fortune";
-import { assetPath } from "@/lib/paths";
+import { assetPath, optimizedImageFallbackPath } from "@/lib/paths";
 import type { OmamoriRouteConfig, SceneNotice } from "@/types/omikuji";
 
 interface ShrineSceneProps {
@@ -31,8 +31,8 @@ function SceneRouteLayers({ route, useRitualBackdrop = false }: { route: Omamori
 
   return (
     <>
-      <Image
-        src={assetPath(backdropImage)}
+      <FallbackImage
+        src={backdropImage}
         alt=""
         fill
         sizes="100vw"
@@ -42,6 +42,33 @@ function SceneRouteLayers({ route, useRitualBackdrop = false }: { route: Omamori
       <div className="absolute inset-0 bg-[image:var(--asset-washi-noise)] opacity-[0.08]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(255,255,255,0.18),transparent_34%),linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,249,238,0.05)_50%,rgba(70,43,54,0.42))]" />
     </>
+  );
+}
+
+type FallbackImageProps = Omit<React.ComponentProps<typeof Image>, "src"> & {
+  src: string;
+};
+
+function FallbackImage({ src, onError, ...props }: FallbackImageProps) {
+  const [imageState, setImageState] = useState({ source: src, resolved: src });
+  const resolvedSrc = imageState.source === src ? imageState.resolved : src;
+  const fallbackSrc = optimizedImageFallbackPath(src);
+
+  return (
+    <Image
+      key={src}
+      {...props}
+      alt={props.alt ?? ""}
+      src={assetPath(resolvedSrc)}
+      onError={(event) => {
+        if (fallbackSrc && resolvedSrc !== fallbackSrc) {
+          setImageState({ source: src, resolved: fallbackSrc });
+          return;
+        }
+
+        onError?.(event);
+      }}
+    />
   );
 }
 
@@ -63,6 +90,7 @@ export function ShrineScene({
   compact = false,
 }: ShrineSceneProps) {
   const hasPageRitualBackdrop = compact && useRitualBackdrop && Boolean(routeConfig.ritualImage);
+  const pageBackdropImage = routeConfig.ritualImage ?? routeConfig.sceneImage;
 
   useEffect(() => {
     if (!notice || !onDismissNotice) {
@@ -138,12 +166,13 @@ export function ShrineScene({
       >
         {hasPageRitualBackdrop ? (
           <div className="pointer-events-none absolute inset-0">
-            <Image
-              src={assetPath(routeConfig.ritualImage ?? routeConfig.sceneImage)}
+            <FallbackImage
+              src={pageBackdropImage}
               alt=""
               fill
               sizes="(max-width: 640px) 100vw, 100vw"
               loading="eager"
+              priority
               className="object-cover object-[50%_30%] opacity-[0.94] lg:object-center lg:opacity-[0.98]"
             />
             <div className="absolute inset-0 bg-[image:var(--asset-washi-noise)] opacity-[0.08] lg:opacity-[0.1]" />

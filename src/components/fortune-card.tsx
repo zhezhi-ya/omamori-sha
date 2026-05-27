@@ -1,12 +1,13 @@
 "use client";
 
 import Image from "next/image";
+import { useState } from "react";
 import { motion } from "motion/react";
 import { CATEGORY_LABELS, RARITY_LABELS, TIER_LABELS } from "@/constants/fortune";
 import { characterThemeMap, luckyColorSwatches } from "@/constants/design-tokens";
 import { cn, getDisplayFortuneTitle } from "@/lib/utils";
 import { OMAMORI_ROUTES } from "@/constants/fortune";
-import { assetPath } from "@/lib/paths";
+import { assetPath, optimizedImageFallbackPath } from "@/lib/paths";
 import type { Fortune, OmamoriRouteConfig, OmikujiCategory } from "@/types/omikuji";
 
 interface FortuneCardProps {
@@ -52,7 +53,7 @@ function CharacterPortrait({
       initial={reducedMotion ? false : { opacity: 0, scale: 0.92, rotate: -1.5 }}
       animate={reducedMotion ? { opacity: 1 } : { opacity: 1, scale: 1, rotate: 0 }}
       transition={{ duration: reducedMotion ? 0.18 : 0.46, ease: [0.21, 0.9, 0.24, 1] }}
-      className="character-portrait relative min-h-[19rem] overflow-hidden rounded-[1.75rem] border"
+      className="character-portrait relative min-h-[13rem] overflow-hidden rounded-[1.35rem] border sm:min-h-[19rem] sm:rounded-[1.75rem]"
       style={{
         borderColor: `${frameColor}30`,
         background: `${theme?.aura ?? `radial-gradient(circle at 35% 20%, ${frameColor}55, transparent 56%)`}, linear-gradient(180deg, rgba(37, 27, 42, 0.2), rgba(255, 249, 238, 0.72))`,
@@ -87,7 +88,7 @@ function CharacterPortrait({
         </>
       ) : (
         <div className="absolute inset-0 flex items-end justify-center px-6 pb-7">
-          <div className="relative h-64 w-52">
+          <div className="relative h-52 w-44 sm:h-64 sm:w-52">
             <div
               className="absolute left-1/2 top-3 h-28 w-32 -translate-x-1/2 rounded-[48%_48%_42%_42%] shadow-[inset_0_-18px_22px_rgba(0,0,0,0.16)]"
               style={{ background: fallbackHair }}
@@ -153,23 +154,40 @@ export function FortuneCard({
     copyStatus === "copied" ? "分享文案已复制" : copyStatus === "failed" ? "请手动复制签文" : "复制签文文案";
   const characterImage = fortune.characterImage ?? characterTheme?.portrait;
   const characterImageSource = fortune.characterImageSource ?? characterTheme?.portraitSource;
+  const [resultCornerState, setResultCornerState] = useState({
+    source: routeConfig.ritualAssets.resultCorner,
+    resolved: routeConfig.ritualAssets.resultCorner,
+  });
+  const resultCornerSrc =
+    resultCornerState.source === routeConfig.ritualAssets.resultCorner
+      ? resultCornerState.resolved
+      : routeConfig.ritualAssets.resultCorner;
+  const resultCornerFallback = optimizedImageFallbackPath(routeConfig.ritualAssets.resultCorner);
 
   return (
-    <div className="relative space-y-6 overflow-hidden rounded-[2rem] border border-[#8f714b]/14 bg-[linear-gradient(180deg,rgba(255,252,245,0.92),rgba(237,220,190,0.88))] p-3 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.38)] sm:p-5">
-      <div className="pointer-events-none absolute right-1 top-1 hidden h-40 w-40 sm:block lg:h-44 lg:w-44">
+    <div className="relative space-y-3 overflow-hidden rounded-[1.45rem] border border-[#8f714b]/14 bg-[linear-gradient(180deg,rgba(255,252,245,0.92),rgba(237,220,190,0.88))] p-2.5 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.38)] sm:space-y-6 sm:rounded-[2rem] sm:p-5">
+      <div className="pointer-events-none absolute right-1 top-1 h-24 w-24 opacity-65 sm:h-40 sm:w-40 sm:opacity-100 lg:h-44 lg:w-44">
         <Image
-          src={assetPath(routeConfig.ritualAssets.resultCorner)}
+          src={assetPath(resultCornerSrc)}
           alt=""
           fill
-          sizes="8rem"
+          sizes="(max-width: 640px) 6rem, 8rem"
           className="object-contain opacity-85"
+          onError={() => {
+            if (resultCornerFallback && resultCornerSrc !== resultCornerFallback) {
+              setResultCornerState({
+                source: routeConfig.ritualAssets.resultCorner,
+                resolved: resultCornerFallback,
+              });
+            }
+          }}
         />
       </div>
-      <div className="flex flex-wrap items-start justify-between gap-4">
-        <div className="space-y-3">
-          <div className="flex flex-wrap items-center gap-2 text-xs tracking-[0.24em] text-[#7d6754] uppercase">
+      <div className="flex flex-wrap items-start justify-between gap-2 sm:gap-4">
+        <div className="space-y-2 pr-14 sm:space-y-3 sm:pr-0">
+          <div className="flex flex-wrap items-center gap-1.5 text-[0.64rem] tracking-[0.18em] text-[#7d6754] uppercase sm:gap-2 sm:text-xs sm:tracking-[0.24em]">
             <span
-              className="rounded-full border px-3 py-1"
+              className="rounded-full border px-2.5 py-0.5 sm:px-3 sm:py-1"
               style={{
                 borderColor: `${accent}44`,
                 background: `${glow}22`,
@@ -177,17 +195,17 @@ export function FortuneCard({
             >
               {categoryLabel}
             </span>
-            <span className="rounded-full border border-[#a27f4f]/20 bg-[#fff7e8]/60 px-3 py-1">
+            <span className="rounded-full border border-[#a27f4f]/20 bg-[#fff7e8]/60 px-2.5 py-0.5 sm:px-3 sm:py-1">
               {tierLabel}
             </span>
-            <span className="rounded-full border border-[#9871d1]/18 bg-[#f8f3ff]/70 px-3 py-1">
+            <span className="rounded-full border border-[#9871d1]/18 bg-[#f8f3ff]/70 px-2.5 py-0.5 sm:px-3 sm:py-1">
               {rarityLabel}
             </span>
           </div>
-          <div className="space-y-2">
-            <p className="text-sm tracking-[0.2em] text-[#8b7360]">{labels.heading}</p>
-            <h2 className="soft-title text-3xl leading-tight text-[#2b2124] sm:text-4xl">{title}</h2>
-            <div className="flex flex-wrap items-center gap-2 text-sm text-[#6b5550]">
+          <div className="space-y-1.5 sm:space-y-2">
+            <p className="text-xs tracking-[0.18em] text-[#8b7360] sm:text-sm sm:tracking-[0.2em]">{labels.heading}</p>
+            <h2 className="soft-title text-2xl leading-tight text-[#2b2124] sm:text-4xl">{title}</h2>
+            <div className="flex flex-wrap items-center gap-1.5 text-xs text-[#6b5550] sm:gap-2 sm:text-sm">
               <span className="font-medium">{characterName}</span>
               {fortune.alias ? <span>· {fortune.alias}</span> : null}
               {archetype ? <span>· {archetype}</span> : null}
@@ -195,7 +213,7 @@ export function FortuneCard({
           </div>
         </div>
         <div
-          className="relative min-w-[13.5rem] max-w-[18rem] overflow-hidden rounded-[1.5rem] border p-5"
+          className="relative hidden min-w-[13.5rem] max-w-[18rem] overflow-hidden rounded-[1.5rem] border p-5 sm:block"
           style={{
             borderColor: `${frameColor}30`,
             background: `${characterTheme?.crest ?? `linear-gradient(180deg, ${glow}26, rgba(255,255,255,0.5))`}`,
@@ -227,12 +245,12 @@ export function FortuneCard({
         </div>
       </div>
 
-      <div className="grid gap-4 md:grid-cols-[1.25fr_0.75fr]">
+      <div className="grid gap-3 md:grid-cols-[1.25fr_0.75fr] sm:gap-4">
         <motion.div
           initial={reducedMotion ? false : { opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45, delay: 0.08 }}
-          className="space-y-4"
+          className="space-y-3 sm:space-y-4"
         >
           <CharacterPortrait
             fortune={fortune}
@@ -244,7 +262,7 @@ export function FortuneCard({
             reducedMotion={reducedMotion}
           />
           <div
-            className="rounded-[1.5rem] border p-4 shadow-[0_16px_38px_rgba(78,48,26,0.08)]"
+            className="rounded-[1.25rem] border p-3 shadow-[0_16px_38px_rgba(78,48,26,0.08)] sm:rounded-[1.5rem] sm:p-4"
             style={{
               borderColor: `${frameColor}22`,
               background:
@@ -254,7 +272,7 @@ export function FortuneCard({
             }}
           >
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-              <div className="relative flex h-24 w-24 shrink-0 items-center justify-center overflow-hidden rounded-[1.6rem] border border-[#b18961]/20">
+              <div className="relative flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-[1.15rem] border border-[#b18961]/20 sm:h-24 sm:w-24 sm:rounded-[1.6rem]">
                 {characterImage ? (
                   <Image
                     src={assetPath(characterImage)}
@@ -276,20 +294,20 @@ export function FortuneCard({
                 )}
                 <div className="absolute inset-3 rounded-[1.1rem] border border-white/40" />
               </div>
-              <div className="space-y-2">
-                <p className="text-xs tracking-[0.22em] text-[#8b7664] uppercase">{labels.quote}</p>
-                <p className="text-base leading-8 text-[#342922]">{quote}</p>
+              <div className="space-y-1.5 sm:space-y-2">
+                <p className="text-[0.68rem] tracking-[0.2em] text-[#8b7664] uppercase sm:text-xs sm:tracking-[0.22em]">{labels.quote}</p>
+                <p className="text-sm leading-6 text-[#342922] sm:text-base sm:leading-8">{quote}</p>
               </div>
             </div>
           </div>
-          <div className="grid gap-3 lg:grid-cols-2">
-            <div className="rounded-[1.5rem] border border-[#ae8f67]/16 bg-white/62 p-4 shadow-[0_16px_38px_rgba(78,48,26,0.06)]">
-              <p className="text-xs tracking-[0.22em] text-[#8b7664] uppercase">{labels.summary}</p>
-              <p className="mt-2 text-[0.98rem] leading-7 text-[#342922]">{summary}</p>
+          <div className="grid gap-2.5 lg:grid-cols-2 sm:gap-3">
+            <div className="rounded-[1.25rem] border border-[#ae8f67]/16 bg-white/62 p-3 shadow-[0_16px_38px_rgba(78,48,26,0.06)] sm:rounded-[1.5rem] sm:p-4">
+              <p className="text-[0.68rem] tracking-[0.2em] text-[#8b7664] uppercase sm:text-xs sm:tracking-[0.22em]">{labels.summary}</p>
+              <p className="mt-1.5 text-sm leading-6 text-[#342922] sm:mt-2 sm:text-[0.98rem] sm:leading-7">{summary}</p>
             </div>
-            <div className="rounded-[1.5rem] border border-[#ae8f67]/16 bg-white/58 p-4 shadow-[0_16px_38px_rgba(78,48,26,0.06)]">
-              <p className="text-xs tracking-[0.22em] text-[#8b7664] uppercase">{labels.advice}</p>
-              <p className="mt-2 text-[0.98rem] leading-7 text-[#342922]">{advice}</p>
+            <div className="rounded-[1.25rem] border border-[#ae8f67]/16 bg-white/58 p-3 shadow-[0_16px_38px_rgba(78,48,26,0.06)] sm:rounded-[1.5rem] sm:p-4">
+              <p className="text-[0.68rem] tracking-[0.2em] text-[#8b7664] uppercase sm:text-xs sm:tracking-[0.22em]">{labels.advice}</p>
+              <p className="mt-1.5 text-sm leading-6 text-[#342922] sm:mt-2 sm:text-[0.98rem] sm:leading-7">{advice}</p>
             </div>
           </div>
         </motion.div>
@@ -298,36 +316,36 @@ export function FortuneCard({
           initial={reducedMotion ? false : { opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45, delay: 0.16 }}
-          className="space-y-4"
+          className="grid gap-2.5 sm:space-y-4"
         >
-          <div className="rounded-[1.5rem] border p-4" style={{ borderColor: `${frameColor}18`, background: "rgba(255,255,255,0.58)" }}>
-            <p className="text-xs tracking-[0.22em] text-[#8b7664] uppercase">{labels.luckyColor}</p>
-            <div className="mt-3 flex items-center gap-3">
+          <div className="rounded-[1.25rem] border p-3 sm:rounded-[1.5rem] sm:p-4" style={{ borderColor: `${frameColor}18`, background: "rgba(255,255,255,0.58)" }}>
+            <p className="text-[0.68rem] tracking-[0.2em] text-[#8b7664] uppercase sm:text-xs sm:tracking-[0.22em]">{labels.luckyColor}</p>
+            <div className="mt-2 flex items-center gap-2.5 sm:mt-3 sm:gap-3">
               <span
-                className="h-9 w-9 rounded-full border border-white/70 shadow-[inset_0_1px_0_rgba(255,255,255,0.45),0_8px_18px_rgba(0,0,0,0.08)]"
+                className="h-7 w-7 rounded-full border border-white/70 shadow-[inset_0_1px_0_rgba(255,255,255,0.45),0_8px_18px_rgba(0,0,0,0.08)] sm:h-9 sm:w-9"
                 style={{
                   background: luckyColorSwatch,
                   boxShadow: `inset 0 1px 0 rgba(255,255,255,0.45), 0 0 0 1px ${frameColor}18, 0 8px 18px rgba(0,0,0,0.08)`,
                 }}
               />
-              <span className="text-base text-[#342922]">{luckyColor}</span>
+              <span className="text-sm text-[#342922] sm:text-base">{luckyColor}</span>
             </div>
           </div>
-          <div className="rounded-[1.5rem] border p-4" style={{ borderColor: `${frameColor}18`, background: "rgba(255,255,255,0.52)" }}>
-            <p className="text-xs tracking-[0.22em] text-[#8b7664] uppercase">{labels.luckyItem}</p>
-            <p className="mt-2 text-base text-[#342922]">{luckyItem}</p>
+          <div className="rounded-[1.25rem] border p-3 sm:rounded-[1.5rem] sm:p-4" style={{ borderColor: `${frameColor}18`, background: "rgba(255,255,255,0.52)" }}>
+            <p className="text-[0.68rem] tracking-[0.2em] text-[#8b7664] uppercase sm:text-xs sm:tracking-[0.22em]">{labels.luckyItem}</p>
+            <p className="mt-1.5 text-sm text-[#342922] sm:mt-2 sm:text-base">{luckyItem}</p>
           </div>
-          <div className="rounded-[1.5rem] border p-4" style={{ borderColor: `${frameColor}18`, background: "rgba(255,255,255,0.52)" }}>
+          <div className="hidden rounded-[1.5rem] border p-4 sm:block" style={{ borderColor: `${frameColor}18`, background: "rgba(255,255,255,0.52)" }}>
             <p className="text-xs tracking-[0.22em] text-[#8b7664] uppercase">{labels.motif}</p>
             <p className="mt-2 text-base text-[#342922]">{motif}</p>
           </div>
-          <div className="rounded-[1.5rem] border p-4" style={{ borderColor: `${frameColor}18`, background: "rgba(255,255,255,0.52)" }}>
-            <p className="text-xs tracking-[0.22em] text-[#8b7664] uppercase">标签</p>
-            <div className="mt-3 flex flex-wrap gap-2">
+          <div className="rounded-[1.25rem] border p-3 sm:rounded-[1.5rem] sm:p-4" style={{ borderColor: `${frameColor}18`, background: "rgba(255,255,255,0.52)" }}>
+            <p className="text-[0.68rem] tracking-[0.2em] text-[#8b7664] uppercase sm:text-xs sm:tracking-[0.22em]">标签</p>
+            <div className="mt-2 flex flex-wrap gap-1.5 sm:mt-3 sm:gap-2">
               {tags.map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-full border border-[#a58360]/18 bg-[#fff9ec]/90 px-3 py-1 text-sm text-[#5a4537]"
+                  className="rounded-full border border-[#a58360]/18 bg-[#fff9ec]/90 px-2.5 py-0.5 text-xs text-[#5a4537] sm:px-3 sm:py-1 sm:text-sm"
                 >
                   #{tag}
                 </span>
@@ -341,16 +359,16 @@ export function FortuneCard({
         initial={reducedMotion ? false : { opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.4, delay: 0.24 }}
-        className="space-y-3 border-t border-[#8f714b]/12 pt-2"
+        className="space-y-2 border-t border-[#8f714b]/12 pt-2 sm:space-y-3"
       >
-        <p className="text-xs leading-6 text-[#7a6452]">东方Project同人风格角色签。</p>
-        <div className="flex flex-wrap items-center gap-3">
+        <p className="text-[0.68rem] leading-5 text-[#7a6452] sm:text-xs sm:leading-6">东方Project同人风格角色签。</p>
+        <div className="flex flex-wrap items-center gap-2 sm:gap-3">
           <button
             type="button"
             onClick={onToggleFavorite}
             aria-pressed={isFavorite}
             className={cn(
-              "min-h-11 rounded-full border px-4 py-2 text-sm transition-all",
+              "min-h-10 rounded-full border px-3.5 py-2 text-sm transition-all sm:min-h-11 sm:px-4",
               isFavorite
                 ? "border-[#c56f72]/34 bg-[#fff0ef] text-[#9b4e52]"
                 : "border-[#8f714b]/16 bg-white/50 text-[#5f4939] hover:border-[#c3996d]/34 hover:bg-white/80",
@@ -362,7 +380,7 @@ export function FortuneCard({
           <button
             type="button"
             onClick={onCopy}
-            className="min-h-11 rounded-full border border-[#8f714b]/16 bg-white/50 px-4 py-2 text-sm text-[#5f4939] transition-all hover:border-[#79d8e7]/28 hover:bg-white/80"
+            className="min-h-10 rounded-full border border-[#8f714b]/16 bg-white/50 px-3.5 py-2 text-sm text-[#5f4939] transition-all hover:border-[#79d8e7]/28 hover:bg-white/80 sm:min-h-11 sm:px-4"
           >
             {copyButtonLabel}
           </button>
