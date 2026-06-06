@@ -188,8 +188,8 @@ export function FortuneCard({
           }}
         />
       </div>
-      <div className="flex flex-wrap items-start justify-between gap-2 sm:gap-4">
-        <div className="space-y-2 pr-14 sm:space-y-3 sm:pr-0">
+      <div className="grid gap-2 sm:grid-cols-[minmax(0,1fr)_minmax(13.5rem,18rem)] sm:items-start sm:gap-4">
+        <div className="min-w-0 space-y-2 pr-14 sm:space-y-3 sm:pr-0">
           <div className="flex flex-wrap items-center gap-1.5 text-[0.64rem] tracking-[0.18em] text-[#7d6754] uppercase sm:gap-2 sm:text-xs sm:tracking-[0.24em]">
             <span
               className="rounded-full border px-2.5 py-0.5 sm:px-3 sm:py-1"
@@ -218,14 +218,14 @@ export function FortuneCard({
           </div>
         </div>
         <div
-          className="relative hidden min-w-[13.5rem] max-w-[18rem] overflow-hidden rounded-[1.5rem] border p-5 sm:block"
+          className="relative hidden w-full overflow-hidden rounded-[1.5rem] border p-5 sm:block"
           style={{
             borderColor: `${frameColor}30`,
             background: `${characterTheme?.crest ?? `linear-gradient(180deg, ${glow}26, rgba(255,255,255,0.5))`}`,
           }}
         >
           <p className="text-xs tracking-[0.24em] text-[#7b604e] uppercase">{labels.channel}</p>
-          <p className="mt-2 text-base leading-6 text-[#3f3027]">{motif}</p>
+          <p className="mt-2 break-words text-base leading-6 text-[#3f3027]">{motif}</p>
           <div className="mt-4 flex flex-wrap gap-2">
             {characterTheme?.sigil ? (
               <span
