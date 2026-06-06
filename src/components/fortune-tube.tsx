@@ -16,6 +16,7 @@ interface FortuneTubeProps {
   revealing?: boolean;
   ritualPhase?: RitualPhase;
   label?: string;
+  descriptionId?: string;
   variant?: OmamoriRouteId;
   ritualAssets?: RitualAssetSet;
   onClick: () => void;
@@ -75,6 +76,7 @@ export function FortuneTube({
   revealing = false,
   ritualPhase = revealing ? "emerging" : active ? "shaking" : "idle",
   label = "摇动抽签筒，抽取今日签文",
+  descriptionId,
   variant = "hakurei",
   ritualAssets,
   onClick,
@@ -99,10 +101,12 @@ export function FortuneTube({
       onClick={onClick}
       disabled={disabled}
       aria-label={label}
+      aria-describedby={descriptionId}
+      aria-busy={disabled ? "true" : undefined}
       className={cn(
         "group relative flex items-end justify-center rounded-[2.8rem] bg-transparent",
         ritualAssets ? `${ritualAssetSizeClass} pb-0` : "h-64 w-48 pb-7",
-        "drop-shadow-[0_30px_64px_rgba(0,0,0,0.42)] transition-opacity disabled:cursor-not-allowed",
+        "drop-shadow-[0_30px_64px_rgba(0,0,0,0.42)] transition-opacity disabled:cursor-wait disabled:opacity-70",
       )}
       data-ritual-phase={ritualPhase}
       data-ritual-variant={variant}

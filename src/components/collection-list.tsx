@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useId, useMemo, useState } from "react";
 import { motion, useReducedMotion as useMotionReducedMotion } from "motion/react";
 import { AmbientAudioController } from "@/components/ambient-audio-controller";
 import { FortuneCard } from "@/components/fortune-card";
@@ -37,6 +37,8 @@ export function CollectionList({ categories }: CollectionListProps) {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [routeFilter, setRouteFilter] = useState<"all" | OmamoriRouteId>("all");
   const [resetConfirmOpen, setResetConfirmOpen] = useState(false);
+  const filterGroupId = useId();
+  const listStatusId = useId();
   const {
     initialize,
     favorites,
@@ -83,6 +85,15 @@ export function CollectionList({ categories }: CollectionListProps) {
     selectedTheme?.stageAura ??
     (selectedCategory ? `radial-gradient(circle at 50% 20%, ${selectedCategory.glow}22, transparent 26%)` : undefined);
   const reducedMotion = Boolean(prefersReducedMotion || settings.reduceMotion);
+  const routeCounts = useMemo(() => {
+    const counts = new Map<OmamoriRouteId, number>();
+    favorites.forEach((item) => {
+      const routeId = getSavedFortuneRouteId(item);
+      counts.set(routeId, (counts.get(routeId) ?? 0) + 1);
+    });
+    return counts;
+  }, [favorites]);
+  const activeFilterLabel = routeFilter === "all" ? "全部入口" : getOmamoriRoute(routeFilter).label;
 
   const handleCopy = async (fortune: SavedFortune) => {
     const copiedSuccessfully = await copyTextSafely(buildShareText(fortune, getOmamoriRoute(getSavedFortuneRouteId(fortune))));
@@ -170,7 +181,8 @@ export function CollectionList({ categories }: CollectionListProps) {
                 <span className="soft-title text-5xl text-[#352632]">{favorites.length}</span>
                 <span className="pb-2 text-sm text-[#5f4555]">枚已收入签册</span>
               </div>
-              <div className="mt-5 flex flex-wrap gap-2">
+              <div className="mt-5 flex flex-wrap gap-2" role="group" aria-labelledby={filterGroupId} aria-describedby={listStatusId}>
+                <p id={filterGroupId} className="sr-only">按入口筛选签册</p>
                 <button
                   type="button"
                   onClick={() => {
@@ -178,9 +190,10 @@ export function CollectionList({ categories }: CollectionListProps) {
                     setSelectedId(null);
                   }}
                   aria-pressed={routeFilter === "all"}
+                  aria-label={`全部入口，${favorites.length} 枚签文`}
                   className="min-h-11 rounded-full border border-[#7a5d6e]/18 bg-white/54 px-4 py-2 text-sm text-[#493344] transition hover:border-[#7a5d6e]/28 hover:bg-white/72 aria-pressed:border-[#e84f72]/38 aria-pressed:bg-white/82"
                 >
-                  全部入口
+                  全部入口 · {favorites.length}
                 </button>
                 {OMAMORI_ROUTE_LIST.map((route) => (
                   <button
@@ -191,13 +204,17 @@ export function CollectionList({ categories }: CollectionListProps) {
                       setSelectedId(null);
                     }}
                     aria-pressed={routeFilter === route.id}
+                    aria-label={`${route.label}，${routeCounts.get(route.id) ?? 0} 枚签文`}
                     className="min-h-11 rounded-full border bg-white/54 px-4 py-2 text-sm transition hover:bg-white/72 aria-pressed:bg-white/82"
                     style={{ borderColor: routeFilter === route.id ? `${route.visual.accent}66` : "rgba(122,93,110,0.18)" }}
                   >
-                    {route.label}
+                    {route.label} · {routeCounts.get(route.id) ?? 0}
                   </button>
                 ))}
               </div>
+              <p id={listStatusId} className="mt-3 text-xs leading-6 text-[#5f4555]" aria-live="polite">
+                当前显示{activeFilterLabel}的 {visibleFavorites.length} 枚签文。
+              </p>
             </div>
 
             {visibleFavorites.length > 0 ? (
@@ -232,6 +249,8 @@ export function CollectionList({ categories }: CollectionListProps) {
                         type="button"
                         onClick={() => setSelectedId(fortune.id)}
                         aria-pressed={selected?.id === fortune.id}
+                        aria-label={selected?.id === fortune.id ? `正在查看 ${fortune.title}` : `查看 ${fortune.title} 的详情`}
+                        disabled={selected?.id === fortune.id}
                         className="min-h-11 rounded-full border border-[#7a5d6e]/18 bg-white/54 px-4 py-2 text-sm text-[#493344] transition hover:border-[#7a5d6e]/28 hover:bg-white/72"
                       >
                         {selected?.id === fortune.id ? "正在查看" : "查看详情"}
@@ -266,6 +285,26 @@ export function CollectionList({ categories }: CollectionListProps) {
                     ? "当你在首页遇到想留下的今日签时，点一下“收进签册”，它就会出现在这里。"
                     : `${getOmamoriRoute(routeFilter).label} 还没有收入签册的签文。换个入口看看，或者先回首页再抽一枚。`}
                 </p>
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {routeFilter !== "all" ? (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setRouteFilter("all");
+                        setSelectedId(null);
+                      }}
+                      className="min-h-11 rounded-full border border-[#7a5d6e]/18 bg-white/54 px-4 py-2 text-sm text-[#493344] transition hover:border-[#7a5d6e]/28 hover:bg-white/72"
+                    >
+                      查看全部签册
+                    </button>
+                  ) : null}
+                  <Link
+                    href="/"
+                    className="min-h-11 rounded-full border border-[#7a5d6e]/18 bg-white/54 px-4 py-2 text-sm text-[#493344] transition hover:border-[#7a5d6e]/28 hover:bg-white/72"
+                  >
+                    回首页抽签
+                  </Link>
+                </div>
               </div>
             )}
           </div>

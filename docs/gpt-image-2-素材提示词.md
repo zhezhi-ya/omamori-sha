@@ -1,6 +1,6 @@
 ﻿# GPT Image 2 素材提示词清单
 
-本文档用于记录 GPT Image 2 素材补全提示词、抽签动画素材设计规格与落盘状态。2026-05-24 已按本文档优先级补全 8 张缺失的独立仪式预览素材；2026-05-25 已落盘并接入 14 个场景的动画拆层素材包。当前素材侧已收口，后续若继续生成图片，仍优先参考本文档并保持当前网页的全屏二次元场景 UI 风格；短期工作重心转向新增场景界面文案润色、地点气质校准和真实 UI 回归。
+本文档用于记录 GPT Image 2 素材补全提示词、抽签动画素材设计规格与落盘状态。2026-05-24 已按本文档优先级补全 8 张缺失的独立仪式预览素材；2026-05-25 已落盘并接入 14 个场景的动画拆层素材包；2026-06-06 已完成素材引用、候选、legacy、体积和公开发布包审计，详见 `docs/素材资产审计.md`。当前素材侧已收口，后续若继续生成图片，仍优先参考本文档并保持当前网页的全屏二次元场景 UI 风格；短期工作重心转向新增场景界面文案润色、地点气质校准、真实 UI 回归和发布包裁剪。
 
 ## 使用原则
 
@@ -538,7 +538,8 @@ Create a restrained Japanese anime visual novel background for Nameless Hill. Sh
 - `scarlet/result-corner.png` 与 `eientei/result-corner.png` 已补强为非空透明角标。
 - 地灵殿静态预览图已统一命名为 `palace-of-earth-spirits-ritual-kit-v1.png`。
 - 旧版森林、命莲寺、雾之湖、无名之丘和地灵殿 v2 背景已归档到 `public/images/generated-themes/legacy/unused-2026-05-25/expanded/`。
-- 当前进行中：新增 11 个正式场景的运行界面文案润色。目标是删除“候选、后续、蓝图、待接入”等工程说明口吻，让它们与博丽神社、红魔馆、永远亭一样像真实抽签入口。
+- 2026-06-06 AI-4 审计确认：`fortune.ts` 图片引用、优化 WebP 的 PNG 回退引用、`tracks.json` 音频引用均无缺失；大于 1MB 的精确重复资源为 0 组。运行首选 WebP 约 9.06MB，但 GitHub Pages 静态发布包会把 raw PNG、source sheet、legacy 和大 MP3 一并带出，当前 `out/` 约 231.70MB。
+- 2026-06-06 AI-5 发布验收确认：14 条正式路线的运行界面文案已经收拢为正式抽签入口口吻；首屏、页面元信息和公开说明均明确“非官方东方 Project 二次创作”。素材侧下一步不再继续批量生图，优先做发布包裁剪、授权复核和必要的单层缺陷替换。
 
 后续 AI 使用顺序：
 
@@ -546,6 +547,8 @@ Create a restrained Japanese anime visual novel background for Nameless Hill. Sh
 2. 候选预览和蓝图说明继续读取 `ritualImage`。
 3. 需要重做某一层时，只替换对应场景目录里的单层 PNG，并保留 `source-sheet-v1.png` 作为重切参考。
 4. 旧素材不要重新接回 `SCENE_CANDIDATES`；确需回看时从 `legacy/unused-2026-05-25/` 查找。
+5. 公开发布前优先按 `docs/素材资产审计.md` 裁剪 `legacy/`、被 v2 / v3 替代的 OOC 旧候选、只作重切参考的 `source-sheet-v1.png` 和授权不明的大体积 BGM；不要为了压包把 `legacy/` 或 OOC 旧图接回配置。
+6. 不得把原作游戏截图、官方游戏拆包素材或官方图放入 `public/`；早期 Touhou LostWord 官方角色图已在 AI-5 验收中从公开目录移除。
 
 生成并筛选图片后，按以下方式接入：
 

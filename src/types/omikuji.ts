@@ -39,6 +39,8 @@ export type OmamoriRouteId =
 
 export type OmamoriRouteTextTone = "shrine" | "mansion" | "moon";
 
+export type OmamoriRouteCopyTone = OmamoriRouteId;
+
 export type SceneCandidateStatus = "active" | "locked";
 
 export interface OmamoriRouteCopyLabels {
@@ -52,6 +54,14 @@ export interface OmamoriRouteCopyLabels {
   rare: string;
   channel: string;
   inspiration: string;
+}
+
+export interface OmamoriRouteRitualProfile {
+  ritualType: string;
+  paper: string;
+  tool: string;
+  sound: string;
+  verbs: string[];
 }
 
 export interface OmamoriRouteVisualTokens {
@@ -97,6 +107,8 @@ export interface OmamoriRouteConfig {
   ritualImage?: string;
   ritualAssets: RitualAssetSet;
   textTone: OmamoriRouteTextTone;
+  copyTone: OmamoriRouteCopyTone;
+  ritualProfile: OmamoriRouteRitualProfile;
   visual: OmamoriRouteVisualTokens;
   copyLabels: OmamoriRouteCopyLabels;
   stage: {

@@ -14,8 +14,8 @@ export default function OpenGraphImage() {
   return new ImageResponse(
     <SocialPreviewArt
       title="御守社"
-      subtitle="从博丽神社、红魔馆或永远亭，收下一枚今日签文。"
-      footer="东方Project同人风格签文"
+      subtitle="从 14 处幻想乡签路，收下一枚今日签文。"
+      footer="非官方东方 Project 二次创作"
     />,
     size,
   );

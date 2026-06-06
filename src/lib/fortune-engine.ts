@@ -25,7 +25,34 @@ function createMulberry32(seed: number): () => number {
 }
 
 function getFortuneWeight(fortune: Fortune): number {
-  return FORTUNE_RARITY_WEIGHTS[fortune.rarity] * CATEGORY_DRAW_MODIFIER[fortune.category];
+  const weight = FORTUNE_RARITY_WEIGHTS[fortune.rarity] * CATEGORY_DRAW_MODIFIER[fortune.category];
+  return Number.isFinite(weight) && weight > 0 ? weight : 0;
+}
+
+function pickWeightedFortune(scenePool: Fortune[], randomValue: number): Fortune {
+  const weightedPool = scenePool
+    .map((fortune) => ({
+      fortune,
+      weight: getFortuneWeight(fortune),
+    }))
+    .filter((item) => item.weight > 0);
+
+  if (weightedPool.length === 0) {
+    return scenePool[0];
+  }
+
+  const totalWeight = weightedPool.reduce((sum, item) => sum + item.weight, 0);
+  const safeRandomValue = Number.isFinite(randomValue) ? Math.min(Math.max(randomValue, 0), 0.999999999) : 0;
+  let target = safeRandomValue * totalWeight;
+
+  for (const item of weightedPool) {
+    target -= item.weight;
+    if (target <= 0) {
+      return item.fortune;
+    }
+  }
+
+  return scenePool[0];
 }
 
 export function filterFortunesForScene(fortunes: Fortune[], sceneId?: string): Fortune[] {
@@ -49,22 +76,16 @@ export function pickDailyFortune(
 
   const seed = hashSeed(`${userId}:${dateKey}:${sceneId ?? "all"}:cyber-omamori-sha`);
   const random = createMulberry32(seed);
-  const weightedPool = scenePool.map((fortune) => ({
-    fortune,
-    weight: getFortuneWeight(fortune),
-  }));
+  return pickWeightedFortune(scenePool, random());
+}
 
-  const totalWeight = weightedPool.reduce((sum, item) => sum + item.weight, 0);
-  let target = random() * totalWeight;
-
-  for (const item of weightedPool) {
-    target -= item.weight;
-    if (target <= 0) {
-      return item.fortune;
-    }
+export function pickRandomFortune(fortunes: Fortune[], sceneId?: string): Fortune {
+  const scenePool = filterFortunesForScene(fortunes, sceneId);
+  if (scenePool.length === 0) {
+    throw new Error(`Fortune pool is empty for scene: ${sceneId ?? "all"}.`);
   }
 
-  return scenePool[0];
+  return pickWeightedFortune(scenePool, Math.random());
 }
 
 export function createTodayRecord(

@@ -14,8 +14,9 @@ import { categoryAccentFallback, characterThemeMap } from "@/constants/design-to
 import { DRAW_TIMINGS, getOmamoriRoute, SCENE_CANDIDATES } from "@/constants/fortune";
 import { getShanghaiReadableDate } from "@/lib/date";
 import { omamoriAudio } from "@/lib/audio";
-import { filterFortunesForScene, pickDailyFortune } from "@/lib/fortune-engine";
+import { filterFortunesForScene } from "@/lib/fortune-engine";
 import { assetPath, optimizedImageFallbackPath } from "@/lib/paths";
+import { publicCharacterImage } from "@/lib/public-assets";
 import { buildShareText, cn, copyTextSafely } from "@/lib/utils";
 import { useMounted } from "@/hooks/use-mounted";
 import { useOmamoriStore } from "@/store/omamori-store";
@@ -104,6 +105,14 @@ async function preloadImages(paths: string[], timeout = 1400): Promise<void> {
   ]);
 }
 
+async function unlockAudioForDrawing(): Promise<boolean> {
+  try {
+    return await omamoriAudio.unlock({ timeoutMs: 700 });
+  } catch {
+    return false;
+  }
+}
+
 function getRoutePreloadImages(route: OmamoriRouteConfig): string[] {
   return [
     route.sceneImage,
@@ -120,7 +129,7 @@ function getRoutePreloadImages(route: OmamoriRouteConfig): string[] {
 
 function getFortunePreloadImages(fortune: Fortune, route: OmamoriRouteConfig): string[] {
   const characterTheme = characterThemeMap[fortune.character];
-  const characterImage = fortune.characterImage ?? characterTheme?.portrait;
+  const characterImage = publicCharacterImage(fortune.characterImage ?? characterTheme?.portrait);
 
   return [
     route.ritualAssets.resultCorner,
@@ -195,11 +204,13 @@ function RouteSelectionPanel({
   onSelectRoute,
   onPreviewLocked,
   reducedMotion,
+  enteringRouteId,
 }: {
   currentRoute: OmamoriRouteConfig;
   onSelectRoute: (route: OmamoriRouteConfig) => void;
   onPreviewLocked: (scene: SceneCandidate) => void;
   reducedMotion: boolean;
+  enteringRouteId?: string;
 }) {
   const [focusedSceneId, setFocusedSceneId] = useState<string>(() => currentRoute.id);
   const previewButtonRefs = useRef<Record<string, HTMLButtonElement | null>>({});
@@ -209,6 +220,7 @@ function RouteSelectionPanel({
     SCENE_CANDIDATES.find((scene) => scene.id === currentRoute.id) ??
     SCENE_CANDIDATES[0];
   const focusedIndex = Math.max(0, SCENE_CANDIDATES.findIndex((scene) => scene.id === focusedScene.id));
+  const isEnteringRoute = Boolean(enteringRouteId);
 
   const focusSceneAt = (targetIndex: number, moveDomFocus = false) => {
     const sceneCount = SCENE_CANDIDATES.length;
@@ -226,6 +238,10 @@ function RouteSelectionPanel({
   };
 
   const handleSceneAction = (scene: SceneCandidate) => {
+    if (isEnteringRoute) {
+      return;
+    }
+
     setFocusedSceneId(scene.id);
 
     if (scene.routeId) {
@@ -302,6 +318,8 @@ function RouteSelectionPanel({
                 alt=""
                 fill
                 loading="eager"
+                priority
+                fetchPriority="high"
                 sizes="100vw"
                 className="object-cover"
               />
@@ -317,8 +335,13 @@ function RouteSelectionPanel({
             <div className="rounded-full border border-white/70 bg-white/54 px-4 py-2 text-xs tracking-[0.26em] text-[#5b4250] shadow-[0_10px_28px_rgba(72,42,50,0.1)] backdrop-blur uppercase">
               幻想乡场景
             </div>
-            <div className="hidden rounded-full border border-white/62 bg-white/42 px-4 py-2 text-xs text-[#5b4250]/76 shadow-[0_10px_28px_rgba(72,42,50,0.08)] backdrop-blur sm:block">
-              {getShanghaiReadableDate()}
+            <div className="flex flex-wrap items-center justify-end gap-2">
+              <div className="rounded-full border border-white/62 bg-white/42 px-4 py-2 text-xs text-[#5b4250]/76 shadow-[0_10px_28px_rgba(72,42,50,0.08)] backdrop-blur">
+                非官方东方 Project 二次创作
+              </div>
+              <div className="hidden rounded-full border border-white/62 bg-white/42 px-4 py-2 text-xs text-[#5b4250]/76 shadow-[0_10px_28px_rgba(72,42,50,0.08)] backdrop-blur sm:block">
+                {getShanghaiReadableDate()}
+              </div>
             </div>
           </div>
 
@@ -337,9 +360,11 @@ function RouteSelectionPanel({
                 <button
                   type="button"
                   onClick={() => handleSceneAction(focusedScene)}
-                  className="min-h-12 rounded-full border border-white/76 bg-white/74 px-5 py-3 text-sm text-[#604052] shadow-[0_18px_46px_rgba(72,42,50,0.16)] backdrop-blur transition hover:-translate-y-0.5 hover:bg-white focus-visible:-translate-y-0.5"
+                  disabled={isEnteringRoute}
+                  aria-describedby="route-selection-status"
+                  className="min-h-12 rounded-full border border-white/76 bg-white/74 px-5 py-3 text-sm text-[#604052] shadow-[0_18px_46px_rgba(72,42,50,0.16)] backdrop-blur transition hover:-translate-y-0.5 hover:bg-white focus-visible:-translate-y-0.5 disabled:cursor-wait disabled:opacity-70"
                 >
-                  进入{focusedScene.label}
+                  {enteringRouteId === focusedScene.routeId ? "正在进入..." : `进入${focusedScene.label}`}
                 </button>
                 <span
                   className="rounded-full border border-white/54 bg-white/34 px-4 py-2 text-xs text-white shadow-[0_12px_32px_rgba(72,42,50,0.1)] backdrop-blur"
@@ -355,8 +380,10 @@ function RouteSelectionPanel({
                 <p className="text-xs tracking-[0.24em] text-white/84 drop-shadow uppercase">场景</p>
               </div>
               <div
+                role="listbox"
                 className="thin-scrollbar flex max-w-full gap-3 overflow-x-auto pb-2 lg:max-h-[calc(100dvh-9.5rem)] lg:flex-col lg:overflow-x-hidden lg:overflow-y-auto lg:pr-2"
                 aria-label="场景列表"
+                aria-activedescendant={`scene-option-${focusedScene.id}`}
                 onWheel={handlePreviewWheel}
               >
                 {SCENE_CANDIDATES.map((scene, index) => {
@@ -365,6 +392,7 @@ function RouteSelectionPanel({
                   return (
                     <motion.button
                       key={scene.id}
+                      id={`scene-option-${scene.id}`}
                       ref={(node) => {
                         previewButtonRefs.current[scene.id] = node;
                       }}
@@ -373,13 +401,15 @@ function RouteSelectionPanel({
                       onFocus={() => previewScene(scene)}
                       onPointerEnter={() => previewScene(scene)}
                       onKeyDown={handlePreviewKeyDown}
-                      aria-pressed={active}
-                      aria-label={`${scene.label}，可进入抽签`}
+                      disabled={isEnteringRoute}
+                      role="option"
+                      aria-selected={active}
+                      aria-label={`${scene.label}，${active ? "当前预览，" : ""}可进入抽签`}
                       initial={reducedMotion ? false : { opacity: 0, x: 22 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.32, delay: reducedMotion ? 0 : Math.min(index * 0.025, 0.22), ease: "easeOut" }}
                       className={cn(
-                        "group relative min-h-[9rem] w-[min(17.5rem,78vw)] flex-none overflow-hidden rounded-[1.45rem] border text-left shadow-[0_20px_54px_rgba(72,42,50,0.18)] transition hover:-translate-y-0.5 focus-visible:-translate-y-0.5 lg:min-h-[8.25rem] lg:w-full",
+                        "group relative min-h-[9rem] w-[min(17.5rem,78vw)] flex-none overflow-hidden rounded-[1.45rem] border text-left shadow-[0_20px_54px_rgba(72,42,50,0.18)] transition hover:-translate-y-0.5 focus-visible:-translate-y-0.5 disabled:cursor-wait disabled:opacity-80 lg:min-h-[8.25rem] lg:w-full",
                         active ? "border-white/90" : "border-white/52",
                       )}
                       style={{
@@ -415,6 +445,9 @@ function RouteSelectionPanel({
             </div>
           </div>
         </div>
+        <p id="route-selection-status" className="sr-only" aria-live="polite">
+          {enteringRouteId ? "正在进入所选场景，请稍候。" : `${focusedScene.label}已在预览中。`}
+        </p>
       </motion.section>
     </main>
   );
@@ -436,11 +469,11 @@ export function DailyDrawPanel({ categories, fortunes }: DailyDrawPanelProps) {
   const previousFocusBeforeResultRef = useRef<HTMLElement | null>(null);
   const hasCapturedResultFocusRef = useRef(false);
   const preloadedRouteIdsRef = useRef<Set<string>>(new Set());
+  const drawInFlightRef = useRef(false);
 
   const {
     initialize,
     isHydrated,
-    userId,
     selectedRouteId,
     todayRecord,
     favorites,
@@ -471,6 +504,10 @@ export function DailyDrawPanel({ categories, fortunes }: DailyDrawPanelProps) {
   const currentTheme = currentFortune ? characterThemeMap[currentFortune.character] : null;
   const showTube = true;
   const activeRouteConfig = hasTodayRecordForCurrentRoute ? recordRouteConfig : routeConfig;
+  const drawButtonLabel = hasTodayRecordForCurrentRoute ? activeRouteConfig.revisitLabel : activeRouteConfig.drawLabel;
+  const drawButtonHelpText = hasTodayRecordForCurrentRoute
+    ? `${activeRouteConfig.resultTitle}今天已记录，再次操作会展开同一枚签文。`
+    : `为${activeRouteConfig.label}抽取今天这台设备上的一枚签文。`;
   const stageTint = currentTheme?.stageGlow ?? activeRouteConfig.visual.glow ?? (currentCategory ? `${currentCategory.accent}22` : `${categoryAccentFallback.study}22`);
   const stageAura =
     currentTheme?.stageAura ??
@@ -574,7 +611,7 @@ export function DailyDrawPanel({ categories, fortunes }: DailyDrawPanelProps) {
   };
 
   const handleDraw = async () => {
-    if (!mounted || isBusy) {
+    if (!mounted || isBusy || drawInFlightRef.current) {
       return;
     }
 
@@ -596,12 +633,13 @@ export function DailyDrawPanel({ categories, fortunes }: DailyDrawPanelProps) {
       return;
     }
 
+    drawInFlightRef.current = true;
     setIsDrawing(true);
     setResultOpen(false);
 
     try {
       const drawStartedAt = window.performance.now();
-      const drawn = currentFortune ?? (userId ? pickDailyFortune(fortunes, userId, undefined, routeConfig.id) : drawFortune(fortunes, routeConfig.id));
+      const drawn = drawFortune(fortunes, routeConfig.id);
       const resultPreloadPromise = preloadImages(getFortunePreloadImages(drawn, routeConfig), 2600);
 
       if (!preloadedRouteIdsRef.current.has(routeConfig.id)) {
@@ -610,7 +648,7 @@ export function DailyDrawPanel({ categories, fortunes }: DailyDrawPanelProps) {
       }
 
       setPhase("closed");
-      await omamoriAudio.unlock();
+      const audioUnlocked = await unlockAudioForDrawing();
       omamoriAudio.playBell(routeConfig.id);
       await wait(reducedMotion ? DRAW_TIMINGS.reducedBell : DRAW_TIMINGS.closed);
 
@@ -632,8 +670,23 @@ export function DailyDrawPanel({ categories, fortunes }: DailyDrawPanelProps) {
       }
       await wait(reducedMotion ? DRAW_TIMINGS.reducedFlash : DRAW_TIMINGS.flash);
       await Promise.race([resultPreloadPromise, wait(reducedMotion ? 80 : 220)]);
-      finishSequence(currentFortune ?? (userId ? drawFortune(fortunes, routeConfig.id) : drawn));
+      finishSequence(drawn);
+      if (!audioUnlocked && settings.sfxEnabled) {
+        showNotice({
+          tone: "info",
+          title: "音效暂时没有响起",
+          message: "浏览器没有及时开放音频，签文已经正常展开。",
+        });
+      }
+    } catch {
+      setPhase("idle");
+      showNotice({
+        tone: "error",
+        title: "签文没有顺利展开",
+        message: "抽签流程已经复位，请再轻触一次签筒。",
+      });
     } finally {
+      drawInFlightRef.current = false;
       setIsDrawing(false);
     }
   };
@@ -700,24 +753,37 @@ export function DailyDrawPanel({ categories, fortunes }: DailyDrawPanelProps) {
   };
 
   const enterRouteWithBuffer = async (route: OmamoriRouteConfig) => {
+    if (enteringRoute) {
+      return;
+    }
+
     setEnteringRoute(route);
     setPhase("idle");
     setResultOpen(false);
 
-    const preloadPromise = preloadImages(getRoutePreloadImages(route), 1800).then(() => {
-      preloadedRouteIdsRef.current.add(route.id);
-    });
+    try {
+      const preloadPromise = preloadImages(getRoutePreloadImages(route), 1800).then(() => {
+        preloadedRouteIdsRef.current.add(route.id);
+      });
 
-    await Promise.all([preloadPromise, wait(reducedMotion ? 120 : 420)]);
-    selectRoute(route.id);
-    setHasConfirmedRouteThisSession(true);
-    window.scrollTo({ top: 0, behavior: reducedMotion ? "auto" : "smooth" });
-    showNotice({
-      tone: "info",
-      title: `已切换到${route.label}`,
-      message: route.description,
-    });
-    setEnteringRoute(null);
+      await Promise.all([preloadPromise, wait(reducedMotion ? 120 : 420)]);
+      selectRoute(route.id);
+      setHasConfirmedRouteThisSession(true);
+      window.scrollTo({ top: 0, behavior: reducedMotion ? "auto" : "smooth" });
+      showNotice({
+        tone: "info",
+        title: `已切换到${route.label}`,
+        message: route.description,
+      });
+    } catch {
+      showNotice({
+        tone: "error",
+        title: "入口切换没有完成",
+        message: "场景素材加载得太慢，请再试一次。",
+      });
+    } finally {
+      setEnteringRoute(null);
+    }
   };
 
   const statusText = useMemo(() => {
@@ -746,6 +812,7 @@ export function DailyDrawPanel({ categories, fortunes }: DailyDrawPanelProps) {
         <RouteSelectionPanel
           currentRoute={routeConfig}
           reducedMotion={reducedMotion}
+          enteringRouteId={enteringRoute?.id}
           onSelectRoute={(route) => void enterRouteWithBuffer(route)}
           onPreviewLocked={(scene) => {
             showNotice({
@@ -763,8 +830,9 @@ export function DailyDrawPanel({ categories, fortunes }: DailyDrawPanelProps) {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: reducedMotion ? 0.12 : 0.22 }}
+              role="status"
               aria-live="polite"
-              aria-label="少女祈祷中......"
+              aria-label={`正在进入${enteringRoute.label}`}
             >
               <motion.div
                 className="relative w-full max-w-xs overflow-hidden rounded-[1.65rem] border border-white/58 bg-white/72 p-5 text-center text-[#54384a] shadow-[0_28px_82px_rgba(42,26,36,0.24)]"
@@ -779,7 +847,7 @@ export function DailyDrawPanel({ categories, fortunes }: DailyDrawPanelProps) {
                   style={{ background: enteringRoute.visual.glow }}
                 />
                 <div className="relative">
-                  <p className="text-xs tracking-[0.28em] text-[#806673] uppercase">少女祈祷中......</p>
+                  <p className="text-xs tracking-[0.28em] text-[#806673] uppercase">正在进入{enteringRoute.shortLabel}</p>
                   <div className="mx-auto mt-4 h-1.5 w-28 overflow-hidden rounded-full bg-[#c7aa8d]/22">
                     <motion.span
                       className="block h-full w-12 rounded-full bg-[#d8b15f]"
@@ -824,10 +892,15 @@ export function DailyDrawPanel({ categories, fortunes }: DailyDrawPanelProps) {
             </Link>
             <button
               type="button"
-              onClick={() => setSettingsOpen(true)}
+              onClick={() => {
+                if (!isBusy) {
+                  setSettingsOpen(true);
+                }
+              }}
               aria-haspopup="dialog"
               aria-expanded={settingsOpen}
-              className="glass-panel grid h-10 w-10 place-items-center rounded-full text-ink-primary transition hover:border-white/20 hover:text-white sm:h-11 sm:w-11"
+              disabled={isBusy}
+              className="glass-panel grid h-10 w-10 place-items-center rounded-full text-ink-primary transition hover:border-white/20 hover:text-white disabled:cursor-not-allowed disabled:opacity-60 sm:h-11 sm:w-11"
               aria-label="设置"
               title="设置"
             >
@@ -836,12 +909,16 @@ export function DailyDrawPanel({ categories, fortunes }: DailyDrawPanelProps) {
             <button
               type="button"
               onClick={() => {
+                if (isBusy) {
+                  return;
+                }
                 setHasConfirmedRouteThisSession(false);
                 setPhase("idle");
                 setResultOpen(false);
                 clearRouteSelection();
               }}
-              className="glass-panel grid h-10 w-10 place-items-center rounded-full text-ink-primary transition hover:border-white/20 hover:text-white sm:h-11 sm:w-11"
+              disabled={isBusy}
+              className="glass-panel grid h-10 w-10 place-items-center rounded-full text-ink-primary transition hover:border-white/20 hover:text-white disabled:cursor-not-allowed disabled:opacity-60 sm:h-11 sm:w-11"
               aria-label={activeRouteConfig.backLabel}
               title={activeRouteConfig.backLabel}
             >
@@ -900,7 +977,8 @@ export function DailyDrawPanel({ categories, fortunes }: DailyDrawPanelProps) {
                         ritualPhase={visiblePhase}
                         reducedMotion={reducedMotion}
                         disabled={isBusy}
-                        label={activeRouteConfig.drawLabel}
+                        label={drawButtonLabel}
+                        descriptionId="draw-button-help"
                         variant={activeRouteConfig.id}
                         ritualAssets={activeRouteConfig.ritualAssets}
                         onClick={handleDraw}
@@ -911,6 +989,9 @@ export function DailyDrawPanel({ categories, fortunes }: DailyDrawPanelProps) {
               </div>
               <p className="sr-only" aria-live="polite">
                 {statusText}
+              </p>
+              <p id="draw-button-help" className="sr-only">
+                {drawButtonHelpText}
               </p>
             </div>
           </div>

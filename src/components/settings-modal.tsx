@@ -32,6 +32,15 @@ export function SettingsModal({
 }: SettingsModalProps) {
   const titleId = useId();
   const descriptionId = useId();
+  const ambienceEnabledId = useId();
+  const sfxEnabledId = useId();
+  const ambienceVolumeId = useId();
+  const sfxVolumeId = useId();
+  const reduceMotionId = useId();
+  const routeGroupId = useId();
+  const askRouteId = useId();
+  const resetConfirmTitleId = useId();
+  const resetConfirmDescriptionId = useId();
   const dialogRef = useRef<HTMLDivElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const confirmResetRef = useRef<HTMLButtonElement>(null);
@@ -126,7 +135,7 @@ export function SettingsModal({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          onClick={onClose}
+          onClick={resetConfirmOpen ? undefined : onClose}
         >
           <motion.div
             ref={dialogRef}
@@ -163,12 +172,13 @@ export function SettingsModal({
             </div>
 
             <div className="mt-6 space-y-5">
-              <label className="flex items-center justify-between gap-4 rounded-[1.5rem] border border-[#b5926d]/18 bg-white/50 px-4 py-4">
+              <label htmlFor={ambienceEnabledId} className="flex items-center justify-between gap-4 rounded-[1.5rem] border border-[#b5926d]/18 bg-white/50 px-4 py-4">
                 <div>
                   <p className="text-sm text-[#352632]">背景环境音</p>
                   <p className="text-xs text-[#6b5550]">随机使用已配置曲目，缺少文件时会回退到合成旋律</p>
                 </div>
                 <input
+                  id={ambienceEnabledId}
                   type="checkbox"
                   checked={settings.ambienceEnabled}
                   onChange={(event) => onChange({ ambienceEnabled: event.target.checked })}
@@ -176,12 +186,13 @@ export function SettingsModal({
                 />
               </label>
 
-              <label className="flex items-center justify-between gap-4 rounded-[1.5rem] border border-[#b5926d]/18 bg-white/50 px-4 py-4">
+              <label htmlFor={sfxEnabledId} className="flex items-center justify-between gap-4 rounded-[1.5rem] border border-[#b5926d]/18 bg-white/50 px-4 py-4">
                 <div>
                   <p className="text-sm text-[#352632]">仪式音效</p>
                   <p className="text-xs text-[#6b5550]">铃响、摇签和纸签展开的声音</p>
                 </div>
                 <input
+                  id={sfxEnabledId}
                   type="checkbox"
                   checked={settings.sfxEnabled}
                   onChange={(event) => onChange({ sfxEnabled: event.target.checked })}
@@ -189,7 +200,7 @@ export function SettingsModal({
                 />
               </label>
 
-              <label className="block rounded-[1.5rem] border border-[#b5926d]/18 bg-white/50 px-4 py-4">
+              <label htmlFor={ambienceVolumeId} className="block rounded-[1.5rem] border border-[#b5926d]/18 bg-white/50 px-4 py-4">
                 <div className="flex items-center justify-between gap-4">
                   <div>
                     <p className="text-sm text-[#352632]">背景音量</p>
@@ -198,6 +209,7 @@ export function SettingsModal({
                   <span className="text-xs text-[#5f4555]">{Math.round(settings.ambienceVolume * 100)}%</span>
                 </div>
                 <input
+                  id={ambienceVolumeId}
                   type="range"
                   min={0}
                   max={100}
@@ -207,7 +219,7 @@ export function SettingsModal({
                 />
               </label>
 
-              <label className="block rounded-[1.5rem] border border-[#b5926d]/18 bg-white/50 px-4 py-4">
+              <label htmlFor={sfxVolumeId} className="block rounded-[1.5rem] border border-[#b5926d]/18 bg-white/50 px-4 py-4">
                 <div className="flex items-center justify-between gap-4">
                   <div>
                     <p className="text-sm text-[#352632]">音效音量</p>
@@ -216,6 +228,7 @@ export function SettingsModal({
                   <span className="text-xs text-[#5f4555]">{Math.round(settings.sfxVolume * 100)}%</span>
                 </div>
                 <input
+                  id={sfxVolumeId}
                   type="range"
                   min={0}
                   max={100}
@@ -225,12 +238,13 @@ export function SettingsModal({
                 />
               </label>
 
-              <label className="flex items-center justify-between gap-4 rounded-[1.5rem] border border-[#b5926d]/18 bg-white/50 px-4 py-4">
+              <label htmlFor={reduceMotionId} className="flex items-center justify-between gap-4 rounded-[1.5rem] border border-[#b5926d]/18 bg-white/50 px-4 py-4">
                 <div>
                   <p className="text-sm text-[#352632]">动效减弱模式</p>
                   <p className="text-xs text-[#6b5550]">更适合对动态敏感或想快速看结果时使用</p>
                 </div>
                 <input
+                  id={reduceMotionId}
                   type="checkbox"
                   checked={settings.reduceMotion}
                   onChange={(event) => onChange({ reduceMotion: event.target.checked })}
@@ -238,9 +252,9 @@ export function SettingsModal({
                 />
               </label>
 
-              <div className="rounded-[1.5rem] border border-[#b5926d]/18 bg-white/50 px-4 py-4">
+              <div className="rounded-[1.5rem] border border-[#b5926d]/18 bg-white/50 px-4 py-4" role="group" aria-labelledby={routeGroupId}>
                 <div>
-                  <p className="text-sm text-[#352632]">默认入口</p>
+                  <p id={routeGroupId} className="text-sm text-[#352632]">默认入口</p>
                   <p className="text-xs text-[#6b5550]">刷新页面后会自动回到这个入口</p>
                 </div>
                 <div className="mt-4 grid gap-2 sm:grid-cols-3">
@@ -261,12 +275,13 @@ export function SettingsModal({
                 </div>
               </div>
 
-              <label className="flex items-center justify-between gap-4 rounded-[1.5rem] border border-[#b5926d]/18 bg-white/50 px-4 py-4">
+              <label htmlFor={askRouteId} className="flex items-center justify-between gap-4 rounded-[1.5rem] border border-[#b5926d]/18 bg-white/50 px-4 py-4">
                 <div>
                   <p className="text-sm text-[#352632]">每次打开都重新选择入口</p>
                   <p className="text-xs text-[#6b5550]">适合每天先决定从哪条路线进入时使用</p>
                 </div>
                 <input
+                  id={askRouteId}
                   type="checkbox"
                   checked={settings.askRouteOnLaunch}
                   onChange={(event) => onChange({ askRouteOnLaunch: event.target.checked })}
@@ -292,10 +307,13 @@ export function SettingsModal({
                   initial={reducedMotion ? { opacity: 0 } : { opacity: 0, y: 10 }}
                   animate={reducedMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
                   exit={reducedMotion ? { opacity: 0 } : { opacity: 0, y: 8 }}
+                  role="alertdialog"
+                  aria-labelledby={resetConfirmTitleId}
+                  aria-describedby={resetConfirmDescriptionId}
                   className="mt-5 rounded-[1.5rem] border border-[#d35d61]/30 bg-[#fff0ef]/88 p-4"
                 >
-                  <p className="text-sm text-[#7e383b]">确认清空这台设备上的本地记录？</p>
-                  <p className="mt-2 text-xs leading-6 text-[#6b5550]">
+                  <p id={resetConfirmTitleId} className="text-sm text-[#7e383b]">确认清空这台设备上的本地记录？</p>
+                  <p id={resetConfirmDescriptionId} className="mt-2 text-xs leading-6 text-[#6b5550]">
                     这会移除今日签文记录、签册、设置和本地身份标识，页面会回到初始状态。
                   </p>
                   <div className="mt-4 flex flex-wrap gap-3">

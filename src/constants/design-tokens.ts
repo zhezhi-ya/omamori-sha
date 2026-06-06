@@ -23,34 +23,29 @@ export interface TouhouMusicTrack {
 
 export const touhouMusicTracks: TouhouMusicTrack[] = [
   {
-    title: "少女绮想曲",
-    circle: "东方本篇曲目",
-    src: "/audio/music/shoujo-kisoukyoku.mp3",
+    title: "本地音轨 001",
+    circle: "本地音频清单",
+    src: "/audio/music/001.mp3",
   },
   {
-    title: "恋色 Master Spark",
-    circle: "东方本篇曲目",
-    src: "/audio/music/love-colored-master-spark.mp3",
+    title: "本地音轨 002",
+    circle: "本地音频清单",
+    src: "/audio/music/002.mp3",
   },
   {
-    title: "亡き王女の為のセプテット",
-    circle: "东方本篇曲目",
-    src: "/audio/music/septette-for-the-dead-princess.mp3",
+    title: "本地音轨 003",
+    circle: "本地音频清单",
+    src: "/audio/music/003.mp3",
   },
   {
-    title: "U.N.オーエンは彼女なのか？",
-    circle: "东方本篇曲目",
-    src: "/audio/music/un-owen-was-her.mp3",
+    title: "本地音轨 004",
+    circle: "本地音频清单",
+    src: "/audio/music/004.mp3",
   },
   {
-    title: "ネイティブフェイス",
-    circle: "东方本篇曲目",
-    src: "/audio/music/native-faith.mp3",
-  },
-  {
-    title: "幽雅に咲かせ、墨染の桜",
-    circle: "东方本篇曲目",
-    src: "/audio/music/border-of-life.mp3",
+    title: "本地音轨 005",
+    circle: "本地音频清单",
+    src: "/audio/music/005.mp3",
   },
 ];
 

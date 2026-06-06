@@ -93,16 +93,18 @@ export const useOmamoriStore = create<OmamoriState>((set, get) => ({
 
     const state = get();
     const dateKey = getShanghaiDateKey();
+    const userId = state.userId ?? getOrCreateUserId();
 
     if (
       state.todayRecord?.dateKey === dateKey &&
       state.todayRecord.routeId === routeId &&
       state.todayRecord.fortune.relatedSceneIds?.includes(routeId)
     ) {
+      saveSelectedRouteId(routeId);
+      set({ userId, selectedRouteId: routeId });
       return state.todayRecord.fortune;
     }
 
-    const userId = state.userId ?? getOrCreateUserId();
     const fortune = pickDailyFortune(fortunes, userId, dateKey, routeId);
     const todayRecord = createTodayRecord(fortune, dateKey, routeId);
 
@@ -144,11 +146,17 @@ export const useOmamoriStore = create<OmamoriState>((set, get) => ({
       saveSelectedRouteId(patch.defaultRouteId);
     }
 
+    const routeSettingChanged =
+      Object.prototype.hasOwnProperty.call(patch, "askRouteOnLaunch") ||
+      Object.prototype.hasOwnProperty.call(patch, "defaultRouteId");
+
     set({
       settings: nextSettings,
-      selectedRouteId: nextSettings.askRouteOnLaunch
-        ? null
-        : (patch.defaultRouteId ?? get().selectedRouteId ?? nextSettings.defaultRouteId),
+      selectedRouteId: routeSettingChanged
+        ? nextSettings.askRouteOnLaunch
+          ? null
+          : (patch.defaultRouteId ?? get().selectedRouteId ?? nextSettings.defaultRouteId)
+        : get().selectedRouteId,
     });
   },
   clearLocalRecords: () => {

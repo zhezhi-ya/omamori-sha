@@ -5,8 +5,8 @@
 当前目录：
 
 - `moegirl/`：从萌娘百科角色页主图下载的本地角色图，当前覆盖 122 名东方角色。
-- `lostword/`：早期手动加入的 Touhou LostWord 官方网站角色图，作为历史素材保留。
-- `lostword-icons/`：预留给 Touhou LostWord Wiki 图标兜底素材。
+- `lostword/`：早期手动加入的 Touhou LostWord 官方网站角色图已在发布验收中移除；公开目录不保留官方图。
+- `lostword-icons/`：预留目录当前不放置公开素材。
 
 签文数据中的 `characterImage` 字段会优先指向这里的本地文件；`src/constants/design-tokens.ts` 的 `characterThemeMap` 也会为角色提供默认 `portrait`。
 
@@ -21,3 +21,4 @@
 
 - 萌娘百科内容要求转载请标注来源页面链接，并声明引自萌娘百科；本项目按用户需求用于本地个人展示。
 - 若要发布或传播项目，请重新确认所有图片授权与署名要求。
+- 不得把原作游戏截图、官方游戏拆包素材或官方角色图放入 `public/`；若需要历史参考，放到非公开素材档案并避免进入构建产物。

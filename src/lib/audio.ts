@@ -4,6 +4,7 @@ import { touhouMusicTracks, type TouhouMusicTrack } from "@/constants/design-tok
 import { clamp } from "@/lib/utils";
 import type { OmamoriRouteId, OmamoriSettings } from "@/types/omikuji";
 import { assetPath } from "@/lib/paths";
+import { canUseLocalMusicTracks } from "@/lib/public-assets";
 
 type MaybeAudioContext = AudioContext | null;
 type AmbientNode = OscillatorNode | AudioBufferSourceNode | BiquadFilterNode | GainNode | StereoPannerNode | DelayNode;
@@ -469,7 +470,12 @@ class OmamoriAudioEngine {
       return null;
     }
 
-    this.context = new AudioCtor();
+    try {
+      this.context = new AudioCtor();
+    } catch {
+      return null;
+    }
+
     this.masterGain = this.context.createGain();
     this.ambienceGain = this.context.createGain();
     this.sfxGain = this.context.createGain();
@@ -485,10 +491,10 @@ class OmamoriAudioEngine {
     return this.context;
   }
 
-  async unlock(): Promise<void> {
+  private async resumeContext(): Promise<boolean> {
     const context = this.ensureContext();
     if (!context) {
-      return;
+      return false;
     }
 
     if (context.state === "suspended") {
@@ -498,6 +504,28 @@ class OmamoriAudioEngine {
     if (this.settings) {
       this.applySettings(this.settings);
     }
+
+    return context.state === "running";
+  }
+
+  async unlock({ timeoutMs = 900 }: { timeoutMs?: number } = {}): Promise<boolean> {
+    const resumePromise = this.resumeContext().catch(() => false);
+
+    if (timeoutMs <= 0 || typeof window === "undefined") {
+      return resumePromise;
+    }
+
+    let timeoutId: number | null = null;
+    const timeoutPromise = new Promise<boolean>((resolve) => {
+      timeoutId = window.setTimeout(() => resolve(false), timeoutMs);
+    });
+
+    const unlocked = await Promise.race([resumePromise, timeoutPromise]);
+    if (timeoutId !== null) {
+      window.clearTimeout(timeoutId);
+    }
+
+    return unlocked;
   }
 
   async warmUp(): Promise<void> {
@@ -607,6 +635,11 @@ class OmamoriAudioEngine {
 
   private async getAvailableTracks(): Promise<TouhouMusicTrack[]> {
     if (this.availableTrackCache) {
+      return this.availableTrackCache;
+    }
+
+    if (!canUseLocalMusicTracks()) {
+      this.availableTrackCache = [];
       return this.availableTrackCache;
     }
 
@@ -888,14 +921,18 @@ class OmamoriAudioEngine {
   }
 
   private playRitualStage(profile: RitualSoundProfile, stage: keyof RitualSoundProfile): void {
-    const context = this.ensureContext();
-    if (!context || !this.sfxGain || !this.settings?.sfxEnabled) {
-      return;
-    }
+    try {
+      const context = this.ensureContext();
+      if (!context || !this.sfxGain || !this.settings?.sfxEnabled) {
+        return;
+      }
 
-    const stageProfile = profile[stage];
-    stageProfile.tones?.forEach((layer) => this.playToneLayer(layer));
-    stageProfile.noises?.forEach((layer) => this.playNoiseLayer(layer));
+      const stageProfile = profile[stage];
+      stageProfile.tones?.forEach((layer) => this.playToneLayer(layer));
+      stageProfile.noises?.forEach((layer) => this.playNoiseLayer(layer));
+    } catch {
+      // Audio is decorative. Drawing must continue even when a browser or device rejects playback.
+    }
   }
 
   playBell(sceneId?: string): void {

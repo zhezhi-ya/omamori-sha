@@ -8,6 +8,7 @@ import { characterThemeMap, luckyColorSwatches } from "@/constants/design-tokens
 import { cn, getDisplayFortuneTitle } from "@/lib/utils";
 import { OMAMORI_ROUTES } from "@/constants/fortune";
 import { assetPath, optimizedImageFallbackPath } from "@/lib/paths";
+import { publicCharacterImage } from "@/lib/public-assets";
 import type { Fortune, OmamoriRouteConfig, OmikujiCategory } from "@/types/omikuji";
 
 interface FortuneCardProps {
@@ -154,8 +155,8 @@ export function FortuneCard({
   const labels = routeConfig.copyLabels;
   const copyButtonLabel =
     copyStatus === "copied" ? "分享文案已复制" : copyStatus === "failed" ? "请手动复制签文" : "复制签文文案";
-  const characterImage = fortune.characterImage ?? characterTheme?.portrait;
-  const characterImageSource = fortune.characterImageSource ?? characterTheme?.portraitSource;
+  const characterImage = publicCharacterImage(fortune.characterImage ?? characterTheme?.portrait);
+  const characterImageSource = characterImage ? (fortune.characterImageSource ?? characterTheme?.portraitSource) : undefined;
   const [resultCornerState, setResultCornerState] = useState({
     source: routeConfig.ritualAssets.resultCorner,
     resolved: routeConfig.ritualAssets.resultCorner,
@@ -357,6 +358,7 @@ export function FortuneCard({
             type="button"
             onClick={onToggleFavorite}
             aria-pressed={isFavorite}
+            aria-label={isFavorite ? `从签册移出 ${title}` : `收进签册 ${title}`}
             className={cn(
               "min-h-10 rounded-full border px-3.5 py-2 text-sm transition-all sm:min-h-11 sm:px-4",
               isFavorite
@@ -370,6 +372,7 @@ export function FortuneCard({
           <button
             type="button"
             onClick={onCopy}
+            aria-label={copyButtonLabel}
             className="min-h-10 rounded-full border border-[#8f714b]/16 bg-white/50 px-3.5 py-2 text-sm text-[#5f4939] transition-all hover:border-[#79d8e7]/28 hover:bg-white/80 sm:min-h-11 sm:px-4"
           >
             {copyButtonLabel}

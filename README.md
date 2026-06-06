@@ -2,10 +2,13 @@
 
 《御守社》是一个以东方 Project 同人风格为核心的抽签网页项目。当前版本强调明亮、精致、日式二次元场景感，而不是普通的抽签按钮页。
 
+本项目是非官方东方 Project 二次创作，不代表上海爱丽丝幻乐团或任何官方 / 授权项目。公开发布时应清楚标注 fan work / 二次创作身份，不使用原作游戏抽取素材，不让用户误认为官方内容，并遵循东方 Project 二次创作指南中关于浏览器游戏免费发布的要求。
+
 ## 当前特性
 
-- 首屏是路线选择入口，三条固定路线分别为博丽神社、红魔馆、永远亭。
-- 抽签流程带有铃、签筒、结果卡和收藏记录。
+- 首屏是路线选择入口，当前开放 14 处正式签路：博丽神社、红魔馆、永远亭、守矢神社、白玉楼、魔法森林、命莲寺、地灵殿、三途川、雾之湖、人间之里、向日葵田、神灵庙、无名之丘。
+- 每条路线都有自己的仪式命名、纸张形态、抽签道具、声音方向、阶段文案和结果标签。
+- 抽签流程带有场景化仪式动画、结果卡和收藏记录。
 - 页面使用统一的生成场景图与轻装饰素材，避免真实照片破坏整体风格。
 - 支持本地收藏、重新查看今日签、设置弹层和动效降级。
 
@@ -50,7 +53,27 @@ cmd /c npm.cmd run build
 
 ```powershell
 cmd /c npm.cmd run lint
+cmd /c npm.cmd run test
+cmd /c npx.cmd tsc --noEmit
 cmd /c npm.cmd run build
+```
+
+## 公开发布构建
+
+公开构建默认不加载本地角色图和本地 BGM，结果签面会使用风格化角色占位，背景环境音会回退到 Web Audio 合成旋律。这样可以避免授权未完全确认的素材随页面运行加载。
+
+```powershell
+cmd /c npm.cmd run build:public
+```
+
+`build:public` 会以 GitHub Pages 静态导出口径构建，并在生成 `out/` 后裁剪公开包中的 `images/characters`、`audio/music`、`generated-themes/legacy`、raw PNG 场景 / 仪式源图与 source sheet。
+
+如果只在本地个人环境展示，并且已确认素材来源，可以显式开启本地素材：
+
+```powershell
+$env:NEXT_PUBLIC_ENABLE_LOCAL_CHARACTER_IMAGES="true"
+$env:NEXT_PUBLIC_ENABLE_LOCAL_MUSIC="true"
+cmd /c npm.cmd run dev
 ```
 
 ## 目录结构
@@ -86,14 +109,16 @@ H:\Project\御守社
 │  ├─ store
 │  └─ types
 └─ docs
-   └─ 后续计划.md
+   ├─ 后续计划.md
+   ├─ 素材资产审计.md
+   └─ 发布验收清单.md
 ```
 
 ## 素材分层
 
 ### `active`
 
-当前主视觉与路线运行素材：
+基础路线的主视觉与运行素材：
 
 - `hakurei-scene.png`
 - `scarlet-scene.png`
@@ -107,19 +132,20 @@ H:\Project\御守社
 
 ### `expanded`
 
-扩展候选场景池，暂不直接接入主路由：
+当前 11 处扩展路线的运行素材与后续素材候选池。下列路线已经接入正式抽签流程，后续新增素材仍继续放在这一层中审计：
 
 - `hakugyokurou-scene.png`
-- `forest-of-magic-scene.png`
-- `divine-spirit-mausoleum-scene.png`
-- `human-village-scene.png`
-- `misty-lake-scene.png`
+- `forest-of-magic-scene-v2.png`
+- `divine-spirit-mausoleum-scene-v2.png`
+- `human-village-scene-v2.png`
+- `misty-lake-scene-v2.png`
 - `moriya-shrine-scene.png`
-- `myouren-temple-scene.png`
-- `nameless-hill-scene.png`
-- `palace-of-earth-spirits-scene.png`
+- `myouren-temple-scene-v2.png`
+- `nameless-hill-scene-v2.png`
+- `palace-of-earth-spirits-scene-v3.png`
 - `sanzu-river-scene.png`
-- `sunflower-field-scene.png`
+- `sunflower-field-scene-v2.png`
+- `rituals/<scene-id>/`：每条扩展路线的仪式预览图与动画拆层素材
 
 ### `legacy`
 
@@ -151,6 +177,25 @@ H:\Project\御守社
 4. 不太可能再用到的简单图片素材优先替换、合并或移入历史目录。
 5. 新增素材继续按 `active / expanded / legacy` 三层归档。
 
+## 二次创作声明
+
+- 《御守社》是东方 Project 非官方二次创作 / fan work。
+- 本项目不代表东方 Project 官方内容，也不与上海爱丽丝幻乐团存在官方授权关系。
+- 项目素材应使用自制或已确认授权的二次创作素材；不得使用原作游戏抽取素材、拆包素材或官方图。
+- 若作为浏览器游戏公开发布，应保持免费游玩，并继续核对最新东方 Project 二次创作指南。
+- 参考指南：[东方 Project 二次创作指南](https://touhou-project.news/guideline/)
+
+## 发布前合规状态
+
+- 页面首屏、页面 metadata、Web App Manifest、OpenGraph 图和 README 均已标注“非官方东方 Project 二次创作”。
+- 运行配置未引用 `legacy/`、原作游戏截图、拆包素材或官方图；早期 Touhou LostWord 官方角色图已从 `public/images/characters/lostword/` 移除。
+- 当前公开版本不包含收费解锁或付费门槛；`unlockedVisualTheme` 仅用于稀有签视觉主题，不是付费功能。
+- 默认公开构建不加载本地角色图和本地 BGM；如需个人本地展示，可通过 `NEXT_PUBLIC_ENABLE_LOCAL_CHARACTER_IMAGES=true` 与 `NEXT_PUBLIC_ENABLE_LOCAL_MUSIC=true` 显式开启。
+- `npm audit --audit-level=moderate` 仍报告 Next 16.2.6 内置 `postcss@8.4.31` 的 moderate advisory，自动修复会强制降级到 `next@9.3.3`，因此不执行 `npm audit fix --force`，等待 Next 上游安全补丁或兼容升级路径。
+- `build:public` 已提供 GitHub Pages 静态包裁剪流程；发布到公开站点前仍需按目标平台补严格 CSP / 响应头策略。
+
 ## 参考文档
 
 - [docs/后续计划.md](./docs/后续计划.md)
+- [docs/素材资产审计.md](./docs/素材资产审计.md)
+- [docs/发布验收清单.md](./docs/发布验收清单.md)
