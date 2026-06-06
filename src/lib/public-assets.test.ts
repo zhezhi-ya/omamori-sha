@@ -8,16 +8,18 @@ import {
 import type { Fortune } from "@/types/omikuji";
 
 describe("public asset gates", () => {
-  it("keeps local character images disabled unless the build opts in", () => {
-    expect(canUseLocalCharacterImages()).toBe(false);
-    expect(publicCharacterImage("/images/characters/moegirl/002-reimu-hakurei.jpg")).toBeUndefined();
+  it("keeps local character images enabled unless the build opts out", () => {
+    expect(canUseLocalCharacterImages()).toBe(true);
+    expect(publicCharacterImage("/images/characters/moegirl/002-reimu-hakurei.jpg")).toBe(
+      "/images/characters/moegirl/002-reimu-hakurei.jpg",
+    );
   });
 
-  it("keeps local music tracks disabled unless the build opts in", () => {
-    expect(canUseLocalMusicTracks()).toBe(false);
+  it("keeps local music tracks enabled unless the build opts out", () => {
+    expect(canUseLocalMusicTracks()).toBe(true);
   });
 
-  it("removes local character image metadata from public fortune payloads", () => {
+  it("keeps local character image metadata in public fortune payloads by default", () => {
     const fortunes = [
       {
         id: "study-reimu-01",
@@ -36,20 +38,6 @@ describe("public asset gates", () => {
       },
     ] satisfies Fortune[];
 
-    expect(publicFortunes(fortunes)).toEqual([
-      {
-        id: "study-reimu-01",
-        category: "study",
-        tier: "middle-blessing",
-        title: "结界静心签",
-        character: "博丽灵梦",
-        summary: "先稳住。",
-        advice: "整理桌面。",
-        luckyColor: "博丽朱红",
-        luckyItem: "便签",
-        tags: ["先稳住"],
-        rarity: "common",
-      },
-    ]);
+    expect(publicFortunes(fortunes)).toEqual(fortunes);
   });
 });

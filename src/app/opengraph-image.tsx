@@ -15,7 +15,7 @@ export default function OpenGraphImage() {
     <SocialPreviewArt
       title="御守社"
       subtitle="从 14 处幻想乡签路，收下一枚今日签文。"
-      footer="非官方东方 Project 二次创作"
+      footer="14 处幻想乡签路"
     />,
     size,
   );

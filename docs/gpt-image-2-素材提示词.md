@@ -539,7 +539,7 @@ Create a restrained Japanese anime visual novel background for Nameless Hill. Sh
 - 地灵殿静态预览图已统一命名为 `palace-of-earth-spirits-ritual-kit-v1.png`。
 - 旧版森林、命莲寺、雾之湖、无名之丘和地灵殿 v2 背景已归档到 `public/images/generated-themes/legacy/unused-2026-05-25/expanded/`。
 - 2026-06-06 AI-4 审计确认：`fortune.ts` 图片引用、优化 WebP 的 PNG 回退引用、`tracks.json` 音频引用均无缺失；大于 1MB 的精确重复资源为 0 组。运行首选 WebP 约 9.06MB，但 GitHub Pages 静态发布包会把 raw PNG、source sheet、legacy 和大 MP3 一并带出，当前 `out/` 约 231.70MB。
-- 2026-06-06 AI-5 发布验收确认：14 条正式路线的运行界面文案已经收拢为正式抽签入口口吻；首屏、页面元信息和公开说明均明确“非官方东方 Project 二次创作”。素材侧下一步不再继续批量生图，优先做发布包裁剪、授权复核和必要的单层缺陷替换。
+- 2026-06-06 AI-5 发布验收确认：14 条正式路线的运行界面文案已经收拢为正式抽签入口口吻；随后个人自用口径已把首屏、页面元信息和公开说明改为轻量项目描述。素材侧下一步不再继续批量生图，优先做发布包裁剪、授权复核和必要的单层缺陷替换。
 
 后续 AI 使用顺序：
 
@@ -548,7 +548,7 @@ Create a restrained Japanese anime visual novel background for Nameless Hill. Sh
 3. 需要重做某一层时，只替换对应场景目录里的单层 PNG，并保留 `source-sheet-v1.png` 作为重切参考。
 4. 旧素材不要重新接回 `SCENE_CANDIDATES`；确需回看时从 `legacy/unused-2026-05-25/` 查找。
 5. 公开发布前优先按 `docs/素材资产审计.md` 裁剪 `legacy/`、被 v2 / v3 替代的 OOC 旧候选、只作重切参考的 `source-sheet-v1.png` 和授权不明的大体积 BGM；不要为了压包把 `legacy/` 或 OOC 旧图接回配置。
-6. 不得把原作游戏截图、官方游戏拆包素材或官方图放入 `public/`；早期 Touhou LostWord 官方角色图已在 AI-5 验收中从公开目录移除。
+6. 不得把原作游戏截图或官方游戏拆包素材放入 `public/`；早期 Touhou LostWord 角色图已按个人自用需求恢复，如未来公开传播需重新确认授权与署名。
 
 生成并筛选图片后，按以下方式接入：
 

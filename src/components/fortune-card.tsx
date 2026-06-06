@@ -352,7 +352,7 @@ export function FortuneCard({
       </div>
 
       <div className="space-y-2 border-t border-[#8f714b]/12 pt-2 sm:space-y-3">
-        <p className="text-[0.68rem] leading-5 text-[#7a6452] sm:text-xs sm:leading-6">东方Project同人风格角色签。</p>
+        <p className="text-[0.68rem] leading-5 text-[#7a6452] sm:text-xs sm:leading-6">东方Project风格角色签。</p>
         <div className="flex flex-wrap items-center gap-2 sm:gap-3">
           <button
             type="button"

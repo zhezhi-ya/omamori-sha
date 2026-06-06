@@ -337,7 +337,7 @@ function RouteSelectionPanel({
             </div>
             <div className="flex flex-wrap items-center justify-end gap-2">
               <div className="rounded-full border border-white/62 bg-white/42 px-4 py-2 text-xs text-[#5b4250]/76 shadow-[0_10px_28px_rgba(72,42,50,0.08)] backdrop-blur">
-                非官方东方 Project 二次创作
+                东方 Project 风格今日签
               </div>
               <div className="hidden rounded-full border border-white/62 bg-white/42 px-4 py-2 text-xs text-[#5b4250]/76 shadow-[0_10px_28px_rgba(72,42,50,0.08)] backdrop-blur sm:block">
                 {getShanghaiReadableDate()}

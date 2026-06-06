@@ -7,7 +7,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "御守社",
     short_name: "御守社",
-    description: "从 14 处幻想乡签路进入明亮动漫风今日签文场景。本项目为非官方东方 Project 二次创作。",
+    description: "从 14 处幻想乡签路进入明亮动漫风今日签文场景。",
     start_url: assetPath("/"),
     display: "standalone",
     background_color: "#fff7e8",

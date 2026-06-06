@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     default: "御守社",
     template: "%s | 御守社",
   },
-  description: "从 14 处幻想乡签路进入明亮日式二次元场景，抽取非官方东方 Project 二次创作今日签文。",
+  description: "从 14 处幻想乡签路进入明亮日式二次元场景，抽取今日签文。",
   applicationName: "御守社",
   category: "entertainment",
   creator: "御守社",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "御守社",
-    description: "从 14 处幻想乡签路进入明亮动漫风今日签文场景。本项目为非官方东方 Project 二次创作。",
+    description: "从 14 处幻想乡签路进入明亮动漫风今日签文场景。",
     siteName: "御守社",
     locale: "zh_CN",
     type: "website",
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "御守社",
-    description: "14 处幻想乡签路，收下一枚非官方东方 Project 二次创作今日签文。",
+    description: "14 处幻想乡签路，收下一枚今日签文。",
   },
 };
 

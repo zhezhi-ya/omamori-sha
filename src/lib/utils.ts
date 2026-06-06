@@ -86,7 +86,7 @@ export function buildShareText(fortune: Fortune, routeConfig?: OmamoriRouteConfi
     `${labels?.advice ?? "建议"}：${fortune.advice || "先把节奏放慢半拍。"}`,
     `${labels?.luckyColor ?? "幸运色"}：${fortune.luckyColor || "薄雾金"} ｜ ${labels?.luckyItem ?? "幸运物"}：${fortune.luckyItem || "随身签纸"}`,
     `稀有度：${rarityLabel}`,
-    "本页为东方Project同人风格致敬内容，非官方作品。",
+    "本页为东方Project风格今日签。",
     `来自「${routeConfig?.shareFrom ?? "御守社"}」`,
   ]
     .filter(Boolean)

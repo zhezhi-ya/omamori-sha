@@ -5,9 +5,7 @@ const ROOT = process.cwd();
 const OUT_DIR = path.join(ROOT, "out");
 
 const removableDirectories = [
-  "images/characters",
   "images/generated-themes/legacy",
-  "audio/music",
 ];
 
 const removableFiles = [
@@ -41,14 +39,6 @@ const sanitizedTextPatterns = [
     replacement: '"sourceSheet":""',
   },
   {
-    pattern: /\/images\/characters\/[^"'`\\\s),;]+?\.(?:jpg|jpeg|png|webp)/gi,
-    replacement: "",
-  },
-  {
-    pattern: /\/audio\/music\/[^"'`\\\s),;]+?\.(?:json|mp3)/gi,
-    replacement: "",
-  },
-  {
     pattern: /\/images\/generated-themes\/legacy\/[^"'`\\\s),;]+?\.(?:jpg|jpeg|png|webp)/gi,
     replacement: "",
   },
@@ -67,8 +57,6 @@ const sanitizedTextPatterns = [
 ];
 
 const forbiddenResiduePatterns = [
-  /\/images\/characters\//i,
-  /\/audio\/music\//i,
   /\/images\/generated-themes\/legacy\//i,
   /source-sheet-v\d+\.(?:png|webp)/i,
   /-scene(?:-v\d+)?\.png/i,

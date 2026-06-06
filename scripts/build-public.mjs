@@ -8,8 +8,8 @@ const env = {
   GITHUB_PAGES: "true",
   NEXT_PUBLIC_BASE_PATH: process.env.NEXT_PUBLIC_BASE_PATH ?? "/omamori-sha",
   NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL ?? "https://zhezhi-ya.github.io/omamori-sha",
-  NEXT_PUBLIC_ENABLE_LOCAL_CHARACTER_IMAGES: "false",
-  NEXT_PUBLIC_ENABLE_LOCAL_MUSIC: "false",
+  NEXT_PUBLIC_ENABLE_LOCAL_CHARACTER_IMAGES: process.env.NEXT_PUBLIC_ENABLE_LOCAL_CHARACTER_IMAGES ?? "true",
+  NEXT_PUBLIC_ENABLE_LOCAL_MUSIC: process.env.NEXT_PUBLIC_ENABLE_LOCAL_MUSIC ?? "true",
 };
 
 function run(command, args) {

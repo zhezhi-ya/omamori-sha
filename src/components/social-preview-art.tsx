@@ -68,7 +68,7 @@ export function SocialPreviewArt({ title, subtitle, footer }: SocialPreviewArtPr
               color: "rgba(73,51,68,0.82)",
             }}
           >
-            东方Project同人风格签文
+            东方Project风格签文
           </div>
         </div>
         <div

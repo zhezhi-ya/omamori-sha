@@ -1,7 +1,7 @@
 import type { Fortune } from "@/types/omikuji";
 
-const ENABLE_LOCAL_CHARACTER_IMAGES = process.env.NEXT_PUBLIC_ENABLE_LOCAL_CHARACTER_IMAGES === "true";
-const ENABLE_LOCAL_MUSIC = process.env.NEXT_PUBLIC_ENABLE_LOCAL_MUSIC === "true";
+const ENABLE_LOCAL_CHARACTER_IMAGES = process.env.NEXT_PUBLIC_ENABLE_LOCAL_CHARACTER_IMAGES !== "false";
+const ENABLE_LOCAL_MUSIC = process.env.NEXT_PUBLIC_ENABLE_LOCAL_MUSIC !== "false";
 
 export function canUseLocalCharacterImages(): boolean {
   return ENABLE_LOCAL_CHARACTER_IMAGES;

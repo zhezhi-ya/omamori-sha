@@ -58,21 +58,27 @@ cmd /c npx.cmd tsc --noEmit
 cmd /c npm.cmd run build
 ```
 
-## 公开发布构建
+## GitHub Pages 构建
 
-公开构建默认不加载本地角色图和本地 BGM，结果签面会使用风格化角色占位，背景环境音会回退到 Web Audio 合成旋律。这样可以避免授权未完全确认的素材随页面运行加载。
+当前项目按个人自用口径构建：默认保留本地角色图与本地 BGM，结果签面会直接加载 `public/images/characters/` 中的角色素材，背景环境音会优先读取 `public/audio/music/` 中的曲目。
 
 ```powershell
 cmd /c npm.cmd run build:public
 ```
 
-`build:public` 会以 GitHub Pages 静态导出口径构建，并在生成 `out/` 后裁剪公开包中的 `images/characters`、`audio/music`、`generated-themes/legacy`、raw PNG 场景 / 仪式源图与 source sheet。
+`build:public` 会以 GitHub Pages 静态导出口径构建，并在生成 `out/` 后裁剪公开包中的 `generated-themes/legacy`、raw PNG 场景 / 仪式源图与 source sheet；角色图和音乐目录会保留。
 
-如果只在本地个人环境展示，并且已确认素材来源，可以显式开启本地素材：
+如需临时隐藏角色图，可显式关闭本地角色图片开关：
 
 ```powershell
-$env:NEXT_PUBLIC_ENABLE_LOCAL_CHARACTER_IMAGES="true"
-$env:NEXT_PUBLIC_ENABLE_LOCAL_MUSIC="true"
+$env:NEXT_PUBLIC_ENABLE_LOCAL_CHARACTER_IMAGES="false"
+cmd /c npm.cmd run dev
+```
+
+如需临时隐藏本地 BGM，可显式关闭音乐开关：
+
+```powershell
+$env:NEXT_PUBLIC_ENABLE_LOCAL_MUSIC="false"
 cmd /c npm.cmd run dev
 ```
 
@@ -187,10 +193,10 @@ H:\Project\御守社
 
 ## 发布前合规状态
 
-- 页面首屏、页面 metadata、Web App Manifest、OpenGraph 图和 README 均已标注“非官方东方 Project 二次创作”。
-- 运行配置未引用 `legacy/`、原作游戏截图、拆包素材或官方图；早期 Touhou LostWord 官方角色图已从 `public/images/characters/lostword/` 移除。
+- 页面首屏、页面 metadata、Web App Manifest 和 OpenGraph 图已收拢为轻量项目口吻，不再在前端显著展示合规声明。
+- 个人自用口径已恢复 `public/images/characters/lostword/` 中的早期 Touhou LostWord 角色图，并默认保留本地角色图加载。
 - 当前公开版本不包含收费解锁或付费门槛；`unlockedVisualTheme` 仅用于稀有签视觉主题，不是付费功能。
-- 默认公开构建不加载本地角色图和本地 BGM；如需个人本地展示，可通过 `NEXT_PUBLIC_ENABLE_LOCAL_CHARACTER_IMAGES=true` 与 `NEXT_PUBLIC_ENABLE_LOCAL_MUSIC=true` 显式开启。
+- 默认构建加载本地角色图和本地 BGM；如需隐藏，可分别通过 `NEXT_PUBLIC_ENABLE_LOCAL_CHARACTER_IMAGES=false` 与 `NEXT_PUBLIC_ENABLE_LOCAL_MUSIC=false` 显式关闭。
 - `npm audit --audit-level=moderate` 仍报告 Next 16.2.6 内置 `postcss@8.4.31` 的 moderate advisory，自动修复会强制降级到 `next@9.3.3`，因此不执行 `npm audit fix --force`，等待 Next 上游安全补丁或兼容升级路径。
 - `build:public` 已提供 GitHub Pages 静态包裁剪流程；发布到公开站点前仍需按目标平台补严格 CSP / 响应头策略。
 
